@@ -50,7 +50,7 @@ export default function Home() {
     
     const startPosition = window.pageYOffset;
     const distance = offsetPosition - startPosition;
-    const duration = 800; 
+    const duration = 500; 
     let start: number | null = null;
 
     const animation = (currentTime: number) => {
