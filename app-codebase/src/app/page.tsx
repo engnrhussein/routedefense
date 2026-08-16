@@ -6,9 +6,7 @@ export default function Home() {
       {/* Header */}
       <header className="px-8 py-6 flex items-center justify-between border-b border-black/5 bg-[#FDFBF7] sticky top-0 z-50">
         <div className="flex items-center gap-3">
-          {/* Logo automatically looks great because its native stroke is #111111 */}
-          <Image src="/logo.svg" alt="RouteDefense Logo" width={32} height={32} className="w-8 h-8" />
-          <span className="font-bold tracking-widest text-sm uppercase text-[#1A1A1A]">RouteDefense</span>
+          <Image src="/logo.svg" alt="RouteDefense Logo" width={48} height={48} className="w-12 h-12" />
         </div>
         <nav>
           <button className="text-sm font-medium tracking-wide text-[#4A4A4A] hover:text-[#1A1A1A] transition-colors uppercase">
