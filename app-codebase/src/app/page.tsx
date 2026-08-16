@@ -43,14 +43,14 @@ export default function Home() {
     }
 
     // For phones, physical distance is longer due to stacked layout.
-    // We enforce a custom 700ms duration with perfectly linear speed.
-    const headerOffset = 112; // 80px header + 32px breathing room
+    // We enforce a custom 800ms duration with perfectly linear speed.
+    const headerOffset = 96; // 80px header + 16px breathing room
     const elementPosition = target.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
     
     const startPosition = window.pageYOffset;
     const distance = offsetPosition - startPosition;
-    const duration = 700; 
+    const duration = 800; 
     let start: number | null = null;
 
     const animation = (currentTime: number) => {
@@ -161,7 +161,7 @@ export default function Home() {
         {/* Ticket Submission Form Section */}
         <section className="border-t border-black/5 bg-[#F9F6EE]">
           <div className="max-w-4xl mx-auto px-8 py-24">
-            <div id="submit" className="text-center mb-12 scroll-mt-28">
+            <div id="submit" className="text-center mb-12 scroll-mt-24">
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl mb-4 text-[#111111]">
                 Submit Your Case For Review
               </h2>
