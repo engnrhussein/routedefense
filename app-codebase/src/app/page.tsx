@@ -107,7 +107,7 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="px-8 py-32 md:py-48 max-w-5xl mx-auto flex flex-col items-center text-center">
+        <section className="px-8 pt-16 pb-20 md:py-48 max-w-5xl mx-auto flex flex-col items-center text-center">
           <h1 className="font-[family-name:var(--font-playfair)] text-5xl md:text-7xl font-semibold leading-tight tracking-tight mb-6 text-[#111111]">
             Resolve Your Ticket. <br />
             <span className="text-[#666666] font-medium">Protect Your Record.</span>
