@@ -78,7 +78,7 @@ export default function Home() {
         <div className="fixed inset-0 z-[100] bg-[#FDFBF7]/90 backdrop-blur-sm flex flex-col items-center justify-center">
           <div className="relative flex items-center justify-center">
             {/* Spinning Circle */}
-            <div className="absolute w-24 h-24 border-4 border-[#DCD6CC] border-t-[#E63946] rounded-full animate-spin"></div>
+            <div className="absolute w-24 h-24 border-4 border-[#CFC6B8] border-t-[#E63946] rounded-full animate-spin"></div>
             {/* Skeleton Logo */}
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 224 224" className="w-12 h-12 opacity-80">
               <path d="M 0 200 L 0 0 L 100 0 L 200 100 L 200 200 Z" fill="none" stroke="#111111" strokeWidth="24" strokeLinejoin="miter" />
@@ -93,7 +93,7 @@ export default function Home() {
       )}
 
       {/* Header - Fixed Padding & Sizing */}
-      <header className="px-8 py-6 flex items-center justify-between border-b border-black/5 bg-[#EFEBE3] sticky top-0 z-50">
+      <header className="px-8 py-6 flex items-center justify-between border-b border-black/5 bg-[#E6E0D4] sticky top-0 z-50">
         <Link href="/" className="flex items-center gap-3">
           <Image src="/logo.svg" alt="RouteDefense Logo" width={32} height={32} className="w-8 h-8" />
           <span className="font-bold tracking-widest text-sm uppercase text-[#1A1A1A]">RouteDefense</span>
@@ -122,14 +122,14 @@ export default function Home() {
         </section>
 
         {/* How It Works - 3 Step Grid */}
-        <section className="border-t border-black/5 bg-[#EFEBE3] relative">
+        <section className="border-t border-black/5 bg-[#E6E0D4] relative">
           <div className="max-w-6xl mx-auto px-8 py-24">
             <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl mb-16 text-center text-[#111111]">
               How RouteDefense Works
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Step 1 */}
-              <div className="border border-[#DCD6CC] p-10 bg-white hover:border-[#C4BBAF] transition-colors duration-300 shadow-sm">
+              <div className="border border-[#CFC6B8] p-10 bg-white hover:border-[#C4BBAF] transition-colors duration-300 shadow-sm">
                 <span className="text-[#E63946] font-mono text-sm tracking-widest block mb-6">01 //</span>
                 <h3 className="text-xl font-semibold mb-4 text-[#111111]">Upload Citation</h3>
                 <p className="text-[#666666] text-sm leading-relaxed">
@@ -138,7 +138,7 @@ export default function Home() {
               </div>
               
               {/* Step 2 */}
-              <div className="border border-[#DCD6CC] p-10 bg-white hover:border-[#C4BBAF] transition-colors duration-300 shadow-sm">
+              <div className="border border-[#CFC6B8] p-10 bg-white hover:border-[#C4BBAF] transition-colors duration-300 shadow-sm">
                 <span className="text-[#E63946] font-mono text-sm tracking-widest block mb-6">02 //</span>
                 <h3 className="text-xl font-semibold mb-4 text-[#111111]">Attorney Match</h3>
                 <p className="text-[#666666] text-sm leading-relaxed">
@@ -147,7 +147,7 @@ export default function Home() {
               </div>
 
               {/* Step 3 */}
-              <div className="border border-[#DCD6CC] p-10 bg-white hover:border-[#C4BBAF] transition-colors duration-300 shadow-sm">
+              <div className="border border-[#CFC6B8] p-10 bg-white hover:border-[#C4BBAF] transition-colors duration-300 shadow-sm">
                 <span className="text-[#E63946] font-mono text-sm tracking-widest block mb-6">03 //</span>
                 <h3 className="text-xl font-semibold mb-4 text-[#111111]">Strategic Defense</h3>
                 <p className="text-[#666666] text-sm leading-relaxed">
@@ -159,7 +159,7 @@ export default function Home() {
         </section>
 
         {/* Ticket Submission Form Section */}
-        <section className="border-t border-black/5 bg-[#EFEBE3]">
+        <section className="border-t border-black/5 bg-[#E6E0D4]">
           <div className="max-w-4xl mx-auto px-8 py-24">
             <div id="submit" className="text-center mb-12 scroll-mt-24">
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl mb-4 text-[#111111]">
@@ -170,10 +170,10 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-white p-8 md:p-12 border border-[#DCD6CC] shadow-sm relative">
+            <div className="bg-white p-8 md:p-12 border border-[#CFC6B8] shadow-sm relative">
               {formStatus === "success" ? (
                 <div className="text-center py-16 animate-in fade-in duration-500">
-                  <div className="w-16 h-16 bg-[#EFEBE3] rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-[#E6E0D4] rounded-full flex items-center justify-center mx-auto mb-6">
                     <svg className="w-8 h-8 text-[#2A9D8F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
@@ -194,22 +194,22 @@ export default function Home() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="flex flex-col gap-2">
                       <label htmlFor="fullName" className="text-xs font-semibold tracking-widest uppercase text-[#4A4A4A]">Full Name</label>
-                      <input type="text" name="name" id="fullName" required className="border border-[#DCD6CC] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors" placeholder="John Doe" />
+                      <input type="text" name="name" id="fullName" required className="border border-[#CFC6B8] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors" placeholder="John Doe" />
                     </div>
                     <div className="flex flex-col gap-2">
                       <label htmlFor="email" className="text-xs font-semibold tracking-widest uppercase text-[#4A4A4A]">Email Address</label>
-                      <input type="email" name="email" id="email" required className="border border-[#EBE6DD] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors" placeholder="john@example.com" />
+                      <input type="email" name="email" id="email" required className="border border-[#CFC6B8] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors" placeholder="john@example.com" />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="flex flex-col gap-2">
                       <label htmlFor="phone" className="text-xs font-semibold tracking-widest uppercase text-[#4A4A4A]">Phone Number</label>
-                      <input type="tel" name="phone" id="phone" required className="border border-[#EBE6DD] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors" placeholder="(800) 555-0199" />
+                      <input type="tel" name="phone" id="phone" required className="border border-[#CFC6B8] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors" placeholder="(800) 555-0199" />
                     </div>
                     <div className="flex flex-col gap-2">
                       <label htmlFor="state" className="text-xs font-semibold tracking-widest uppercase text-[#4A4A4A]">State of Issue</label>
-                      <select name="state" id="state" required className="border border-[#EBE6DD] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors appearance-none text-[#1A1A1A] h-[46px] overflow-y-auto">
+                      <select name="state" id="state" required className="border border-[#CFC6B8] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors appearance-none text-[#1A1A1A] h-[46px] overflow-y-auto">
                         <option value="">Select State</option>
                         <option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option>
                       </select>
@@ -218,12 +218,12 @@ export default function Home() {
 
                   <div className="flex flex-col gap-2">
                     <label htmlFor="citation" className="text-xs font-semibold tracking-widest uppercase text-[#4A4A4A]">Citation/Ticket Number</label>
-                    <input type="text" name="citation_number" id="citation" required className="border border-[#EBE6DD] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors" placeholder="e.g. T12345678" />
+                    <input type="text" name="citation_number" id="citation" required className="border border-[#CFC6B8] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors" placeholder="e.g. T12345678" />
                   </div>
 
                   <div className="flex flex-col gap-2">
                     <label htmlFor="details" className="text-xs font-semibold tracking-widest uppercase text-[#4A4A4A]">Incident Details</label>
-                    <textarea name="details" id="details" rows={4} required className="border border-[#EBE6DD] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors resize-none" placeholder="Briefly describe the violation..."></textarea>
+                    <textarea name="details" id="details" rows={4} required className="border border-[#CFC6B8] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors resize-none" placeholder="Briefly describe the violation..."></textarea>
                   </div>
 
                   {formStatus === "error" && (
@@ -243,7 +243,7 @@ export default function Home() {
       </main>
 
       {/* Minimal Footer */}
-      <footer className="border-t border-black/5 bg-[#F9F6EE] px-8 py-12 text-center">
+      <footer className="border-t border-black/5 bg-[#E6E0D4] px-8 py-12 text-center">
         <p className="text-xs text-[#888888] tracking-widest uppercase">
           &copy; {new Date().getFullYear()} RouteDefense Legal Network. Secure & Confidential.
         </p>
