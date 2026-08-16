@@ -35,13 +35,22 @@ export default function Home() {
     const target = document.getElementById("submit");
     if (!target) return;
     
-    const headerOffset = 80; // approximate sticky header height
+    // If on desktop (width >= 768px), fallback to native browser scroll
+    // which the user confirmed feels perfect for shorter desktop distances.
+    if (window.innerWidth >= 768) {
+      target.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+
+    // For phones, physical distance is longer due to stacked layout.
+    // We enforce a custom 600ms duration with easeOutCubic (starts fast, gracefully decelerates).
+    const headerOffset = 80;
     const elementPosition = target.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
     
     const startPosition = window.pageYOffset;
     const distance = offsetPosition - startPosition;
-    const duration = 1000; // 1 full second for a luxurious, slow scroll
+    const duration = 600; 
     let start: number | null = null;
 
     const animation = (currentTime: number) => {
@@ -49,11 +58,7 @@ export default function Home() {
       const timeElapsed = currentTime - start;
       const progress = Math.min(timeElapsed / duration, 1);
       
-      // easeInOutQuart easing function for a very premium feel
-      const ease = progress < 0.5 
-        ? 8 * progress * progress * progress * progress 
-        : 1 - Math.pow(-2 * progress + 2, 4) / 2;
-
+      const ease = 1 - Math.pow(1 - progress, 3);
       window.scrollTo(0, startPosition + distance * ease);
 
       if (timeElapsed < duration) {
