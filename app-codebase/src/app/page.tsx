@@ -43,14 +43,14 @@ export default function Home() {
     }
 
     // For phones, physical distance is longer due to stacked layout.
-    // We enforce a custom 600ms duration with easeOutCubic (starts fast, gracefully decelerates).
-    const headerOffset = 80;
+    // We enforce a custom 700ms duration with perfectly linear speed.
+    const headerOffset = 112; // 80px header + 32px breathing room
     const elementPosition = target.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
     
     const startPosition = window.pageYOffset;
     const distance = offsetPosition - startPosition;
-    const duration = 800; 
+    const duration = 700; 
     let start: number | null = null;
 
     const animation = (currentTime: number) => {
@@ -159,9 +159,9 @@ export default function Home() {
         </section>
 
         {/* Ticket Submission Form Section */}
-        <section id="submit" className="border-t border-black/5 bg-[#F9F6EE] scroll-mt-20">
+        <section className="border-t border-black/5 bg-[#F9F6EE]">
           <div className="max-w-4xl mx-auto px-8 py-24">
-            <div className="text-center mb-12">
+            <div id="submit" className="text-center mb-12 scroll-mt-28">
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl mb-4 text-[#111111]">
                 Submit Your Case For Review
               </h2>
