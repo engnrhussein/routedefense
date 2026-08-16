@@ -58,10 +58,8 @@ export default function Home() {
       const timeElapsed = currentTime - start;
       const progress = Math.min(timeElapsed / duration, 1);
       
-      // easeInOutQuad matches native PC scroll curve perfectly
-      const ease = progress < 0.5 
-        ? 2 * progress * progress 
-        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+      // Linear easing: perfectly constant speed from start to finish
+      const ease = progress;
         
       window.scrollTo(0, startPosition + distance * ease);
 
