@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${playfairDisplay.variable} h-full antialiased scroll-smooth`}>
-      <body className="min-h-full flex flex-col bg-[#FDFBF7] text-[#1A1A1A]">
+      <body className="min-h-full flex flex-col bg-[#F9F6EE] text-[#1A1A1A]">
         {children}
       </body>
     </html>
