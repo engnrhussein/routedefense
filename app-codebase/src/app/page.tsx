@@ -52,7 +52,7 @@ export default function Home() {
       )}
 
       {/* Header - Fixed Padding & Sizing */}
-      <header className="pl-0 pr-8 py-6 flex items-center justify-between border-b border-black/5 bg-[#F9F6EE] sticky top-0 z-50">
+      <header className="px-8 py-6 flex items-center justify-between border-b border-black/5 bg-[#F9F6EE] sticky top-0 z-50">
         <Link href="/" className="flex items-center gap-3">
           <Image src="/logo.svg" alt="RouteDefense Logo" width={32} height={32} className="w-8 h-8" />
           <span className="font-bold tracking-widest text-sm uppercase text-[#1A1A1A]">RouteDefense</span>
