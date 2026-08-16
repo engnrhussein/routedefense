@@ -38,7 +38,7 @@ export default function Poster() {
           <div className="mt-auto pt-16 flex justify-between items-end">
             <div>
               <p className="text-[#E63946] font-bold tracking-[0.2em] uppercase mb-4 text-lg">Secure Case Evaluation At:</p>
-              <p className="text-3xl font-bold uppercase tracking-[0.2em] text-[#111111]">routedefense.com</p>
+              <p className="text-2xl font-bold uppercase tracking-[0.2em] text-[#111111]">routedefense.com</p>
             </div>
             
             {/* QR Code Placeholder Box */}
