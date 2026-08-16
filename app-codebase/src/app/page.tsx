@@ -30,6 +30,40 @@ export default function Home() {
     }
   };
 
+  const scrollToSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const target = document.getElementById("submit");
+    if (!target) return;
+    
+    const headerOffset = 80; // approximate sticky header height
+    const elementPosition = target.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    
+    const startPosition = window.pageYOffset;
+    const distance = offsetPosition - startPosition;
+    const duration = 1000; // 1 full second for a luxurious, slow scroll
+    let start: number | null = null;
+
+    const animation = (currentTime: number) => {
+      if (start === null) start = currentTime;
+      const timeElapsed = currentTime - start;
+      const progress = Math.min(timeElapsed / duration, 1);
+      
+      // easeInOutQuart easing function for a very premium feel
+      const ease = progress < 0.5 
+        ? 8 * progress * progress * progress * progress 
+        : 1 - Math.pow(-2 * progress + 2, 4) / 2;
+
+      window.scrollTo(0, startPosition + distance * ease);
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    };
+
+    requestAnimationFrame(animation);
+  };
+
   return (
     <div className="min-h-screen font-[family-name:var(--font-geist-sans)] flex flex-col relative">
       {/* Full Page Loading Overlay */}
@@ -75,9 +109,9 @@ export default function Home() {
             An institutional-grade pipeline connecting drivers facing immediate fines 
             with vetted, specialized traffic defense attorneys.
           </p>
-          <a href="#submit" className="bg-[#E63946] hover:bg-[#c92d39] text-white px-10 py-5 text-sm font-bold tracking-widest uppercase transition-all duration-300 shadow-sm">
+          <button onClick={scrollToSubmit} className="bg-[#E63946] hover:bg-[#c92d39] text-white px-10 py-5 text-sm font-bold tracking-widest uppercase transition-all duration-300 shadow-sm">
             Submit Your Ticket
-          </a>
+          </button>
         </section>
 
         {/* How It Works - 3 Step Grid */}
