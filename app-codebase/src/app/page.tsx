@@ -93,7 +93,7 @@ export default function Home() {
       )}
 
       {/* Header - Fixed Padding & Sizing */}
-      <header className="px-8 py-6 flex items-center justify-between border-b border-black/5 bg-[#E6E0D4] sticky top-0 z-50">
+      <header className="px-8 py-6 flex items-center justify-between border-b border-black/5 bg-[#E8DFD4] sticky top-0 z-50">
         <Link href="/" className="flex items-center gap-3">
           <Image src="/logo.svg" alt="RouteDefense Logo" width={32} height={32} className="w-8 h-8" />
           <span className="font-bold tracking-widest text-sm uppercase text-[#1A1A1A]">RouteDefense</span>
@@ -122,7 +122,7 @@ export default function Home() {
         </section>
 
         {/* How It Works - 3 Step Grid */}
-        <section className="border-t border-black/5 bg-[#E6E0D4] relative">
+        <section className="border-t border-black/5 bg-[#E8DFD4] relative">
           <div className="max-w-6xl mx-auto px-8 py-24">
             <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl mb-16 text-center text-[#111111]">
               How RouteDefense Works
@@ -159,7 +159,7 @@ export default function Home() {
         </section>
 
         {/* Ticket Submission Form Section */}
-        <section className="border-t border-black/5 bg-[#E6E0D4]">
+        <section className="border-t border-black/5 bg-[#E8DFD4]">
           <div className="max-w-4xl mx-auto px-8 py-24">
             <div id="submit" className="text-center mb-12 scroll-mt-24">
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl mb-4 text-[#111111]">
@@ -173,7 +173,7 @@ export default function Home() {
             <div className="bg-white p-8 md:p-12 border border-[#CFC6B8] shadow-sm relative">
               {formStatus === "success" ? (
                 <div className="text-center py-16 animate-in fade-in duration-500">
-                  <div className="w-16 h-16 bg-[#E6E0D4] rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-[#E8DFD4] rounded-full flex items-center justify-center mx-auto mb-6">
                     <svg className="w-8 h-8 text-[#2A9D8F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
@@ -243,7 +243,7 @@ export default function Home() {
       </main>
 
       {/* Minimal Footer */}
-      <footer className="border-t border-black/5 bg-[#E6E0D4] px-8 py-12 text-center">
+      <footer className="border-t border-black/5 bg-[#E8DFD4] px-8 py-12 text-center">
         <p className="text-xs text-[#888888] tracking-widest uppercase">
           &copy; {new Date().getFullYear()} RouteDefense Legal Network. Secure & Confidential.
         </p>
