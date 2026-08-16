@@ -8,13 +8,19 @@ export default function Poster() {
         className="bg-[#E8DFD4] relative flex flex-col justify-between overflow-hidden shadow-2xl print:shadow-none mx-auto"
         style={{ width: '210mm', height: '297mm', WebkitPrintColorAdjust: 'exact', printColorAdjust: 'exact' }}
       >
+        {/* Top Border Accent */}
+        <div className="h-6 w-full bg-[#E63946] shrink-0"></div>
+
         {/* Content */}
         <div className="flex-1 flex flex-col px-20 pt-16 pb-24">
           <div className="mb-auto">
             {/* Logo */}
             <div className="flex items-center gap-6 mb-16">
               <img src="/logo.svg" alt="RouteDefense Logo" className="w-16 h-16 opacity-90" />
-              <span className="font-bold tracking-[0.3em] text-2xl uppercase text-[#111111]">RouteDefense</span>
+              <div className="flex flex-col">
+                <span className="font-bold tracking-[0.3em] text-2xl uppercase text-[#111111]">RouteDefense</span>
+                <span className="text-[10px] tracking-[0.4em] text-[#666666] font-bold mt-1">PREMIUM LEGAL NETWORK</span>
+              </div>
             </div>
 
             {/* Headline */}
@@ -29,10 +35,10 @@ export default function Poster() {
           </div>
 
           {/* Bottom Call to Action */}
-          <div className="mt-auto border-t-[3px] border-[#CFC6B8] pt-16 flex justify-between items-end">
+          <div className="mt-auto pt-16 flex justify-between items-end">
             <div>
               <p className="text-[#E63946] font-bold tracking-[0.2em] uppercase mb-4 text-lg">Secure Case Evaluation At:</p>
-              <p className="text-5xl font-[family-name:var(--font-playfair)] text-[#111111] tracking-tight">www.routedefense.com</p>
+              <p className="text-5xl font-[family-name:var(--font-playfair)] text-[#111111] tracking-tight">routedefense.com</p>
             </div>
             
             {/* QR Code Placeholder Box */}
