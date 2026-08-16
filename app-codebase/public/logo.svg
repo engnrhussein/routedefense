@@ -1,11 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300" width="100%" height="100%">
-  <!-- Abstract Geometric Mark for RouteDefense -->
-  <g transform="translate(150, 50)">
-    <!-- Outer Shield / Pathway -->
-    <path d="M 0 200 L 0 0 L 100 0 L 200 100 L 200 200 Z" fill="none" stroke="#111111" stroke-width="24" stroke-linejoin="miter" />
-    <!-- Inner Forward Motion Line -->
-    <path d="M 60 200 L 60 60 L 100 60 L 140 100 L 140 200" fill="none" stroke="#111111" stroke-width="24" stroke-linejoin="miter" />
-    <!-- The Accent (Safety Red) - representing resolution -->
-    <rect x="116" y="150" width="24" height="24" fill="#E63946" />
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 224 224" width="100%" height="100%">
+  <!-- Outer Shield / Pathway -->
+  <path d="M 0 200 L 0 0 L 100 0 L 200 100 L 200 200 Z" fill="none" stroke="#111111" stroke-width="24" stroke-linejoin="miter" />
+  <!-- Inner Forward Motion Line -->
+  <path d="M 60 200 L 60 60 L 100 60 L 140 100 L 140 200" fill="none" stroke="#111111" stroke-width="24" stroke-linejoin="miter" />
+  <!-- The Accent (Safety Red) - representing resolution -->
+  <rect x="116" y="150" width="24" height="24" fill="#E63946" />
 </svg>

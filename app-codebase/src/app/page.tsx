@@ -1,15 +1,16 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="min-h-screen font-[family-name:var(--font-geist-sans)] flex flex-col">
       {/* Header */}
-      <header className="px-8 py-6 flex items-center justify-between border-b border-black/5 bg-[#F9F6EE] sticky top-0 z-50">
-        <div className="flex items-center gap-3">
-          <Image src="/logo.svg" alt="RouteDefense Logo" width={80} height={80} className="w-20 h-20 -my-4" />
+      <header className="px-8 py-4 flex items-center justify-between border-b border-black/5 bg-[#F9F6EE] sticky top-0 z-50 h-[80px]">
+        <Link href="/" className="flex items-center gap-4 -ml-4">
+          <Image src="/logo.svg" alt="RouteDefense Logo" width={64} height={64} className="w-16 h-16" />
           <span className="font-bold tracking-widest text-sm uppercase text-[#1A1A1A]">RouteDefense</span>
-        </div>
-        <nav>
+        </Link>
+        <nav className="flex items-center">
           <button className="text-sm font-medium tracking-wide text-[#4A4A4A] hover:text-[#1A1A1A] transition-colors uppercase">
             Lawyer Portal
           </button>
@@ -70,7 +71,7 @@ export default function Home() {
         </section>
 
         {/* Ticket Submission Form Section */}
-        <section id="submit" className="border-t border-black/5 bg-[#F9F6EE]">
+        <section id="submit" className="border-t border-black/5 bg-[#F9F6EE] scroll-mt-20">
           <div className="max-w-4xl mx-auto px-8 py-24">
             <div className="text-center mb-12">
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl mb-4 text-[#111111]">
@@ -83,8 +84,7 @@ export default function Home() {
 
             <div className="bg-white p-8 md:p-12 border border-[#EBE6DD] shadow-sm">
               <form action="https://api.web3forms.com/submit" method="POST" className="space-y-6">
-                {/* Web3Forms Access Key - User Must Replace This */}
-                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE" />
+                <input type="hidden" name="access_key" value="8afa92c0-e6bd-4cee-a464-ada76b23b0aa" />
                 
                 {/* Optional: Redirect back to site after submission (you can change this URL) */}
                 <input type="hidden" name="redirect" value="https://routedefense.pages.dev" />

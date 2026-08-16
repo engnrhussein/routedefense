@@ -1,14 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 500 500"
+   width="100%"
+   height="100%"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="logo.jpg"
+   inkscape:export-xdpi="1200"
+   inkscape:export-ydpi="1200"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs3" />
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="2.33"
+     inkscape:cx="250"
+     inkscape:cy="250"
+     inkscape:window-width="2560"
+     inkscape:window-height="1361"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3" />
   <!-- Abstract Geometric Mark for RouteDefense -->
-  <g transform="translate(150, 100)">
+  <g
+     transform="translate(150, 100)"
+     id="g2">
     <!-- Outer Shield / Pathway -->
-    <path d="M 0 200 L 0 0 L 100 0 L 200 100 L 200 200 Z" fill="none" stroke="#111111" stroke-width="24" stroke-linejoin="miter" />
+    <path
+       d="M 0 200 L 0 0 L 100 0 L 200 100 L 200 200 Z"
+       fill="none"
+       stroke="#111111"
+       stroke-width="24"
+       stroke-linejoin="miter"
+       id="path1" />
     <!-- Inner Forward Motion Line -->
-    <path d="M 60 200 L 60 60 L 100 60 L 140 100 L 140 200" fill="none" stroke="#111111" stroke-width="24" stroke-linejoin="miter" />
+    <path
+       d="M 60 200 L 60 60 L 100 60 L 140 100 L 140 200"
+       fill="none"
+       stroke="#111111"
+       stroke-width="24"
+       stroke-linejoin="miter"
+       id="path2" />
     <!-- The Accent (Safety Red) - representing resolution -->
-    <rect x="116" y="150" width="24" height="24" fill="#E63946" />
+    <rect
+       x="116"
+       y="150"
+       width="24"
+       height="24"
+       fill="#E63946"
+       id="rect2" />
   </g>
   <!-- Authoritative Typography -->
-  <text x="250" y="380" font-family="'Geist', 'Inter', system-ui, sans-serif" font-weight="800" font-size="32" fill="#111111" letter-spacing="8" text-anchor="middle">ROUTEDEFENSE</text>
-  <text x="250" y="420" font-family="'Geist', 'Inter', system-ui, sans-serif" font-weight="500" font-size="12" fill="#888888" letter-spacing="5" text-anchor="middle">PREMIUM LEGAL NETWORK</text>
+  <text
+     x="250"
+     y="380"
+     font-family="'Geist', 'Inter', system-ui, sans-serif"
+     font-weight="800"
+     font-size="32"
+     fill="#111111"
+     letter-spacing="8"
+     text-anchor="middle"
+     id="text2">ROUTEDEFENSE</text>
+  <text
+     x="250"
+     y="420"
+     font-family="'Geist', 'Inter', system-ui, sans-serif"
+     font-weight="500"
+     font-size="12"
+     fill="#888888"
+     letter-spacing="5"
+     text-anchor="middle"
+     id="text3">PREMIUM LEGAL NETWORK</text>
 </svg>
