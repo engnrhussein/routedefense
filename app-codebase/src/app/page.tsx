@@ -50,7 +50,7 @@ export default function Home() {
     
     const startPosition = window.pageYOffset;
     const distance = offsetPosition - startPosition;
-    const duration = 600; 
+    const duration = 800; 
     let start: number | null = null;
 
     const animation = (currentTime: number) => {
@@ -58,7 +58,11 @@ export default function Home() {
       const timeElapsed = currentTime - start;
       const progress = Math.min(timeElapsed / duration, 1);
       
-      const ease = 1 - Math.pow(1 - progress, 3);
+      // easeInOutQuad matches native PC scroll curve perfectly
+      const ease = progress < 0.5 
+        ? 2 * progress * progress 
+        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+        
       window.scrollTo(0, startPosition + distance * ease);
 
       if (timeElapsed < duration) {
