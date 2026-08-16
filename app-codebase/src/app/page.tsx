@@ -1,13 +1,60 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
+  const [formStatus, setFormStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus("loading");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        setFormStatus("success");
+      } else {
+        setFormStatus("error");
+      }
+    } catch (error) {
+      setFormStatus("error");
+    }
+  };
+
   return (
-    <div className="min-h-screen font-[family-name:var(--font-geist-sans)] flex flex-col">
-      {/* Header */}
-      <header className="px-8 py-4 flex items-center justify-between border-b border-black/5 bg-[#F9F6EE] sticky top-0 z-50 h-[80px]">
-        <Link href="/" className="flex items-center gap-4 -ml-4">
-          <Image src="/logo.svg" alt="RouteDefense Logo" width={64} height={64} className="w-16 h-16" />
+    <div className="min-h-screen font-[family-name:var(--font-geist-sans)] flex flex-col relative">
+      {/* Full Page Loading Overlay */}
+      {formStatus === "loading" && (
+        <div className="fixed inset-0 z-[100] bg-[#FDFBF7]/90 backdrop-blur-sm flex flex-col items-center justify-center">
+          <div className="relative flex items-center justify-center">
+            {/* Spinning Circle */}
+            <div className="absolute w-24 h-24 border-4 border-[#EBE6DD] border-t-[#E63946] rounded-full animate-spin"></div>
+            {/* Skeleton Logo */}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 224 224" className="w-12 h-12 opacity-80">
+              <path d="M 0 200 L 0 0 L 100 0 L 200 100 L 200 200 Z" fill="none" stroke="#111111" strokeWidth="24" strokeLinejoin="miter" />
+              <path d="M 60 200 L 60 60 L 100 60 L 140 100 L 140 200" fill="none" stroke="#111111" strokeWidth="24" strokeLinejoin="miter" />
+              <rect x="116" y="150" width="24" height="24" fill="#E63946" />
+            </svg>
+          </div>
+          <p className="mt-8 font-bold tracking-widest text-sm uppercase text-[#1A1A1A] animate-pulse">
+            Encrypting & Submitting Case...
+          </p>
+        </div>
+      )}
+
+      {/* Header - Fixed Padding & Sizing */}
+      <header className="pl-0 pr-8 py-6 flex items-center justify-between border-b border-black/5 bg-[#F9F6EE] sticky top-0 z-50">
+        <Link href="/" className="flex items-center gap-3">
+          <Image src="/logo.svg" alt="RouteDefense Logo" width={32} height={32} className="w-8 h-8" />
           <span className="font-bold tracking-widest text-sm uppercase text-[#1A1A1A]">RouteDefense</span>
         </Link>
         <nav className="flex items-center">
@@ -82,54 +129,73 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-white p-8 md:p-12 border border-[#EBE6DD] shadow-sm">
-              <form action="https://api.web3forms.com/submit" method="POST" className="space-y-6">
-                <input type="hidden" name="access_key" value="8afa92c0-e6bd-4cee-a464-ada76b23b0aa" />
-                
-                {/* Optional: Redirect back to site after submission (you can change this URL) */}
-                <input type="hidden" name="redirect" value="https://routedefense.pages.dev" />
-                <input type="hidden" name="subject" value="New RouteDefense Ticket Submission" />
-                <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="fullName" className="text-xs font-semibold tracking-widest uppercase text-[#4A4A4A]">Full Name</label>
-                    <input type="text" name="name" id="fullName" required className="border border-[#EBE6DD] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors" placeholder="John Doe" />
+            <div className="bg-white p-8 md:p-12 border border-[#EBE6DD] shadow-sm relative">
+              {formStatus === "success" ? (
+                <div className="text-center py-16 animate-in fade-in duration-500">
+                  <div className="w-16 h-16 bg-[#F9F6EE] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg className="w-8 h-8 text-[#2A9D8F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="email" className="text-xs font-semibold tracking-widest uppercase text-[#4A4A4A]">Email Address</label>
-                    <input type="email" name="email" id="email" required className="border border-[#EBE6DD] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors" placeholder="john@example.com" />
+                  <h3 className="font-[family-name:var(--font-playfair)] text-3xl text-[#2A9D8F] mb-4">
+                    Case Successfully Submitted
+                  </h3>
+                  <p className="text-[#4A4A4A] max-w-md mx-auto leading-relaxed">
+                    Thank you. Your citation has been securely encrypted and routed. A specialized defense attorney will review your file and contact you shortly.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <input type="hidden" name="access_key" value="8afa92c0-e6bd-4cee-a464-ada76b23b0aa" />
+                  <input type="hidden" name="subject" value="New RouteDefense Ticket Submission" />
+                  <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="fullName" className="text-xs font-semibold tracking-widest uppercase text-[#4A4A4A]">Full Name</label>
+                      <input type="text" name="name" id="fullName" required className="border border-[#EBE6DD] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors" placeholder="John Doe" />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="email" className="text-xs font-semibold tracking-widest uppercase text-[#4A4A4A]">Email Address</label>
+                      <input type="email" name="email" id="email" required className="border border-[#EBE6DD] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors" placeholder="john@example.com" />
+                    </div>
                   </div>
-                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="phone" className="text-xs font-semibold tracking-widest uppercase text-[#4A4A4A]">Phone Number</label>
-                    <input type="tel" name="phone" id="phone" required className="border border-[#EBE6DD] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors" placeholder="(555) 123-4567" />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="phone" className="text-xs font-semibold tracking-widest uppercase text-[#4A4A4A]">Phone Number</label>
+                      <input type="tel" name="phone" id="phone" required className="border border-[#EBE6DD] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors" placeholder="(800) 555-0199" />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="state" className="text-xs font-semibold tracking-widest uppercase text-[#4A4A4A]">State of Issue</label>
+                      <select name="state" id="state" required className="border border-[#EBE6DD] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors appearance-none text-[#1A1A1A] h-[46px] overflow-y-auto">
+                        <option value="">Select State</option>
+                        <option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option>
+                      </select>
+                    </div>
                   </div>
+
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="state" className="text-xs font-semibold tracking-widest uppercase text-[#4A4A4A]">State of Issue</label>
-                    <select name="state" id="state" required className="border border-[#EBE6DD] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors appearance-none text-[#1A1A1A] h-[46px] overflow-y-auto">
-                      <option value="">Select State</option>
-                      <option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option>
-                    </select>
+                    <label htmlFor="citation" className="text-xs font-semibold tracking-widest uppercase text-[#4A4A4A]">Citation/Ticket Number</label>
+                    <input type="text" name="citation_number" id="citation" required className="border border-[#EBE6DD] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors" placeholder="e.g. T12345678" />
                   </div>
-                </div>
 
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="citation" className="text-xs font-semibold tracking-widest uppercase text-[#4A4A4A]">Citation/Ticket Number</label>
-                  <input type="text" name="citation_number" id="citation" required className="border border-[#EBE6DD] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors" placeholder="e.g. T12345678" />
-                </div>
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="details" className="text-xs font-semibold tracking-widest uppercase text-[#4A4A4A]">Incident Details</label>
+                    <textarea name="details" id="details" rows={4} required className="border border-[#EBE6DD] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors resize-none" placeholder="Briefly describe the violation..."></textarea>
+                  </div>
 
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="details" className="text-xs font-semibold tracking-widest uppercase text-[#4A4A4A]">Incident Details</label>
-                  <textarea name="details" id="details" rows={4} className="border border-[#EBE6DD] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#E63946] transition-colors resize-none" placeholder="Briefly describe the violation..."></textarea>
-                </div>
+                  {formStatus === "error" && (
+                    <p className="text-[#E63946] text-sm font-semibold">
+                      An error occurred while submitting your case. Please try again.
+                    </p>
+                  )}
 
-                <button type="submit" className="w-full bg-[#111111] hover:bg-[#E63946] text-white px-10 py-5 text-sm font-bold tracking-widest uppercase transition-colors duration-300 mt-4">
-                  Request Free Case Evaluation
-                </button>
-              </form>
+                  <button type="submit" disabled={formStatus === "loading"} className="w-full bg-[#111111] hover:bg-[#E63946] text-white px-10 py-5 text-sm font-bold tracking-widest uppercase transition-colors duration-300 mt-4 disabled:opacity-50">
+                    Request Free Case Evaluation
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </section>
