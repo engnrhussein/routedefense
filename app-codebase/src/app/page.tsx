@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useMemo, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { 
   ArrowUpRight, 
   ShieldCheck, 
@@ -18,12 +18,7 @@ import {
   AlertTriangle, 
   Gavel, 
   Lock, 
-  ShieldAlert,
-  Car,
-  ChevronRight,
-  Sparkles,
-  Award,
-  Layers
+  ShieldAlert
 } from "lucide-react";
 // @ts-expect-error missing types
 import scus from "state-counties-us";
@@ -89,7 +84,6 @@ export default function Home() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("how-it-works");
-  const [selectedStage, setSelectedStage] = useState<number>(0);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const countyOptions = useMemo(() => {
@@ -107,7 +101,7 @@ export default function Home() {
     const sectionIds = ["how-it-works", "guidance", "specialties", "coverage", "submit-section"];
     
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 140;
+      const scrollPosition = window.scrollY + 100;
       
       for (const id of sectionIds) {
         const element = document.getElementById(id);
@@ -127,13 +121,14 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Smooth slide navigation handler
+  // Precise smooth slide handler: lands cleanly with balanced margin below the 80px navbar
   const scrollToSection = (e: React.MouseEvent, sectionId: string) => {
     e.preventDefault();
     const element = document.getElementById(sectionId);
     if (!element) return;
     
-    const headerOffset = 84;
+    // 80px navbar height + 10px breathing room = 90px exact offset
+    const headerOffset = 90;
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -191,57 +186,6 @@ export default function Home() {
     }
   };
 
-  const stages = [
-    {
-      num: "01",
-      title: "Immediate Roadside Protocol",
-      badge: "Crucial First Step",
-      icon: ShieldAlert,
-      shortDesc: "Sign to acknowledge receipt, never argue, and never admit guilt on the record.",
-      details: [
-        "Signing the citation is solely an acknowledgement of receipt, NOT an admission of fault.",
-        "Do not offer roadside admissions or excuses; bodycam recordings are requested by prosecutors.",
-        "Politely request the officer's measurement method (Radar, Lidar Laser, Visual Pacing, or Aircraft)."
-      ]
-    },
-    {
-      num: "02",
-      title: "Photograph & Docket Capture",
-      badge: "Evidence Integrity",
-      icon: FileCheck2,
-      shortDesc: "Capture high-resolution photos of the citation ticket, court dates, and road conditions.",
-      details: [
-        "Take clear photos of the ticket number, charging statute, county, and court appearance deadline.",
-        "Note weather conditions, traffic density, and construction zone signage positions immediately.",
-        "Do not rush to pay the court fine online — paying automatically triggers license points and insurance surcharges."
-      ]
-    },
-    {
-      num: "03",
-      title: "Encrypted Portal Upload",
-      badge: "Automated Routing",
-      icon: UploadCloud,
-      shortDesc: "Transmit your citation to RouteDefense for instant jurisdictional mapping and statute review.",
-      details: [
-        "Our intake algorithm parses the violation code against county court precedents across 3,143 counties.",
-        "Your file is routed exclusively to verified defense counsel who regularly practice in that courthouse.",
-        "Receive a customized defense analysis identifying calibration flaws or dismissal opportunities within 24 hours."
-      ]
-    },
-    {
-      num: "04",
-      title: "Court Appearance & Defense",
-      badge: "Zero-Point Goal",
-      icon: Gavel,
-      shortDesc: "Your attorney appears on your behalf to negotiate dismissals, reductions, and clean records.",
-      details: [
-        "In over 90% of traffic proceedings, your attorney appears in court on your behalf with no client presence needed.",
-        "Counsel files formal discovery motions requesting radar calibration logs and officer training certificates.",
-        "Cases are aggressively resolved via complete statutory dismissal or converted into non-moving equipment violations."
-      ]
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-[#FAFAFA] text-[#111111] font-[family-name:var(--font-geist-sans)] selection:bg-[#E63946] selection:text-white flex flex-col relative overflow-x-hidden">
       
@@ -267,7 +211,7 @@ export default function Home() {
         </div>
       )}
 
-      {/* Navigation Bar - Frosted Glass with Interactive Slide Scrolling & Active Underline Highlight */}
+      {/* Navigation Bar - Frosted Glass with Smooth Slide & Active Highlights */}
       <nav className="fixed top-0 w-full z-50 bg-[#FAFAFA]/90 backdrop-blur-md border-b border-[#E5E7EB]">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
           
@@ -285,7 +229,7 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Desktop Navigation Links with Active Highlights & Smooth Slide */}
+          {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center gap-10 text-xs font-bold tracking-widest uppercase">
             
             <a 
@@ -369,8 +313,8 @@ export default function Home() {
       {/* Main Content Area */}
       <main className="flex-1">
         
-        {/* HERO SECTION: Tightened padding, crisp architectural slate/white contrast */}
-        <section className="relative pt-28 pb-16 md:pt-32 md:pb-24 px-6 lg:px-12 overflow-hidden bg-[#FAFAFA]">
+        {/* HERO SECTION: Tightened padding directly under navbar */}
+        <section className="relative pt-28 pb-16 md:pt-32 md:pb-20 px-6 lg:px-12 overflow-hidden bg-[#FAFAFA]">
           
           {/* Subtle Ambient Glows */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#E63946]/5 rounded-full blur-[130px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
@@ -414,7 +358,7 @@ export default function Home() {
                     onClick={(e) => scrollToSection(e, "how-it-works")}
                     className="inline-flex items-center justify-center gap-2 border border-[#111111] text-[#111111] hover:bg-[#111111] hover:text-white px-8 py-4 font-bold tracking-widest uppercase text-xs sm:text-sm transition-all duration-300 bg-white"
                   >
-                    <span>Explore How It Works</span>
+                    <span>How It Works</span>
                   </button>
                 </div>
 
@@ -435,7 +379,7 @@ export default function Home() {
                 </div>
               </motion.div>
 
-              {/* Right Column: Commercial Photograph Hero Showcase (Realistic photo preserved) */}
+              {/* Right Column: Commercial Photograph Hero Showcase */}
               <motion.div 
                 initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -469,130 +413,109 @@ export default function Home() {
           </div>
         </section>
 
-        {/* HOW IT WORKS: High-End Vector/Interactive 4-Stage Resolution Engine (Replaces the cartoonish cut-off image) */}
-        <section id="how-it-works" className="py-24 px-6 lg:px-12 bg-white border-t border-b border-[#E5E7EB] scroll-mt-20">
+        {/* HOW IT WORKS: RESTORED ORIGINAL SIDE-BY-SIDE LAYOUT WITH ULTRA-REALISTIC LEGAL 3D ILLUSTRATION */}
+        <section id="how-it-works" className="pt-10 pb-16 md:pt-14 md:pb-20 px-6 lg:px-12 bg-white border-t border-b border-[#E5E7EB]">
           <div className="max-w-[1600px] mx-auto">
             
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-              <div className="max-w-2xl">
-                <span className="text-[#E63946] font-bold text-xs tracking-[0.25em] uppercase block mb-3">
-                  System Architecture & Process
-                </span>
-                <h2 className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl font-bold text-[#111111] leading-tight">
-                  How RouteDefense resolves your ticket.
-                </h2>
-                <div className="w-16 h-1 bg-[#E63946] mt-4 mb-4"></div>
-                <p className="text-[#555555] text-base font-light leading-relaxed">
-                  A calibrated, 4-stage institutional pipeline engineered to protect your license, challenge municipal evidentiary burdens, and eliminate courtroom appearances.
-                </p>
-              </div>
-
-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#777777]">
-                <Layers size={16} className="text-[#E63946]" />
-                <span>Interactive 4-Stage Workflow</span>
-              </div>
+            {/* Header */}
+            <div className="max-w-3xl mb-12">
+              <span className="text-[#E63946] font-bold text-xs tracking-[0.25em] uppercase block mb-3">
+                Protocol & Action Plan
+              </span>
+              <h2 className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl font-bold text-[#111111] leading-tight mb-4">
+                What to do immediately after receiving a ticket.
+              </h2>
+              <div className="w-16 h-1 bg-[#E63946] mb-4"></div>
+              <p className="text-base text-[#555555] font-light leading-relaxed">
+                Most drivers make the irreversible mistake of rushing to pay the court fine. Follow this 4-step protocol designed by seasoned traffic defense attorneys.
+              </p>
             </div>
 
-            {/* Stage Selector Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              {stages.map((stage, idx) => {
-                const IconComponent = stage.icon;
-                const isSelected = selectedStage === idx;
-                return (
-                  <div 
-                    key={idx}
-                    onClick={() => setSelectedStage(idx)}
-                    className={`cursor-pointer border p-6 transition-all duration-300 relative ${
-                      isSelected 
-                        ? 'border-[#111111] bg-[#FAFAFA] shadow-md ring-1 ring-[#111111]' 
-                        : 'border-[#E5E7EB] bg-white hover:border-[#111111]/50'
-                    }`}
-                  >
-                    {/* Active accent top bar */}
-                    {isSelected && (
-                      <div className="absolute top-0 left-0 right-0 h-1 bg-[#E63946]"></div>
-                    )}
+            {/* Restored Side-by-Side: Image in Left Box + 4 Stage Cards in Right Box */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              
+              {/* Left Box: The High-End 3D Legal Illustration (Zero cartoon clay, zero cut-off text) */}
+              <div className="lg:col-span-6 relative aspect-[16/11] rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-md bg-[#FAFAFA]">
+                <Image 
+                  src="/images/guidance-illustration.jpg" 
+                  alt="RouteDefense Strategic Case Scanning & Legal Resolution Protocol"
+                  fill
+                  className="object-cover object-center"
+                  priority
+                />
+              </div>
 
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="font-mono text-xs font-bold text-[#E63946] tracking-widest">
-                        STAGE {stage.num} //
-                      </span>
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                        isSelected ? 'bg-[#111111] text-white' : 'bg-slate-100 text-[#555555]'
-                      }`}>
-                        <IconComponent size={16} />
-                      </div>
-                    </div>
-
-                    <h3 className="font-bold text-sm text-[#111111] uppercase tracking-wide mb-2">
-                      {stage.title}
-                    </h3>
-                    
-                    <p className="text-xs text-[#666666] leading-relaxed">
-                      {stage.shortDesc}
-                    </p>
-
-                    <div className="mt-4 flex items-center gap-1.5 text-[11px] font-bold text-[#E63946] uppercase tracking-wider">
-                      <span>{isSelected ? "Inspecting Protocol" : "Click to Inspect"}</span>
-                      <ChevronRight size={13} />
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Deep Stage Inspection Panel */}
-            <div className="border border-[#E5E7EB] bg-[#FAFAFA] p-8 md:p-12 relative overflow-hidden">
-              <div className="max-w-4xl relative z-10">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#E5E7EB] text-[11px] font-bold tracking-wider uppercase text-[#E63946] mb-4">
-                  <Award size={14} />
-                  {stages[selectedStage].badge}
-                </div>
-
-                <h3 className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl font-bold text-[#111111] mb-6">
-                  Stage {stages[selectedStage].num}: {stages[selectedStage].title}
-                </h3>
-
-                <div className="space-y-4">
-                  {stages[selectedStage].details.map((point, i) => (
-                    <div key={i} className="flex items-start gap-4 text-sm text-[#333333]">
-                      <div className="w-2 h-2 rounded-full bg-[#E63946] mt-2 shrink-0"></div>
-                      <p className="leading-relaxed font-light">{point}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-[#E5E7EB] flex flex-wrap items-center justify-between gap-4">
-                  <p className="text-xs text-[#777777] font-medium uppercase tracking-wider">
-                    Protocol active across all 3,143 US county municipal courts
+              {/* Right Box: The 4 Stage Cards Grid */}
+              <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-5">
+                
+                {/* Stage 1 */}
+                <div className="border border-[#E5E7EB] p-6 bg-[#FAFAFA] hover:border-[#111111] transition-colors duration-300 shadow-xs">
+                  <span className="font-mono text-xs font-bold text-[#E63946] tracking-widest block mb-2">STAGE 01 //</span>
+                  <h3 className="text-sm font-bold text-[#111111] uppercase tracking-wide mb-2 flex items-center gap-2">
+                    <AlertTriangle size={16} className="text-[#E63946]" />
+                    Stay Calm & Sign
+                  </h3>
+                  <p className="text-xs text-[#555555] leading-relaxed font-light">
+                    Signing the citation is NOT an admission of guilt; it only acknowledges receipt. Remain polite and do not argue with the issuing officer.
                   </p>
-                  <button 
-                    onClick={(e) => scrollToSection(e, "submit-section")}
-                    className="inline-flex items-center gap-2 bg-[#111111] hover:bg-[#E63946] text-white px-6 py-2.5 text-xs font-bold tracking-widest uppercase transition-colors"
-                  >
-                    <span>Upload Citation For Stage 03</span>
-                    <ArrowUpRight size={14} />
-                  </button>
                 </div>
+
+                {/* Stage 2 */}
+                <div className="border border-[#E5E7EB] p-6 bg-[#FAFAFA] hover:border-[#111111] transition-colors duration-300 shadow-xs">
+                  <span className="font-mono text-xs font-bold text-[#E63946] tracking-widest block mb-2">STAGE 02 //</span>
+                  <h3 className="text-sm font-bold text-[#111111] uppercase tracking-wide mb-2 flex items-center gap-2">
+                    <FileCheck2 size={16} className="text-[#E63946]" />
+                    Photograph Ticket
+                  </h3>
+                  <p className="text-xs text-[#555555] leading-relaxed font-light">
+                    Take a clear, well-lit photo of the entire citation showing the statute code, date, county, and court appearance deadline.
+                  </p>
+                </div>
+
+                {/* Stage 3 */}
+                <div className="border border-[#E5E7EB] p-6 bg-[#FAFAFA] hover:border-[#111111] transition-colors duration-300 shadow-xs">
+                  <span className="font-mono text-xs font-bold text-[#E63946] tracking-widest block mb-2">STAGE 03 //</span>
+                  <h3 className="text-sm font-bold text-[#111111] uppercase tracking-wide mb-2 flex items-center gap-2">
+                    <UploadCloud size={16} className="text-[#E63946]" />
+                    Secure Portal Upload
+                  </h3>
+                  <p className="text-xs text-[#555555] leading-relaxed font-light">
+                    Submit your ticket directly to RouteDefense. Our network matches your case with counsel who regularly practices in that specific county court.
+                  </p>
+                </div>
+
+                {/* Stage 4 */}
+                <div className="border border-[#E5E7EB] p-6 bg-[#FAFAFA] hover:border-[#111111] transition-colors duration-300 shadow-xs">
+                  <span className="font-mono text-xs font-bold text-[#E63946] tracking-widest block mb-2">STAGE 04 //</span>
+                  <h3 className="text-sm font-bold text-[#111111] uppercase tracking-wide mb-2 flex items-center gap-2">
+                    <Gavel size={16} className="text-[#E63946]" />
+                    Dismissal & Defense
+                  </h3>
+                  <p className="text-xs text-[#555555] leading-relaxed font-light">
+                    In most traffic hearings, your attorney appears on your behalf. You never have to take time off work or step inside a courthouse.
+                  </p>
+                </div>
+
               </div>
+
             </div>
 
           </div>
         </section>
 
-        {/* DRIVER GUIDANCE: Critical Roadside Rules & What To Do */}
-        <section id="guidance" className="py-24 px-6 lg:px-12 bg-[#FAFAFA] scroll-mt-20">
+        {/* DRIVER GUIDANCE: Critical Roadside Rules */}
+        <section id="guidance" className="pt-10 pb-16 md:pt-14 md:pb-20 px-6 lg:px-12 bg-[#FAFAFA]">
           <div className="max-w-[1600px] mx-auto">
             
-            <div className="max-w-3xl mb-16">
+            <div className="max-w-3xl mb-12">
               <span className="text-[#E63946] font-bold text-xs tracking-[0.25em] uppercase block mb-3">
                 Driver Defense Rules
               </span>
-              <h2 className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl font-bold text-[#111111] leading-tight mb-6">
+              <h2 className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl font-bold text-[#111111] leading-tight mb-4">
                 Critical rules every driver must know.
               </h2>
-              <div className="w-16 h-1 bg-[#E63946] mb-6"></div>
-              <p className="text-base md:text-lg text-[#555555] font-light leading-relaxed">
+              <div className="w-16 h-1 bg-[#E63946] mb-4"></div>
+              <p className="text-base text-[#555555] font-light leading-relaxed">
                 The municipal traffic court system relies on uninformed drivers who simply pay citations without realizing the consequences. Here is what you must understand before taking action.
               </p>
             </div>
@@ -644,7 +567,7 @@ export default function Home() {
         </section>
 
         {/* LEGAL SPECIALTIES: Institutional Capabilities with Attorney Review Photo */}
-        <section id="specialties" className="py-24 px-6 lg:px-12 bg-white border-t border-b border-[#E5E7EB] scroll-mt-20">
+        <section id="specialties" className="pt-10 pb-16 md:pt-14 md:pb-20 px-6 lg:px-12 bg-white border-t border-b border-[#E5E7EB]">
           <div className="max-w-[1600px] mx-auto">
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -670,7 +593,7 @@ export default function Home() {
                       <h3 className="font-bold text-sm uppercase tracking-wider text-[#111111] mb-1">
                         Speeding & Radar/Lidar Defense
                       </h3>
-                      <p className="text-xs text-[#666666] leading-relaxed">
+                      <p className="text-xs text-[#666666] leading-relaxed font-light">
                         Challenging calibration logs, tuning fork tests, visual pacing errors, and speed trap statutory thresholds.
                       </p>
                     </div>
@@ -682,7 +605,7 @@ export default function Home() {
                       <h3 className="font-bold text-sm uppercase tracking-wider text-[#111111] mb-1">
                         Commercial Drivers & CDL Defense
                       </h3>
-                      <p className="text-xs text-[#666666] leading-relaxed">
+                      <p className="text-xs text-[#666666] leading-relaxed font-light">
                         Protecting professional livelihoods, PSP scores, and FMCSA safety points for commercial haulers and operators.
                       </p>
                     </div>
@@ -694,7 +617,7 @@ export default function Home() {
                       <h3 className="font-bold text-sm uppercase tracking-wider text-[#111111] mb-1">
                         Reckless Driving & High Speed
                       </h3>
-                      <p className="text-xs text-[#666666] leading-relaxed">
+                      <p className="text-xs text-[#666666] leading-relaxed font-light">
                         Converting serious misdemeanor criminal traffic charges into non-moving equipment infractions with zero license points.
                       </p>
                     </div>
@@ -706,7 +629,7 @@ export default function Home() {
                       <h3 className="font-bold text-sm uppercase tracking-wider text-[#111111] mb-1">
                         Automated Camera & Red Light Citations
                       </h3>
-                      <p className="text-xs text-[#666666] leading-relaxed">
+                      <p className="text-xs text-[#666666] leading-relaxed font-light">
                         Demanding proof of driver identity, yellow light timing minimums, and strict maintenance certification.
                       </p>
                     </div>
@@ -715,7 +638,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Commercial Photograph Showcase: Attorney Review (Preserved as requested) */}
+              {/* Commercial Photograph Showcase: Attorney Review */}
               <div className="lg:col-span-5 relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-xl bg-white">
                 <Image 
                   src="/images/attorney-review.jpg" 
@@ -742,7 +665,7 @@ export default function Home() {
         </section>
 
         {/* 50-STATE COVERAGE HIGHLIGHT */}
-        <section id="coverage" className="py-20 px-6 lg:px-12 bg-[#FAFAFA] scroll-mt-20">
+        <section id="coverage" className="pt-10 pb-16 md:pt-14 md:pb-20 px-6 lg:px-12 bg-[#FAFAFA]">
           <div className="max-w-[1600px] mx-auto text-center">
             <span className="text-[#E63946] font-bold text-xs tracking-[0.25em] uppercase block mb-3">
               Nationwide Jurisdiction
@@ -760,8 +683,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* TICKET SUBMISSION PORTAL: Next-Level Form with Document Upload & Cascading Inventory */}
-        <section id="submit-section" className="py-24 px-6 lg:px-12 bg-white border-t border-[#E5E7EB] scroll-mt-20">
+        {/* TICKET SUBMISSION PORTAL: Form with Document Upload & Cascading Inventory */}
+        <section id="submit-section" className="pt-10 pb-20 md:pt-14 md:pb-24 px-6 lg:px-12 bg-white border-t border-[#E5E7EB]">
           <div className="max-w-4xl mx-auto">
             
             <div className="text-center mb-12">
@@ -865,7 +788,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Cascading State & County Selection (Preserved Inventory) */}
+                  {/* Cascading State & County Selection */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="flex flex-col gap-2">
                       <label htmlFor="state" className="text-xs font-bold tracking-widest uppercase text-[#4A4A4A]">
