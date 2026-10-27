@@ -5,430 +5,2544 @@
    height="1024"
    version="1.1"
    id="routedefense_qr_svg"
-   xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <filter id="badgeShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="0.3" stdDeviation="0.4" flood-color="#000000" flood-opacity="0.15"/>
+   sodipodi:docname="routedefense_QR.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   inkscape:export-filename="routedefense_QR.jpg"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview403"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.57521479"
+     inkscape:cx="529.36747"
+     inkscape:cy="418.10468"
+     inkscape:window-width="1920"
+     inkscape:window-height="1051"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="center_emblem" />
+  <defs
+     id="defs1">
+    <filter
+       id="badgeShadow"
+       x="-0.018181818"
+       y="-0.018181818"
+       width="1.0363636"
+       height="1.0363636">
+      <feDropShadow
+         dx="0"
+         dy="0.3"
+         stdDeviation="0.4"
+         flood-color="#000000"
+         flood-opacity="0.15" />
     </filter>
   </defs>
   <!-- Solid white background with subtle border radius -->
-  <rect x="0" y="0" width="37" height="37" fill="#FFFFFF" rx="3.5" />
-  <rect x="0.25" y="0.25" width="36.5" height="36.5" fill="none" stroke="#E5E7EB" stroke-width="0.5" rx="3.5" />
-  <g transform="translate(2, 2)" id="qr_modules">
-    <circle cx="8.50" cy="0.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="0.50" r="0.44" fill="#111111" />
-    <circle cx="14.50" cy="0.50" r="0.44" fill="#111111" />
-    <circle cx="16.50" cy="0.50" r="0.44" fill="#111111" />
-    <circle cx="18.50" cy="0.50" r="0.44" fill="#111111" />
-    <circle cx="20.50" cy="0.50" r="0.44" fill="#111111" />
-    <circle cx="21.50" cy="0.50" r="0.44" fill="#111111" />
-    <circle cx="23.50" cy="0.50" r="0.44" fill="#111111" />
-    <circle cx="24.50" cy="0.50" r="0.44" fill="#111111" />
-    <circle cx="8.50" cy="1.50" r="0.44" fill="#111111" />
-    <circle cx="17.50" cy="1.50" r="0.44" fill="#111111" />
-    <circle cx="19.50" cy="1.50" r="0.44" fill="#111111" />
-    <circle cx="21.50" cy="1.50" r="0.44" fill="#111111" />
-    <circle cx="22.50" cy="1.50" r="0.44" fill="#111111" />
-    <circle cx="24.50" cy="1.50" r="0.44" fill="#111111" />
-    <circle cx="8.50" cy="2.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="2.50" r="0.44" fill="#111111" />
-    <circle cx="11.50" cy="2.50" r="0.44" fill="#111111" />
-    <circle cx="15.50" cy="2.50" r="0.44" fill="#111111" />
-    <circle cx="16.50" cy="2.50" r="0.44" fill="#111111" />
-    <circle cx="17.50" cy="2.50" r="0.44" fill="#111111" />
-    <circle cx="18.50" cy="2.50" r="0.44" fill="#111111" />
-    <circle cx="21.50" cy="2.50" r="0.44" fill="#111111" />
-    <circle cx="22.50" cy="2.50" r="0.44" fill="#111111" />
-    <circle cx="23.50" cy="2.50" r="0.44" fill="#111111" />
-    <circle cx="24.50" cy="2.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="3.50" r="0.44" fill="#111111" />
-    <circle cx="13.50" cy="3.50" r="0.44" fill="#111111" />
-    <circle cx="14.50" cy="3.50" r="0.44" fill="#111111" />
-    <circle cx="15.50" cy="3.50" r="0.44" fill="#111111" />
-    <circle cx="17.50" cy="3.50" r="0.44" fill="#111111" />
-    <circle cx="19.50" cy="3.50" r="0.44" fill="#111111" />
-    <circle cx="22.50" cy="3.50" r="0.44" fill="#111111" />
-    <circle cx="23.50" cy="3.50" r="0.44" fill="#111111" />
-    <circle cx="24.50" cy="3.50" r="0.44" fill="#111111" />
-    <circle cx="9.50" cy="4.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="4.50" r="0.44" fill="#111111" />
-    <circle cx="11.50" cy="4.50" r="0.44" fill="#111111" />
-    <circle cx="12.50" cy="4.50" r="0.44" fill="#111111" />
-    <circle cx="13.50" cy="4.50" r="0.44" fill="#111111" />
-    <circle cx="16.50" cy="4.50" r="0.44" fill="#111111" />
-    <circle cx="17.50" cy="4.50" r="0.44" fill="#111111" />
-    <circle cx="21.50" cy="4.50" r="0.44" fill="#111111" />
-    <circle cx="8.50" cy="5.50" r="0.44" fill="#111111" />
-    <circle cx="9.50" cy="5.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="5.50" r="0.44" fill="#111111" />
-    <circle cx="14.50" cy="5.50" r="0.44" fill="#111111" />
-    <circle cx="15.50" cy="5.50" r="0.44" fill="#111111" />
-    <circle cx="18.50" cy="5.50" r="0.44" fill="#111111" />
-    <circle cx="20.50" cy="5.50" r="0.44" fill="#111111" />
-    <circle cx="21.50" cy="5.50" r="0.44" fill="#111111" />
-    <circle cx="22.50" cy="5.50" r="0.44" fill="#111111" />
-    <circle cx="23.50" cy="5.50" r="0.44" fill="#111111" />
-    <circle cx="24.50" cy="5.50" r="0.44" fill="#111111" />
-    <circle cx="8.50" cy="6.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="6.50" r="0.44" fill="#111111" />
-    <circle cx="12.50" cy="6.50" r="0.44" fill="#111111" />
-    <circle cx="14.50" cy="6.50" r="0.44" fill="#111111" />
-    <circle cx="16.50" cy="6.50" r="0.44" fill="#111111" />
-    <circle cx="18.50" cy="6.50" r="0.44" fill="#111111" />
-    <circle cx="20.50" cy="6.50" r="0.44" fill="#111111" />
-    <circle cx="22.50" cy="6.50" r="0.44" fill="#111111" />
-    <circle cx="24.50" cy="6.50" r="0.44" fill="#111111" />
-    <circle cx="8.50" cy="7.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="7.50" r="0.44" fill="#111111" />
-    <circle cx="13.50" cy="7.50" r="0.44" fill="#111111" />
-    <circle cx="16.50" cy="7.50" r="0.44" fill="#111111" />
-    <circle cx="17.50" cy="7.50" r="0.44" fill="#111111" />
-    <circle cx="18.50" cy="7.50" r="0.44" fill="#111111" />
-    <circle cx="19.50" cy="7.50" r="0.44" fill="#111111" />
-    <circle cx="20.50" cy="7.50" r="0.44" fill="#111111" />
-    <circle cx="21.50" cy="7.50" r="0.44" fill="#111111" />
-    <circle cx="22.50" cy="7.50" r="0.44" fill="#111111" />
-    <circle cx="23.50" cy="7.50" r="0.44" fill="#111111" />
-    <circle cx="2.50" cy="8.50" r="0.44" fill="#111111" />
-    <circle cx="3.50" cy="8.50" r="0.44" fill="#111111" />
-    <circle cx="4.50" cy="8.50" r="0.44" fill="#111111" />
-    <circle cx="6.50" cy="8.50" r="0.44" fill="#111111" />
-    <circle cx="8.50" cy="8.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="8.50" r="0.44" fill="#111111" />
-    <circle cx="11.50" cy="8.50" r="0.44" fill="#111111" />
-    <circle cx="14.50" cy="8.50" r="0.44" fill="#111111" />
-    <circle cx="15.50" cy="8.50" r="0.44" fill="#111111" />
-    <circle cx="18.50" cy="8.50" r="0.44" fill="#111111" />
-    <circle cx="19.50" cy="8.50" r="0.44" fill="#111111" />
-    <circle cx="22.50" cy="8.50" r="0.44" fill="#111111" />
-    <circle cx="23.50" cy="8.50" r="0.44" fill="#111111" />
-    <circle cx="25.50" cy="8.50" r="0.44" fill="#111111" />
-    <circle cx="26.50" cy="8.50" r="0.44" fill="#111111" />
-    <circle cx="27.50" cy="8.50" r="0.44" fill="#111111" />
-    <circle cx="30.50" cy="8.50" r="0.44" fill="#111111" />
-    <circle cx="31.50" cy="8.50" r="0.44" fill="#111111" />
-    <circle cx="32.50" cy="8.50" r="0.44" fill="#111111" />
-    <circle cx="0.50" cy="9.50" r="0.44" fill="#111111" />
-    <circle cx="1.50" cy="9.50" r="0.44" fill="#111111" />
-    <circle cx="2.50" cy="9.50" r="0.44" fill="#111111" />
-    <circle cx="3.50" cy="9.50" r="0.44" fill="#111111" />
-    <circle cx="4.50" cy="9.50" r="0.44" fill="#111111" />
-    <circle cx="5.50" cy="9.50" r="0.44" fill="#111111" />
-    <circle cx="9.50" cy="9.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="9.50" r="0.44" fill="#111111" />
-    <circle cx="11.50" cy="9.50" r="0.44" fill="#111111" />
-    <circle cx="13.50" cy="9.50" r="0.44" fill="#111111" />
-    <circle cx="16.50" cy="9.50" r="0.44" fill="#111111" />
-    <circle cx="18.50" cy="9.50" r="0.44" fill="#111111" />
-    <circle cx="20.50" cy="9.50" r="0.44" fill="#111111" />
-    <circle cx="21.50" cy="9.50" r="0.44" fill="#111111" />
-    <circle cx="22.50" cy="9.50" r="0.44" fill="#111111" />
-    <circle cx="23.50" cy="9.50" r="0.44" fill="#111111" />
-    <circle cx="25.50" cy="9.50" r="0.44" fill="#111111" />
-    <circle cx="26.50" cy="9.50" r="0.44" fill="#111111" />
-    <circle cx="29.50" cy="9.50" r="0.44" fill="#111111" />
-    <circle cx="32.50" cy="9.50" r="0.44" fill="#111111" />
-    <circle cx="0.50" cy="10.50" r="0.44" fill="#111111" />
-    <circle cx="2.50" cy="10.50" r="0.44" fill="#111111" />
-    <circle cx="5.50" cy="10.50" r="0.44" fill="#111111" />
-    <circle cx="6.50" cy="10.50" r="0.44" fill="#111111" />
-    <circle cx="8.50" cy="10.50" r="0.44" fill="#111111" />
-    <circle cx="12.50" cy="10.50" r="0.44" fill="#111111" />
-    <circle cx="14.50" cy="10.50" r="0.44" fill="#111111" />
-    <circle cx="17.50" cy="10.50" r="0.44" fill="#111111" />
-    <circle cx="18.50" cy="10.50" r="0.44" fill="#111111" />
-    <circle cx="21.50" cy="10.50" r="0.44" fill="#111111" />
-    <circle cx="25.50" cy="10.50" r="0.44" fill="#111111" />
-    <circle cx="27.50" cy="10.50" r="0.44" fill="#111111" />
-    <circle cx="31.50" cy="10.50" r="0.44" fill="#111111" />
-    <circle cx="0.50" cy="11.50" r="0.44" fill="#111111" />
-    <circle cx="1.50" cy="11.50" r="0.44" fill="#111111" />
-    <circle cx="2.50" cy="11.50" r="0.44" fill="#111111" />
-    <circle cx="3.50" cy="11.50" r="0.44" fill="#111111" />
-    <circle cx="22.50" cy="11.50" r="0.44" fill="#111111" />
-    <circle cx="23.50" cy="11.50" r="0.44" fill="#111111" />
-    <circle cx="29.50" cy="11.50" r="0.44" fill="#111111" />
-    <circle cx="30.50" cy="11.50" r="0.44" fill="#111111" />
-    <circle cx="32.50" cy="11.50" r="0.44" fill="#111111" />
-    <circle cx="2.50" cy="12.50" r="0.44" fill="#111111" />
-    <circle cx="3.50" cy="12.50" r="0.44" fill="#111111" />
-    <circle cx="4.50" cy="12.50" r="0.44" fill="#111111" />
-    <circle cx="6.50" cy="12.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="12.50" r="0.44" fill="#111111" />
-    <circle cx="23.50" cy="12.50" r="0.44" fill="#111111" />
-    <circle cx="24.50" cy="12.50" r="0.44" fill="#111111" />
-    <circle cx="25.50" cy="12.50" r="0.44" fill="#111111" />
-    <circle cx="27.50" cy="12.50" r="0.44" fill="#111111" />
-    <circle cx="29.50" cy="12.50" r="0.44" fill="#111111" />
-    <circle cx="0.50" cy="13.50" r="0.44" fill="#111111" />
-    <circle cx="1.50" cy="13.50" r="0.44" fill="#111111" />
-    <circle cx="2.50" cy="13.50" r="0.44" fill="#111111" />
-    <circle cx="7.50" cy="13.50" r="0.44" fill="#111111" />
-    <circle cx="8.50" cy="13.50" r="0.44" fill="#111111" />
-    <circle cx="9.50" cy="13.50" r="0.44" fill="#111111" />
-    <circle cx="22.50" cy="13.50" r="0.44" fill="#111111" />
-    <circle cx="23.50" cy="13.50" r="0.44" fill="#111111" />
-    <circle cx="26.50" cy="13.50" r="0.44" fill="#111111" />
-    <circle cx="27.50" cy="13.50" r="0.44" fill="#111111" />
-    <circle cx="30.50" cy="13.50" r="0.44" fill="#111111" />
-    <circle cx="32.50" cy="13.50" r="0.44" fill="#111111" />
-    <circle cx="0.50" cy="14.50" r="0.44" fill="#111111" />
-    <circle cx="2.50" cy="14.50" r="0.44" fill="#111111" />
-    <circle cx="3.50" cy="14.50" r="0.44" fill="#111111" />
-    <circle cx="5.50" cy="14.50" r="0.44" fill="#111111" />
-    <circle cx="6.50" cy="14.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="14.50" r="0.44" fill="#111111" />
-    <circle cx="22.50" cy="14.50" r="0.44" fill="#111111" />
-    <circle cx="24.50" cy="14.50" r="0.44" fill="#111111" />
-    <circle cx="25.50" cy="14.50" r="0.44" fill="#111111" />
-    <circle cx="29.50" cy="14.50" r="0.44" fill="#111111" />
-    <circle cx="31.50" cy="14.50" r="0.44" fill="#111111" />
-    <circle cx="0.50" cy="15.50" r="0.44" fill="#111111" />
-    <circle cx="1.50" cy="15.50" r="0.44" fill="#111111" />
-    <circle cx="8.50" cy="15.50" r="0.44" fill="#111111" />
-    <circle cx="9.50" cy="15.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="15.50" r="0.44" fill="#111111" />
-    <circle cx="22.50" cy="15.50" r="0.44" fill="#111111" />
-    <circle cx="25.50" cy="15.50" r="0.44" fill="#111111" />
-    <circle cx="26.50" cy="15.50" r="0.44" fill="#111111" />
-    <circle cx="28.50" cy="15.50" r="0.44" fill="#111111" />
-    <circle cx="29.50" cy="15.50" r="0.44" fill="#111111" />
-    <circle cx="30.50" cy="15.50" r="0.44" fill="#111111" />
-    <circle cx="31.50" cy="15.50" r="0.44" fill="#111111" />
-    <circle cx="1.50" cy="16.50" r="0.44" fill="#111111" />
-    <circle cx="2.50" cy="16.50" r="0.44" fill="#111111" />
-    <circle cx="3.50" cy="16.50" r="0.44" fill="#111111" />
-    <circle cx="6.50" cy="16.50" r="0.44" fill="#111111" />
-    <circle cx="7.50" cy="16.50" r="0.44" fill="#111111" />
-    <circle cx="9.50" cy="16.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="16.50" r="0.44" fill="#111111" />
-    <circle cx="25.50" cy="16.50" r="0.44" fill="#111111" />
-    <circle cx="27.50" cy="16.50" r="0.44" fill="#111111" />
-    <circle cx="28.50" cy="16.50" r="0.44" fill="#111111" />
-    <circle cx="31.50" cy="16.50" r="0.44" fill="#111111" />
-    <circle cx="32.50" cy="16.50" r="0.44" fill="#111111" />
-    <circle cx="0.50" cy="17.50" r="0.44" fill="#111111" />
-    <circle cx="1.50" cy="17.50" r="0.44" fill="#111111" />
-    <circle cx="3.50" cy="17.50" r="0.44" fill="#111111" />
-    <circle cx="4.50" cy="17.50" r="0.44" fill="#111111" />
-    <circle cx="7.50" cy="17.50" r="0.44" fill="#111111" />
-    <circle cx="8.50" cy="17.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="17.50" r="0.44" fill="#111111" />
-    <circle cx="23.50" cy="17.50" r="0.44" fill="#111111" />
-    <circle cx="24.50" cy="17.50" r="0.44" fill="#111111" />
-    <circle cx="25.50" cy="17.50" r="0.44" fill="#111111" />
-    <circle cx="26.50" cy="17.50" r="0.44" fill="#111111" />
-    <circle cx="32.50" cy="17.50" r="0.44" fill="#111111" />
-    <circle cx="2.50" cy="18.50" r="0.44" fill="#111111" />
-    <circle cx="6.50" cy="18.50" r="0.44" fill="#111111" />
-    <circle cx="7.50" cy="18.50" r="0.44" fill="#111111" />
-    <circle cx="8.50" cy="18.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="18.50" r="0.44" fill="#111111" />
-    <circle cx="22.50" cy="18.50" r="0.44" fill="#111111" />
-    <circle cx="25.50" cy="18.50" r="0.44" fill="#111111" />
-    <circle cx="26.50" cy="18.50" r="0.44" fill="#111111" />
-    <circle cx="30.50" cy="18.50" r="0.44" fill="#111111" />
-    <circle cx="31.50" cy="18.50" r="0.44" fill="#111111" />
-    <circle cx="0.50" cy="19.50" r="0.44" fill="#111111" />
-    <circle cx="5.50" cy="19.50" r="0.44" fill="#111111" />
-    <circle cx="9.50" cy="19.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="19.50" r="0.44" fill="#111111" />
-    <circle cx="23.50" cy="19.50" r="0.44" fill="#111111" />
-    <circle cx="24.50" cy="19.50" r="0.44" fill="#111111" />
-    <circle cx="26.50" cy="19.50" r="0.44" fill="#111111" />
-    <circle cx="29.50" cy="19.50" r="0.44" fill="#111111" />
-    <circle cx="30.50" cy="19.50" r="0.44" fill="#111111" />
-    <circle cx="32.50" cy="19.50" r="0.44" fill="#111111" />
-    <circle cx="4.50" cy="20.50" r="0.44" fill="#111111" />
-    <circle cx="6.50" cy="20.50" r="0.44" fill="#111111" />
-    <circle cx="7.50" cy="20.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="20.50" r="0.44" fill="#111111" />
-    <circle cx="22.50" cy="20.50" r="0.44" fill="#111111" />
-    <circle cx="25.50" cy="20.50" r="0.44" fill="#111111" />
-    <circle cx="26.50" cy="20.50" r="0.44" fill="#111111" />
-    <circle cx="28.50" cy="20.50" r="0.44" fill="#111111" />
-    <circle cx="29.50" cy="20.50" r="0.44" fill="#111111" />
-    <circle cx="31.50" cy="20.50" r="0.44" fill="#111111" />
-    <circle cx="32.50" cy="20.50" r="0.44" fill="#111111" />
-    <circle cx="0.50" cy="21.50" r="0.44" fill="#111111" />
-    <circle cx="1.50" cy="21.50" r="0.44" fill="#111111" />
-    <circle cx="3.50" cy="21.50" r="0.44" fill="#111111" />
-    <circle cx="9.50" cy="21.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="21.50" r="0.44" fill="#111111" />
-    <circle cx="24.50" cy="21.50" r="0.44" fill="#111111" />
-    <circle cx="29.50" cy="21.50" r="0.44" fill="#111111" />
-    <circle cx="32.50" cy="21.50" r="0.44" fill="#111111" />
-    <circle cx="0.50" cy="22.50" r="0.44" fill="#111111" />
-    <circle cx="2.50" cy="22.50" r="0.44" fill="#111111" />
-    <circle cx="4.50" cy="22.50" r="0.44" fill="#111111" />
-    <circle cx="6.50" cy="22.50" r="0.44" fill="#111111" />
-    <circle cx="8.50" cy="22.50" r="0.44" fill="#111111" />
-    <circle cx="9.50" cy="22.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="22.50" r="0.44" fill="#111111" />
-    <circle cx="12.50" cy="22.50" r="0.44" fill="#111111" />
-    <circle cx="13.50" cy="22.50" r="0.44" fill="#111111" />
-    <circle cx="15.50" cy="22.50" r="0.44" fill="#111111" />
-    <circle cx="19.50" cy="22.50" r="0.44" fill="#111111" />
-    <circle cx="20.50" cy="22.50" r="0.44" fill="#111111" />
-    <circle cx="21.50" cy="22.50" r="0.44" fill="#111111" />
-    <circle cx="29.50" cy="22.50" r="0.44" fill="#111111" />
-    <circle cx="31.50" cy="22.50" r="0.44" fill="#111111" />
-    <circle cx="0.50" cy="23.50" r="0.44" fill="#111111" />
-    <circle cx="4.50" cy="23.50" r="0.44" fill="#111111" />
-    <circle cx="5.50" cy="23.50" r="0.44" fill="#111111" />
-    <circle cx="7.50" cy="23.50" r="0.44" fill="#111111" />
-    <circle cx="8.50" cy="23.50" r="0.44" fill="#111111" />
-    <circle cx="9.50" cy="23.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="23.50" r="0.44" fill="#111111" />
-    <circle cx="13.50" cy="23.50" r="0.44" fill="#111111" />
-    <circle cx="14.50" cy="23.50" r="0.44" fill="#111111" />
-    <circle cx="17.50" cy="23.50" r="0.44" fill="#111111" />
-    <circle cx="18.50" cy="23.50" r="0.44" fill="#111111" />
-    <circle cx="19.50" cy="23.50" r="0.44" fill="#111111" />
-    <circle cx="20.50" cy="23.50" r="0.44" fill="#111111" />
-    <circle cx="21.50" cy="23.50" r="0.44" fill="#111111" />
-    <circle cx="24.50" cy="23.50" r="0.44" fill="#111111" />
-    <circle cx="29.50" cy="23.50" r="0.44" fill="#111111" />
-    <circle cx="30.50" cy="23.50" r="0.44" fill="#111111" />
-    <circle cx="31.50" cy="23.50" r="0.44" fill="#111111" />
-    <circle cx="0.50" cy="24.50" r="0.44" fill="#111111" />
-    <circle cx="3.50" cy="24.50" r="0.44" fill="#111111" />
-    <circle cx="5.50" cy="24.50" r="0.44" fill="#111111" />
-    <circle cx="6.50" cy="24.50" r="0.44" fill="#111111" />
-    <circle cx="8.50" cy="24.50" r="0.44" fill="#111111" />
-    <circle cx="9.50" cy="24.50" r="0.44" fill="#111111" />
-    <circle cx="11.50" cy="24.50" r="0.44" fill="#111111" />
-    <circle cx="12.50" cy="24.50" r="0.44" fill="#111111" />
-    <circle cx="15.50" cy="24.50" r="0.44" fill="#111111" />
-    <circle cx="19.50" cy="24.50" r="0.44" fill="#111111" />
-    <circle cx="20.50" cy="24.50" r="0.44" fill="#111111" />
-    <circle cx="24.50" cy="24.50" r="0.44" fill="#111111" />
-    <circle cx="25.50" cy="24.50" r="0.44" fill="#111111" />
-    <circle cx="26.50" cy="24.50" r="0.44" fill="#111111" />
-    <circle cx="27.50" cy="24.50" r="0.44" fill="#111111" />
-    <circle cx="28.50" cy="24.50" r="0.44" fill="#111111" />
-    <circle cx="29.50" cy="24.50" r="0.44" fill="#111111" />
-    <circle cx="31.50" cy="24.50" r="0.44" fill="#111111" />
-    <circle cx="8.50" cy="25.50" r="0.44" fill="#111111" />
-    <circle cx="9.50" cy="25.50" r="0.44" fill="#111111" />
-    <circle cx="11.50" cy="25.50" r="0.44" fill="#111111" />
-    <circle cx="12.50" cy="25.50" r="0.44" fill="#111111" />
-    <circle cx="14.50" cy="25.50" r="0.44" fill="#111111" />
-    <circle cx="16.50" cy="25.50" r="0.44" fill="#111111" />
-    <circle cx="20.50" cy="25.50" r="0.44" fill="#111111" />
-    <circle cx="24.50" cy="25.50" r="0.44" fill="#111111" />
-    <circle cx="28.50" cy="25.50" r="0.44" fill="#111111" />
-    <circle cx="30.50" cy="25.50" r="0.44" fill="#111111" />
-    <circle cx="31.50" cy="25.50" r="0.44" fill="#111111" />
-    <circle cx="32.50" cy="25.50" r="0.44" fill="#111111" />
-    <circle cx="9.50" cy="26.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="26.50" r="0.44" fill="#111111" />
-    <circle cx="12.50" cy="26.50" r="0.44" fill="#111111" />
-    <circle cx="15.50" cy="26.50" r="0.44" fill="#111111" />
-    <circle cx="16.50" cy="26.50" r="0.44" fill="#111111" />
-    <circle cx="17.50" cy="26.50" r="0.44" fill="#111111" />
-    <circle cx="20.50" cy="26.50" r="0.44" fill="#111111" />
-    <circle cx="22.50" cy="26.50" r="0.44" fill="#111111" />
-    <circle cx="23.50" cy="26.50" r="0.44" fill="#111111" />
-    <circle cx="24.50" cy="26.50" r="0.44" fill="#111111" />
-    <circle cx="26.50" cy="26.50" r="0.44" fill="#111111" />
-    <circle cx="28.50" cy="26.50" r="0.44" fill="#111111" />
-    <circle cx="29.50" cy="26.50" r="0.44" fill="#111111" />
-    <circle cx="31.50" cy="26.50" r="0.44" fill="#111111" />
-    <circle cx="9.50" cy="27.50" r="0.44" fill="#111111" />
-    <circle cx="13.50" cy="27.50" r="0.44" fill="#111111" />
-    <circle cx="14.50" cy="27.50" r="0.44" fill="#111111" />
-    <circle cx="16.50" cy="27.50" r="0.44" fill="#111111" />
-    <circle cx="23.50" cy="27.50" r="0.44" fill="#111111" />
-    <circle cx="24.50" cy="27.50" r="0.44" fill="#111111" />
-    <circle cx="28.50" cy="27.50" r="0.44" fill="#111111" />
-    <circle cx="29.50" cy="27.50" r="0.44" fill="#111111" />
-    <circle cx="30.50" cy="27.50" r="0.44" fill="#111111" />
-    <circle cx="31.50" cy="27.50" r="0.44" fill="#111111" />
-    <circle cx="32.50" cy="27.50" r="0.44" fill="#111111" />
-    <circle cx="8.50" cy="28.50" r="0.44" fill="#111111" />
-    <circle cx="9.50" cy="28.50" r="0.44" fill="#111111" />
-    <circle cx="12.50" cy="28.50" r="0.44" fill="#111111" />
-    <circle cx="13.50" cy="28.50" r="0.44" fill="#111111" />
-    <circle cx="16.50" cy="28.50" r="0.44" fill="#111111" />
-    <circle cx="17.50" cy="28.50" r="0.44" fill="#111111" />
-    <circle cx="21.50" cy="28.50" r="0.44" fill="#111111" />
-    <circle cx="22.50" cy="28.50" r="0.44" fill="#111111" />
-    <circle cx="24.50" cy="28.50" r="0.44" fill="#111111" />
-    <circle cx="25.50" cy="28.50" r="0.44" fill="#111111" />
-    <circle cx="26.50" cy="28.50" r="0.44" fill="#111111" />
-    <circle cx="27.50" cy="28.50" r="0.44" fill="#111111" />
-    <circle cx="28.50" cy="28.50" r="0.44" fill="#111111" />
-    <circle cx="31.50" cy="28.50" r="0.44" fill="#111111" />
-    <circle cx="32.50" cy="28.50" r="0.44" fill="#111111" />
-    <circle cx="8.50" cy="29.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="29.50" r="0.44" fill="#111111" />
-    <circle cx="11.50" cy="29.50" r="0.44" fill="#111111" />
-    <circle cx="12.50" cy="29.50" r="0.44" fill="#111111" />
-    <circle cx="13.50" cy="29.50" r="0.44" fill="#111111" />
-    <circle cx="14.50" cy="29.50" r="0.44" fill="#111111" />
-    <circle cx="16.50" cy="29.50" r="0.44" fill="#111111" />
-    <circle cx="17.50" cy="29.50" r="0.44" fill="#111111" />
-    <circle cx="18.50" cy="29.50" r="0.44" fill="#111111" />
-    <circle cx="20.50" cy="29.50" r="0.44" fill="#111111" />
-    <circle cx="25.50" cy="29.50" r="0.44" fill="#111111" />
-    <circle cx="28.50" cy="29.50" r="0.44" fill="#111111" />
-    <circle cx="29.50" cy="29.50" r="0.44" fill="#111111" />
-    <circle cx="31.50" cy="29.50" r="0.44" fill="#111111" />
-    <circle cx="8.50" cy="30.50" r="0.44" fill="#111111" />
-    <circle cx="9.50" cy="30.50" r="0.44" fill="#111111" />
-    <circle cx="10.50" cy="30.50" r="0.44" fill="#111111" />
-    <circle cx="12.50" cy="30.50" r="0.44" fill="#111111" />
-    <circle cx="13.50" cy="30.50" r="0.44" fill="#111111" />
-    <circle cx="16.50" cy="30.50" r="0.44" fill="#111111" />
-    <circle cx="18.50" cy="30.50" r="0.44" fill="#111111" />
-    <circle cx="20.50" cy="30.50" r="0.44" fill="#111111" />
-    <circle cx="24.50" cy="30.50" r="0.44" fill="#111111" />
-    <circle cx="25.50" cy="30.50" r="0.44" fill="#111111" />
-    <circle cx="26.50" cy="30.50" r="0.44" fill="#111111" />
-    <circle cx="29.50" cy="30.50" r="0.44" fill="#111111" />
-    <circle cx="9.50" cy="31.50" r="0.44" fill="#111111" />
-    <circle cx="11.50" cy="31.50" r="0.44" fill="#111111" />
-    <circle cx="12.50" cy="31.50" r="0.44" fill="#111111" />
-    <circle cx="15.50" cy="31.50" r="0.44" fill="#111111" />
-    <circle cx="16.50" cy="31.50" r="0.44" fill="#111111" />
-    <circle cx="20.50" cy="31.50" r="0.44" fill="#111111" />
-    <circle cx="25.50" cy="31.50" r="0.44" fill="#111111" />
-    <circle cx="27.50" cy="31.50" r="0.44" fill="#111111" />
-    <circle cx="29.50" cy="31.50" r="0.44" fill="#111111" />
-    <circle cx="30.50" cy="31.50" r="0.44" fill="#111111" />
-    <circle cx="9.50" cy="32.50" r="0.44" fill="#111111" />
-    <circle cx="12.50" cy="32.50" r="0.44" fill="#111111" />
-    <circle cx="15.50" cy="32.50" r="0.44" fill="#111111" />
-    <circle cx="16.50" cy="32.50" r="0.44" fill="#111111" />
-    <circle cx="18.50" cy="32.50" r="0.44" fill="#111111" />
-    <circle cx="19.50" cy="32.50" r="0.44" fill="#111111" />
-    <circle cx="20.50" cy="32.50" r="0.44" fill="#111111" />
-    <circle cx="21.50" cy="32.50" r="0.44" fill="#111111" />
-    <circle cx="22.50" cy="32.50" r="0.44" fill="#111111" />
-    <circle cx="23.50" cy="32.50" r="0.44" fill="#111111" />
-    <circle cx="24.50" cy="32.50" r="0.44" fill="#111111" />
-    <circle cx="25.50" cy="32.50" r="0.44" fill="#111111" />
-    <circle cx="31.50" cy="32.50" r="0.44" fill="#111111" />
+  <rect
+     x="0"
+     y="0"
+     width="37"
+     height="37"
+     fill="#ffffff"
+     rx="3.5"
+     id="rect1"
+     style="display:inline" />
+  <rect
+     x="0.25"
+     y="0.25"
+     width="36.5"
+     height="36.5"
+     fill="none"
+     stroke="#e5e7eb"
+     stroke-width="0.5"
+     rx="3.5"
+     id="rect2"
+     style="display:none" />
+  <g
+     transform="translate(2,2)"
+     id="qr_modules"
+     style="display:inline">
+    <circle
+       cx="8.5"
+       cy="0.5"
+       r="0.44"
+       fill="#111111"
+       id="circle2" />
+    <circle
+       cx="10.5"
+       cy="0.5"
+       r="0.44"
+       fill="#111111"
+       id="circle3" />
+    <circle
+       cx="14.5"
+       cy="0.5"
+       r="0.44"
+       fill="#111111"
+       id="circle4" />
+    <circle
+       cx="16.5"
+       cy="0.5"
+       r="0.44"
+       fill="#111111"
+       id="circle5" />
+    <circle
+       cx="18.5"
+       cy="0.5"
+       r="0.44"
+       fill="#111111"
+       id="circle6" />
+    <circle
+       cx="20.5"
+       cy="0.5"
+       r="0.44"
+       fill="#111111"
+       id="circle7" />
+    <circle
+       cx="21.5"
+       cy="0.5"
+       r="0.44"
+       fill="#111111"
+       id="circle8" />
+    <circle
+       cx="23.5"
+       cy="0.5"
+       r="0.44"
+       fill="#111111"
+       id="circle9" />
+    <circle
+       cx="24.5"
+       cy="0.5"
+       r="0.44"
+       fill="#111111"
+       id="circle10" />
+    <circle
+       cx="8.5"
+       cy="1.5"
+       r="0.44"
+       fill="#111111"
+       id="circle11" />
+    <circle
+       cx="17.5"
+       cy="1.5"
+       r="0.44"
+       fill="#111111"
+       id="circle12" />
+    <circle
+       cx="19.5"
+       cy="1.5"
+       r="0.44"
+       fill="#111111"
+       id="circle13" />
+    <circle
+       cx="21.5"
+       cy="1.5"
+       r="0.44"
+       fill="#111111"
+       id="circle14" />
+    <circle
+       cx="22.5"
+       cy="1.5"
+       r="0.44"
+       fill="#111111"
+       id="circle15" />
+    <circle
+       cx="24.5"
+       cy="1.5"
+       r="0.44"
+       fill="#111111"
+       id="circle16" />
+    <circle
+       cx="8.5"
+       cy="2.5"
+       r="0.44"
+       fill="#111111"
+       id="circle17" />
+    <circle
+       cx="10.5"
+       cy="2.5"
+       r="0.44"
+       fill="#111111"
+       id="circle18" />
+    <circle
+       cx="11.5"
+       cy="2.5"
+       r="0.44"
+       fill="#111111"
+       id="circle19" />
+    <circle
+       cx="15.5"
+       cy="2.5"
+       r="0.44"
+       fill="#111111"
+       id="circle20" />
+    <circle
+       cx="16.5"
+       cy="2.5"
+       r="0.44"
+       fill="#111111"
+       id="circle21" />
+    <circle
+       cx="17.5"
+       cy="2.5"
+       r="0.44"
+       fill="#111111"
+       id="circle22" />
+    <circle
+       cx="18.5"
+       cy="2.5"
+       r="0.44"
+       fill="#111111"
+       id="circle23" />
+    <circle
+       cx="21.5"
+       cy="2.5"
+       r="0.44"
+       fill="#111111"
+       id="circle24" />
+    <circle
+       cx="22.5"
+       cy="2.5"
+       r="0.44"
+       fill="#111111"
+       id="circle25" />
+    <circle
+       cx="23.5"
+       cy="2.5"
+       r="0.44"
+       fill="#111111"
+       id="circle26" />
+    <circle
+       cx="24.5"
+       cy="2.5"
+       r="0.44"
+       fill="#111111"
+       id="circle27" />
+    <circle
+       cx="10.5"
+       cy="3.5"
+       r="0.44"
+       fill="#111111"
+       id="circle28" />
+    <circle
+       cx="13.5"
+       cy="3.5"
+       r="0.44"
+       fill="#111111"
+       id="circle29" />
+    <circle
+       cx="14.5"
+       cy="3.5"
+       r="0.44"
+       fill="#111111"
+       id="circle30" />
+    <circle
+       cx="15.5"
+       cy="3.5"
+       r="0.44"
+       fill="#111111"
+       id="circle31" />
+    <circle
+       cx="17.5"
+       cy="3.5"
+       r="0.44"
+       fill="#111111"
+       id="circle32" />
+    <circle
+       cx="19.5"
+       cy="3.5"
+       r="0.44"
+       fill="#111111"
+       id="circle33" />
+    <circle
+       cx="22.5"
+       cy="3.5"
+       r="0.44"
+       fill="#111111"
+       id="circle34" />
+    <circle
+       cx="23.5"
+       cy="3.5"
+       r="0.44"
+       fill="#111111"
+       id="circle35" />
+    <circle
+       cx="24.5"
+       cy="3.5"
+       r="0.44"
+       fill="#111111"
+       id="circle36" />
+    <circle
+       cx="9.5"
+       cy="4.5"
+       r="0.44"
+       fill="#111111"
+       id="circle37" />
+    <circle
+       cx="10.5"
+       cy="4.5"
+       r="0.44"
+       fill="#111111"
+       id="circle38" />
+    <circle
+       cx="11.5"
+       cy="4.5"
+       r="0.44"
+       fill="#111111"
+       id="circle39" />
+    <circle
+       cx="12.5"
+       cy="4.5"
+       r="0.44"
+       fill="#111111"
+       id="circle40" />
+    <circle
+       cx="13.5"
+       cy="4.5"
+       r="0.44"
+       fill="#111111"
+       id="circle41" />
+    <circle
+       cx="16.5"
+       cy="4.5"
+       r="0.44"
+       fill="#111111"
+       id="circle42" />
+    <circle
+       cx="17.5"
+       cy="4.5"
+       r="0.44"
+       fill="#111111"
+       id="circle43" />
+    <circle
+       cx="21.5"
+       cy="4.5"
+       r="0.44"
+       fill="#111111"
+       id="circle44" />
+    <circle
+       cx="8.5"
+       cy="5.5"
+       r="0.44"
+       fill="#111111"
+       id="circle45" />
+    <circle
+       cx="9.5"
+       cy="5.5"
+       r="0.44"
+       fill="#111111"
+       id="circle46" />
+    <circle
+       cx="10.5"
+       cy="5.5"
+       r="0.44"
+       fill="#111111"
+       id="circle47" />
+    <circle
+       cx="14.5"
+       cy="5.5"
+       r="0.44"
+       fill="#111111"
+       id="circle48" />
+    <circle
+       cx="15.5"
+       cy="5.5"
+       r="0.44"
+       fill="#111111"
+       id="circle49" />
+    <circle
+       cx="18.5"
+       cy="5.5"
+       r="0.44"
+       fill="#111111"
+       id="circle50" />
+    <circle
+       cx="20.5"
+       cy="5.5"
+       r="0.44"
+       fill="#111111"
+       id="circle51" />
+    <circle
+       cx="21.5"
+       cy="5.5"
+       r="0.44"
+       fill="#111111"
+       id="circle52" />
+    <circle
+       cx="22.5"
+       cy="5.5"
+       r="0.44"
+       fill="#111111"
+       id="circle53" />
+    <circle
+       cx="23.5"
+       cy="5.5"
+       r="0.44"
+       fill="#111111"
+       id="circle54" />
+    <circle
+       cx="24.5"
+       cy="5.5"
+       r="0.44"
+       fill="#111111"
+       id="circle55" />
+    <circle
+       cx="8.5"
+       cy="6.5"
+       r="0.44"
+       fill="#111111"
+       id="circle56" />
+    <circle
+       cx="10.5"
+       cy="6.5"
+       r="0.44"
+       fill="#111111"
+       id="circle57" />
+    <circle
+       cx="12.5"
+       cy="6.5"
+       r="0.44"
+       fill="#111111"
+       id="circle58" />
+    <circle
+       cx="14.5"
+       cy="6.5"
+       r="0.44"
+       fill="#111111"
+       id="circle59" />
+    <circle
+       cx="16.5"
+       cy="6.5"
+       r="0.44"
+       fill="#111111"
+       id="circle60" />
+    <circle
+       cx="18.5"
+       cy="6.5"
+       r="0.44"
+       fill="#111111"
+       id="circle61" />
+    <circle
+       cx="20.5"
+       cy="6.5"
+       r="0.44"
+       fill="#111111"
+       id="circle62" />
+    <circle
+       cx="22.5"
+       cy="6.5"
+       r="0.44"
+       fill="#111111"
+       id="circle63" />
+    <circle
+       cx="24.5"
+       cy="6.5"
+       r="0.44"
+       fill="#111111"
+       id="circle64" />
+    <circle
+       cx="8.5"
+       cy="7.5"
+       r="0.44"
+       fill="#111111"
+       id="circle65" />
+    <circle
+       cx="10.5"
+       cy="7.5"
+       r="0.44"
+       fill="#111111"
+       id="circle66" />
+    <circle
+       cx="13.5"
+       cy="7.5"
+       r="0.44"
+       fill="#111111"
+       id="circle67" />
+    <circle
+       cx="16.5"
+       cy="7.5"
+       r="0.44"
+       fill="#111111"
+       id="circle68" />
+    <circle
+       cx="17.5"
+       cy="7.5"
+       r="0.44"
+       fill="#111111"
+       id="circle69" />
+    <circle
+       cx="18.5"
+       cy="7.5"
+       r="0.44"
+       fill="#111111"
+       id="circle70" />
+    <circle
+       cx="19.5"
+       cy="7.5"
+       r="0.44"
+       fill="#111111"
+       id="circle71" />
+    <circle
+       cx="20.5"
+       cy="7.5"
+       r="0.44"
+       fill="#111111"
+       id="circle72" />
+    <circle
+       cx="21.5"
+       cy="7.5"
+       r="0.44"
+       fill="#111111"
+       id="circle73" />
+    <circle
+       cx="22.5"
+       cy="7.5"
+       r="0.44"
+       fill="#111111"
+       id="circle74" />
+    <circle
+       cx="23.5"
+       cy="7.5"
+       r="0.44"
+       fill="#111111"
+       id="circle75" />
+    <circle
+       cx="2.5"
+       cy="8.5"
+       r="0.44"
+       fill="#111111"
+       id="circle76" />
+    <circle
+       cx="3.5"
+       cy="8.5"
+       r="0.44"
+       fill="#111111"
+       id="circle77" />
+    <circle
+       cx="4.5"
+       cy="8.5"
+       r="0.44"
+       fill="#111111"
+       id="circle78" />
+    <circle
+       cx="6.5"
+       cy="8.5"
+       r="0.44"
+       fill="#111111"
+       id="circle79" />
+    <circle
+       cx="8.5"
+       cy="8.5"
+       r="0.44"
+       fill="#111111"
+       id="circle80" />
+    <circle
+       cx="10.5"
+       cy="8.5"
+       r="0.44"
+       fill="#111111"
+       id="circle81" />
+    <circle
+       cx="11.5"
+       cy="8.5"
+       r="0.44"
+       fill="#111111"
+       id="circle82" />
+    <circle
+       cx="14.5"
+       cy="8.5"
+       r="0.44"
+       fill="#111111"
+       id="circle83" />
+    <circle
+       cx="15.5"
+       cy="8.5"
+       r="0.44"
+       fill="#111111"
+       id="circle84" />
+    <circle
+       cx="18.5"
+       cy="8.5"
+       r="0.44"
+       fill="#111111"
+       id="circle85" />
+    <circle
+       cx="19.5"
+       cy="8.5"
+       r="0.44"
+       fill="#111111"
+       id="circle86" />
+    <circle
+       cx="22.5"
+       cy="8.5"
+       r="0.44"
+       fill="#111111"
+       id="circle87" />
+    <circle
+       cx="23.5"
+       cy="8.5"
+       r="0.44"
+       fill="#111111"
+       id="circle88" />
+    <circle
+       cx="25.5"
+       cy="8.5"
+       r="0.44"
+       fill="#111111"
+       id="circle89" />
+    <circle
+       cx="26.5"
+       cy="8.5"
+       r="0.44"
+       fill="#111111"
+       id="circle90" />
+    <circle
+       cx="27.5"
+       cy="8.5"
+       r="0.44"
+       fill="#111111"
+       id="circle91" />
+    <circle
+       cx="30.5"
+       cy="8.5"
+       r="0.44"
+       fill="#111111"
+       id="circle92" />
+    <circle
+       cx="31.5"
+       cy="8.5"
+       r="0.44"
+       fill="#111111"
+       id="circle93" />
+    <circle
+       cx="32.5"
+       cy="8.5"
+       r="0.44"
+       fill="#111111"
+       id="circle94" />
+    <circle
+       cx="0.5"
+       cy="9.5"
+       r="0.44"
+       fill="#111111"
+       id="circle95" />
+    <circle
+       cx="1.5"
+       cy="9.5"
+       r="0.44"
+       fill="#111111"
+       id="circle96" />
+    <circle
+       cx="2.5"
+       cy="9.5"
+       r="0.44"
+       fill="#111111"
+       id="circle97" />
+    <circle
+       cx="3.5"
+       cy="9.5"
+       r="0.44"
+       fill="#111111"
+       id="circle98" />
+    <circle
+       cx="4.5"
+       cy="9.5"
+       r="0.44"
+       fill="#111111"
+       id="circle99" />
+    <circle
+       cx="5.5"
+       cy="9.5"
+       r="0.44"
+       fill="#111111"
+       id="circle100" />
+    <circle
+       cx="9.5"
+       cy="9.5"
+       r="0.44"
+       fill="#111111"
+       id="circle101" />
+    <circle
+       cx="10.5"
+       cy="9.5"
+       r="0.44"
+       fill="#111111"
+       id="circle102" />
+    <circle
+       cx="11.5"
+       cy="9.5"
+       r="0.44"
+       fill="#111111"
+       id="circle103" />
+    <circle
+       cx="13.5"
+       cy="9.5"
+       r="0.44"
+       fill="#111111"
+       id="circle104" />
+    <circle
+       cx="16.5"
+       cy="9.5"
+       r="0.44"
+       fill="#111111"
+       id="circle105" />
+    <circle
+       cx="18.5"
+       cy="9.5"
+       r="0.44"
+       fill="#111111"
+       id="circle106" />
+    <circle
+       cx="20.5"
+       cy="9.5"
+       r="0.44"
+       fill="#111111"
+       id="circle107" />
+    <circle
+       cx="21.5"
+       cy="9.5"
+       r="0.44"
+       fill="#111111"
+       id="circle108" />
+    <circle
+       cx="22.5"
+       cy="9.5"
+       r="0.44"
+       fill="#111111"
+       id="circle109" />
+    <circle
+       cx="23.5"
+       cy="9.5"
+       r="0.44"
+       fill="#111111"
+       id="circle110" />
+    <circle
+       cx="25.5"
+       cy="9.5"
+       r="0.44"
+       fill="#111111"
+       id="circle111" />
+    <circle
+       cx="26.5"
+       cy="9.5"
+       r="0.44"
+       fill="#111111"
+       id="circle112" />
+    <circle
+       cx="29.5"
+       cy="9.5"
+       r="0.44"
+       fill="#111111"
+       id="circle113" />
+    <circle
+       cx="32.5"
+       cy="9.5"
+       r="0.44"
+       fill="#111111"
+       id="circle114" />
+    <circle
+       cx="0.5"
+       cy="10.5"
+       r="0.44"
+       fill="#111111"
+       id="circle115" />
+    <circle
+       cx="2.5"
+       cy="10.5"
+       r="0.44"
+       fill="#111111"
+       id="circle116" />
+    <circle
+       cx="5.5"
+       cy="10.5"
+       r="0.44"
+       fill="#111111"
+       id="circle117" />
+    <circle
+       cx="6.5"
+       cy="10.5"
+       r="0.44"
+       fill="#111111"
+       id="circle118" />
+    <circle
+       cx="8.5"
+       cy="10.5"
+       r="0.44"
+       fill="#111111"
+       id="circle119" />
+    <circle
+       cx="12.5"
+       cy="10.5"
+       r="0.44"
+       fill="#111111"
+       id="circle120" />
+    <circle
+       cx="14.5"
+       cy="10.5"
+       r="0.44"
+       fill="#111111"
+       id="circle121" />
+    <circle
+       cx="17.5"
+       cy="10.5"
+       r="0.44"
+       fill="#111111"
+       id="circle122" />
+    <circle
+       cx="18.5"
+       cy="10.5"
+       r="0.44"
+       fill="#111111"
+       id="circle123" />
+    <circle
+       cx="21.5"
+       cy="10.5"
+       r="0.44"
+       fill="#111111"
+       id="circle124" />
+    <circle
+       cx="25.5"
+       cy="10.5"
+       r="0.44"
+       fill="#111111"
+       id="circle125" />
+    <circle
+       cx="27.5"
+       cy="10.5"
+       r="0.44"
+       fill="#111111"
+       id="circle126" />
+    <circle
+       cx="31.5"
+       cy="10.5"
+       r="0.44"
+       fill="#111111"
+       id="circle127" />
+    <circle
+       cx="0.5"
+       cy="11.5"
+       r="0.44"
+       fill="#111111"
+       id="circle128" />
+    <circle
+       cx="1.5"
+       cy="11.5"
+       r="0.44"
+       fill="#111111"
+       id="circle129" />
+    <circle
+       cx="2.5"
+       cy="11.5"
+       r="0.44"
+       fill="#111111"
+       id="circle130" />
+    <circle
+       cx="3.5"
+       cy="11.5"
+       r="0.44"
+       fill="#111111"
+       id="circle131" />
+    <circle
+       cx="22.5"
+       cy="11.5"
+       r="0.44"
+       fill="#111111"
+       id="circle132" />
+    <circle
+       cx="23.5"
+       cy="11.5"
+       r="0.44"
+       fill="#111111"
+       id="circle133" />
+    <circle
+       cx="29.5"
+       cy="11.5"
+       r="0.44"
+       fill="#111111"
+       id="circle134" />
+    <circle
+       cx="30.5"
+       cy="11.5"
+       r="0.44"
+       fill="#111111"
+       id="circle135" />
+    <circle
+       cx="32.5"
+       cy="11.5"
+       r="0.44"
+       fill="#111111"
+       id="circle136" />
+    <circle
+       cx="2.5"
+       cy="12.5"
+       r="0.44"
+       fill="#111111"
+       id="circle137" />
+    <circle
+       cx="3.5"
+       cy="12.5"
+       r="0.44"
+       fill="#111111"
+       id="circle138" />
+    <circle
+       cx="4.5"
+       cy="12.5"
+       r="0.44"
+       fill="#111111"
+       id="circle139" />
+    <circle
+       cx="6.5"
+       cy="12.5"
+       r="0.44"
+       fill="#111111"
+       id="circle140" />
+    <circle
+       cx="10.5"
+       cy="12.5"
+       r="0.44"
+       fill="#111111"
+       id="circle141" />
+    <circle
+       cx="23.5"
+       cy="12.5"
+       r="0.44"
+       fill="#111111"
+       id="circle142" />
+    <circle
+       cx="24.5"
+       cy="12.5"
+       r="0.44"
+       fill="#111111"
+       id="circle143" />
+    <circle
+       cx="25.5"
+       cy="12.5"
+       r="0.44"
+       fill="#111111"
+       id="circle144" />
+    <circle
+       cx="27.5"
+       cy="12.5"
+       r="0.44"
+       fill="#111111"
+       id="circle145" />
+    <circle
+       cx="29.5"
+       cy="12.5"
+       r="0.44"
+       fill="#111111"
+       id="circle146" />
+    <circle
+       cx="0.5"
+       cy="13.5"
+       r="0.44"
+       fill="#111111"
+       id="circle147" />
+    <circle
+       cx="1.5"
+       cy="13.5"
+       r="0.44"
+       fill="#111111"
+       id="circle148" />
+    <circle
+       cx="2.5"
+       cy="13.5"
+       r="0.44"
+       fill="#111111"
+       id="circle149" />
+    <circle
+       cx="7.5"
+       cy="13.5"
+       r="0.44"
+       fill="#111111"
+       id="circle150" />
+    <circle
+       cx="8.5"
+       cy="13.5"
+       r="0.44"
+       fill="#111111"
+       id="circle151" />
+    <circle
+       cx="9.5"
+       cy="13.5"
+       r="0.44"
+       fill="#111111"
+       id="circle152" />
+    <circle
+       cx="22.5"
+       cy="13.5"
+       r="0.44"
+       fill="#111111"
+       id="circle153" />
+    <circle
+       cx="23.5"
+       cy="13.5"
+       r="0.44"
+       fill="#111111"
+       id="circle154" />
+    <circle
+       cx="26.5"
+       cy="13.5"
+       r="0.44"
+       fill="#111111"
+       id="circle155" />
+    <circle
+       cx="27.5"
+       cy="13.5"
+       r="0.44"
+       fill="#111111"
+       id="circle156" />
+    <circle
+       cx="30.5"
+       cy="13.5"
+       r="0.44"
+       fill="#111111"
+       id="circle157" />
+    <circle
+       cx="32.5"
+       cy="13.5"
+       r="0.44"
+       fill="#111111"
+       id="circle158" />
+    <circle
+       cx="0.5"
+       cy="14.5"
+       r="0.44"
+       fill="#111111"
+       id="circle159" />
+    <circle
+       cx="2.5"
+       cy="14.5"
+       r="0.44"
+       fill="#111111"
+       id="circle160" />
+    <circle
+       cx="3.5"
+       cy="14.5"
+       r="0.44"
+       fill="#111111"
+       id="circle161" />
+    <circle
+       cx="5.5"
+       cy="14.5"
+       r="0.44"
+       fill="#111111"
+       id="circle162" />
+    <circle
+       cx="6.5"
+       cy="14.5"
+       r="0.44"
+       fill="#111111"
+       id="circle163" />
+    <circle
+       cx="10.5"
+       cy="14.5"
+       r="0.44"
+       fill="#111111"
+       id="circle164" />
+    <circle
+       cx="22.5"
+       cy="14.5"
+       r="0.44"
+       fill="#111111"
+       id="circle165" />
+    <circle
+       cx="24.5"
+       cy="14.5"
+       r="0.44"
+       fill="#111111"
+       id="circle166" />
+    <circle
+       cx="25.5"
+       cy="14.5"
+       r="0.44"
+       fill="#111111"
+       id="circle167" />
+    <circle
+       cx="29.5"
+       cy="14.5"
+       r="0.44"
+       fill="#111111"
+       id="circle168" />
+    <circle
+       cx="31.5"
+       cy="14.5"
+       r="0.44"
+       fill="#111111"
+       id="circle169" />
+    <circle
+       cx="0.5"
+       cy="15.5"
+       r="0.44"
+       fill="#111111"
+       id="circle170" />
+    <circle
+       cx="1.5"
+       cy="15.5"
+       r="0.44"
+       fill="#111111"
+       id="circle171" />
+    <circle
+       cx="8.5"
+       cy="15.5"
+       r="0.44"
+       fill="#111111"
+       id="circle172" />
+    <circle
+       cx="9.5"
+       cy="15.5"
+       r="0.44"
+       fill="#111111"
+       id="circle173" />
+    <circle
+       cx="10.5"
+       cy="15.5"
+       r="0.44"
+       fill="#111111"
+       id="circle174" />
+    <circle
+       cx="22.5"
+       cy="15.5"
+       r="0.44"
+       fill="#111111"
+       id="circle175" />
+    <circle
+       cx="25.5"
+       cy="15.5"
+       r="0.44"
+       fill="#111111"
+       id="circle176" />
+    <circle
+       cx="26.5"
+       cy="15.5"
+       r="0.44"
+       fill="#111111"
+       id="circle177" />
+    <circle
+       cx="28.5"
+       cy="15.5"
+       r="0.44"
+       fill="#111111"
+       id="circle178" />
+    <circle
+       cx="29.5"
+       cy="15.5"
+       r="0.44"
+       fill="#111111"
+       id="circle179" />
+    <circle
+       cx="30.5"
+       cy="15.5"
+       r="0.44"
+       fill="#111111"
+       id="circle180" />
+    <circle
+       cx="31.5"
+       cy="15.5"
+       r="0.44"
+       fill="#111111"
+       id="circle181" />
+    <circle
+       cx="1.5"
+       cy="16.5"
+       r="0.44"
+       fill="#111111"
+       id="circle182" />
+    <circle
+       cx="2.5"
+       cy="16.5"
+       r="0.44"
+       fill="#111111"
+       id="circle183" />
+    <circle
+       cx="3.5"
+       cy="16.5"
+       r="0.44"
+       fill="#111111"
+       id="circle184" />
+    <circle
+       cx="6.5"
+       cy="16.5"
+       r="0.44"
+       fill="#111111"
+       id="circle185" />
+    <circle
+       cx="7.5"
+       cy="16.5"
+       r="0.44"
+       fill="#111111"
+       id="circle186" />
+    <circle
+       cx="9.5"
+       cy="16.5"
+       r="0.44"
+       fill="#111111"
+       id="circle187" />
+    <circle
+       cx="10.5"
+       cy="16.5"
+       r="0.44"
+       fill="#111111"
+       id="circle188" />
+    <circle
+       cx="25.5"
+       cy="16.5"
+       r="0.44"
+       fill="#111111"
+       id="circle189" />
+    <circle
+       cx="27.5"
+       cy="16.5"
+       r="0.44"
+       fill="#111111"
+       id="circle190" />
+    <circle
+       cx="28.5"
+       cy="16.5"
+       r="0.44"
+       fill="#111111"
+       id="circle191" />
+    <circle
+       cx="31.5"
+       cy="16.5"
+       r="0.44"
+       fill="#111111"
+       id="circle192" />
+    <circle
+       cx="32.5"
+       cy="16.5"
+       r="0.44"
+       fill="#111111"
+       id="circle193" />
+    <circle
+       cx="0.5"
+       cy="17.5"
+       r="0.44"
+       fill="#111111"
+       id="circle194" />
+    <circle
+       cx="1.5"
+       cy="17.5"
+       r="0.44"
+       fill="#111111"
+       id="circle195" />
+    <circle
+       cx="3.5"
+       cy="17.5"
+       r="0.44"
+       fill="#111111"
+       id="circle196" />
+    <circle
+       cx="4.5"
+       cy="17.5"
+       r="0.44"
+       fill="#111111"
+       id="circle197" />
+    <circle
+       cx="7.5"
+       cy="17.5"
+       r="0.44"
+       fill="#111111"
+       id="circle198" />
+    <circle
+       cx="8.5"
+       cy="17.5"
+       r="0.44"
+       fill="#111111"
+       id="circle199" />
+    <circle
+       cx="10.5"
+       cy="17.5"
+       r="0.44"
+       fill="#111111"
+       id="circle200" />
+    <circle
+       cx="23.5"
+       cy="17.5"
+       r="0.44"
+       fill="#111111"
+       id="circle201" />
+    <circle
+       cx="24.5"
+       cy="17.5"
+       r="0.44"
+       fill="#111111"
+       id="circle202" />
+    <circle
+       cx="25.5"
+       cy="17.5"
+       r="0.44"
+       fill="#111111"
+       id="circle203" />
+    <circle
+       cx="26.5"
+       cy="17.5"
+       r="0.44"
+       fill="#111111"
+       id="circle204" />
+    <circle
+       cx="32.5"
+       cy="17.5"
+       r="0.44"
+       fill="#111111"
+       id="circle205" />
+    <circle
+       cx="2.5"
+       cy="18.5"
+       r="0.44"
+       fill="#111111"
+       id="circle206" />
+    <circle
+       cx="6.5"
+       cy="18.5"
+       r="0.44"
+       fill="#111111"
+       id="circle207" />
+    <circle
+       cx="7.5"
+       cy="18.5"
+       r="0.44"
+       fill="#111111"
+       id="circle208" />
+    <circle
+       cx="8.5"
+       cy="18.5"
+       r="0.44"
+       fill="#111111"
+       id="circle209" />
+    <circle
+       cx="10.5"
+       cy="18.5"
+       r="0.44"
+       fill="#111111"
+       id="circle210" />
+    <circle
+       cx="22.5"
+       cy="18.5"
+       r="0.44"
+       fill="#111111"
+       id="circle211" />
+    <circle
+       cx="25.5"
+       cy="18.5"
+       r="0.44"
+       fill="#111111"
+       id="circle212" />
+    <circle
+       cx="26.5"
+       cy="18.5"
+       r="0.44"
+       fill="#111111"
+       id="circle213" />
+    <circle
+       cx="30.5"
+       cy="18.5"
+       r="0.44"
+       fill="#111111"
+       id="circle214" />
+    <circle
+       cx="31.5"
+       cy="18.5"
+       r="0.44"
+       fill="#111111"
+       id="circle215" />
+    <circle
+       cx="0.5"
+       cy="19.5"
+       r="0.44"
+       fill="#111111"
+       id="circle216" />
+    <circle
+       cx="5.5"
+       cy="19.5"
+       r="0.44"
+       fill="#111111"
+       id="circle217" />
+    <circle
+       cx="9.5"
+       cy="19.5"
+       r="0.44"
+       fill="#111111"
+       id="circle218" />
+    <circle
+       cx="10.5"
+       cy="19.5"
+       r="0.44"
+       fill="#111111"
+       id="circle219" />
+    <circle
+       cx="23.5"
+       cy="19.5"
+       r="0.44"
+       fill="#111111"
+       id="circle220" />
+    <circle
+       cx="24.5"
+       cy="19.5"
+       r="0.44"
+       fill="#111111"
+       id="circle221" />
+    <circle
+       cx="26.5"
+       cy="19.5"
+       r="0.44"
+       fill="#111111"
+       id="circle222" />
+    <circle
+       cx="29.5"
+       cy="19.5"
+       r="0.44"
+       fill="#111111"
+       id="circle223" />
+    <circle
+       cx="30.5"
+       cy="19.5"
+       r="0.44"
+       fill="#111111"
+       id="circle224" />
+    <circle
+       cx="32.5"
+       cy="19.5"
+       r="0.44"
+       fill="#111111"
+       id="circle225" />
+    <circle
+       cx="4.5"
+       cy="20.5"
+       r="0.44"
+       fill="#111111"
+       id="circle226" />
+    <circle
+       cx="6.5"
+       cy="20.5"
+       r="0.44"
+       fill="#111111"
+       id="circle227" />
+    <circle
+       cx="7.5"
+       cy="20.5"
+       r="0.44"
+       fill="#111111"
+       id="circle228" />
+    <circle
+       cx="10.5"
+       cy="20.5"
+       r="0.44"
+       fill="#111111"
+       id="circle229" />
+    <circle
+       cx="22.5"
+       cy="20.5"
+       r="0.44"
+       fill="#111111"
+       id="circle230" />
+    <circle
+       cx="25.5"
+       cy="20.5"
+       r="0.44"
+       fill="#111111"
+       id="circle231" />
+    <circle
+       cx="26.5"
+       cy="20.5"
+       r="0.44"
+       fill="#111111"
+       id="circle232" />
+    <circle
+       cx="28.5"
+       cy="20.5"
+       r="0.44"
+       fill="#111111"
+       id="circle233" />
+    <circle
+       cx="29.5"
+       cy="20.5"
+       r="0.44"
+       fill="#111111"
+       id="circle234" />
+    <circle
+       cx="31.5"
+       cy="20.5"
+       r="0.44"
+       fill="#111111"
+       id="circle235" />
+    <circle
+       cx="32.5"
+       cy="20.5"
+       r="0.44"
+       fill="#111111"
+       id="circle236" />
+    <circle
+       cx="0.5"
+       cy="21.5"
+       r="0.44"
+       fill="#111111"
+       id="circle237" />
+    <circle
+       cx="1.5"
+       cy="21.5"
+       r="0.44"
+       fill="#111111"
+       id="circle238" />
+    <circle
+       cx="3.5"
+       cy="21.5"
+       r="0.44"
+       fill="#111111"
+       id="circle239" />
+    <circle
+       cx="9.5"
+       cy="21.5"
+       r="0.44"
+       fill="#111111"
+       id="circle240" />
+    <circle
+       cx="10.5"
+       cy="21.5"
+       r="0.44"
+       fill="#111111"
+       id="circle241" />
+    <circle
+       cx="24.5"
+       cy="21.5"
+       r="0.44"
+       fill="#111111"
+       id="circle242" />
+    <circle
+       cx="29.5"
+       cy="21.5"
+       r="0.44"
+       fill="#111111"
+       id="circle243" />
+    <circle
+       cx="32.5"
+       cy="21.5"
+       r="0.44"
+       fill="#111111"
+       id="circle244" />
+    <circle
+       cx="0.5"
+       cy="22.5"
+       r="0.44"
+       fill="#111111"
+       id="circle245" />
+    <circle
+       cx="2.5"
+       cy="22.5"
+       r="0.44"
+       fill="#111111"
+       id="circle246" />
+    <circle
+       cx="4.5"
+       cy="22.5"
+       r="0.44"
+       fill="#111111"
+       id="circle247" />
+    <circle
+       cx="6.5"
+       cy="22.5"
+       r="0.44"
+       fill="#111111"
+       id="circle248" />
+    <circle
+       cx="8.5"
+       cy="22.5"
+       r="0.44"
+       fill="#111111"
+       id="circle249" />
+    <circle
+       cx="9.5"
+       cy="22.5"
+       r="0.44"
+       fill="#111111"
+       id="circle250" />
+    <circle
+       cx="10.5"
+       cy="22.5"
+       r="0.44"
+       fill="#111111"
+       id="circle251" />
+    <circle
+       cx="12.5"
+       cy="22.5"
+       r="0.44"
+       fill="#111111"
+       id="circle252" />
+    <circle
+       cx="13.5"
+       cy="22.5"
+       r="0.44"
+       fill="#111111"
+       id="circle253" />
+    <circle
+       cx="15.5"
+       cy="22.5"
+       r="0.44"
+       fill="#111111"
+       id="circle254" />
+    <circle
+       cx="19.5"
+       cy="22.5"
+       r="0.44"
+       fill="#111111"
+       id="circle255" />
+    <circle
+       cx="20.5"
+       cy="22.5"
+       r="0.44"
+       fill="#111111"
+       id="circle256" />
+    <circle
+       cx="21.5"
+       cy="22.5"
+       r="0.44"
+       fill="#111111"
+       id="circle257" />
+    <circle
+       cx="29.5"
+       cy="22.5"
+       r="0.44"
+       fill="#111111"
+       id="circle258" />
+    <circle
+       cx="31.5"
+       cy="22.5"
+       r="0.44"
+       fill="#111111"
+       id="circle259" />
+    <circle
+       cx="0.5"
+       cy="23.5"
+       r="0.44"
+       fill="#111111"
+       id="circle260" />
+    <circle
+       cx="4.5"
+       cy="23.5"
+       r="0.44"
+       fill="#111111"
+       id="circle261" />
+    <circle
+       cx="5.5"
+       cy="23.5"
+       r="0.44"
+       fill="#111111"
+       id="circle262" />
+    <circle
+       cx="7.5"
+       cy="23.5"
+       r="0.44"
+       fill="#111111"
+       id="circle263" />
+    <circle
+       cx="8.5"
+       cy="23.5"
+       r="0.44"
+       fill="#111111"
+       id="circle264" />
+    <circle
+       cx="9.5"
+       cy="23.5"
+       r="0.44"
+       fill="#111111"
+       id="circle265" />
+    <circle
+       cx="10.5"
+       cy="23.5"
+       r="0.44"
+       fill="#111111"
+       id="circle266" />
+    <circle
+       cx="13.5"
+       cy="23.5"
+       r="0.44"
+       fill="#111111"
+       id="circle267" />
+    <circle
+       cx="14.5"
+       cy="23.5"
+       r="0.44"
+       fill="#111111"
+       id="circle268" />
+    <circle
+       cx="17.5"
+       cy="23.5"
+       r="0.44"
+       fill="#111111"
+       id="circle269" />
+    <circle
+       cx="18.5"
+       cy="23.5"
+       r="0.44"
+       fill="#111111"
+       id="circle270" />
+    <circle
+       cx="19.5"
+       cy="23.5"
+       r="0.44"
+       fill="#111111"
+       id="circle271" />
+    <circle
+       cx="20.5"
+       cy="23.5"
+       r="0.44"
+       fill="#111111"
+       id="circle272" />
+    <circle
+       cx="21.5"
+       cy="23.5"
+       r="0.44"
+       fill="#111111"
+       id="circle273" />
+    <circle
+       cx="24.5"
+       cy="23.5"
+       r="0.44"
+       fill="#111111"
+       id="circle274" />
+    <circle
+       cx="29.5"
+       cy="23.5"
+       r="0.44"
+       fill="#111111"
+       id="circle275" />
+    <circle
+       cx="30.5"
+       cy="23.5"
+       r="0.44"
+       fill="#111111"
+       id="circle276" />
+    <circle
+       cx="31.5"
+       cy="23.5"
+       r="0.44"
+       fill="#111111"
+       id="circle277" />
+    <circle
+       cx="0.5"
+       cy="24.5"
+       r="0.44"
+       fill="#111111"
+       id="circle278" />
+    <circle
+       cx="3.5"
+       cy="24.5"
+       r="0.44"
+       fill="#111111"
+       id="circle279" />
+    <circle
+       cx="5.5"
+       cy="24.5"
+       r="0.44"
+       fill="#111111"
+       id="circle280" />
+    <circle
+       cx="6.5"
+       cy="24.5"
+       r="0.44"
+       fill="#111111"
+       id="circle281" />
+    <circle
+       cx="8.5"
+       cy="24.5"
+       r="0.44"
+       fill="#111111"
+       id="circle282" />
+    <circle
+       cx="9.5"
+       cy="24.5"
+       r="0.44"
+       fill="#111111"
+       id="circle283" />
+    <circle
+       cx="11.5"
+       cy="24.5"
+       r="0.44"
+       fill="#111111"
+       id="circle284" />
+    <circle
+       cx="12.5"
+       cy="24.5"
+       r="0.44"
+       fill="#111111"
+       id="circle285" />
+    <circle
+       cx="15.5"
+       cy="24.5"
+       r="0.44"
+       fill="#111111"
+       id="circle286" />
+    <circle
+       cx="19.5"
+       cy="24.5"
+       r="0.44"
+       fill="#111111"
+       id="circle287" />
+    <circle
+       cx="20.5"
+       cy="24.5"
+       r="0.44"
+       fill="#111111"
+       id="circle288" />
+    <circle
+       cx="24.5"
+       cy="24.5"
+       r="0.44"
+       fill="#111111"
+       id="circle289" />
+    <circle
+       cx="25.5"
+       cy="24.5"
+       r="0.44"
+       fill="#111111"
+       id="circle290" />
+    <circle
+       cx="26.5"
+       cy="24.5"
+       r="0.44"
+       fill="#111111"
+       id="circle291" />
+    <circle
+       cx="27.5"
+       cy="24.5"
+       r="0.44"
+       fill="#111111"
+       id="circle292" />
+    <circle
+       cx="28.5"
+       cy="24.5"
+       r="0.44"
+       fill="#111111"
+       id="circle293" />
+    <circle
+       cx="29.5"
+       cy="24.5"
+       r="0.44"
+       fill="#111111"
+       id="circle294" />
+    <circle
+       cx="31.5"
+       cy="24.5"
+       r="0.44"
+       fill="#111111"
+       id="circle295" />
+    <circle
+       cx="8.5"
+       cy="25.5"
+       r="0.44"
+       fill="#111111"
+       id="circle296" />
+    <circle
+       cx="9.5"
+       cy="25.5"
+       r="0.44"
+       fill="#111111"
+       id="circle297" />
+    <circle
+       cx="11.5"
+       cy="25.5"
+       r="0.44"
+       fill="#111111"
+       id="circle298" />
+    <circle
+       cx="12.5"
+       cy="25.5"
+       r="0.44"
+       fill="#111111"
+       id="circle299" />
+    <circle
+       cx="14.5"
+       cy="25.5"
+       r="0.44"
+       fill="#111111"
+       id="circle300" />
+    <circle
+       cx="16.5"
+       cy="25.5"
+       r="0.44"
+       fill="#111111"
+       id="circle301" />
+    <circle
+       cx="20.5"
+       cy="25.5"
+       r="0.44"
+       fill="#111111"
+       id="circle302" />
+    <circle
+       cx="24.5"
+       cy="25.5"
+       r="0.44"
+       fill="#111111"
+       id="circle303" />
+    <circle
+       cx="28.5"
+       cy="25.5"
+       r="0.44"
+       fill="#111111"
+       id="circle304" />
+    <circle
+       cx="30.5"
+       cy="25.5"
+       r="0.44"
+       fill="#111111"
+       id="circle305" />
+    <circle
+       cx="31.5"
+       cy="25.5"
+       r="0.44"
+       fill="#111111"
+       id="circle306" />
+    <circle
+       cx="32.5"
+       cy="25.5"
+       r="0.44"
+       fill="#111111"
+       id="circle307" />
+    <circle
+       cx="9.5"
+       cy="26.5"
+       r="0.44"
+       fill="#111111"
+       id="circle308" />
+    <circle
+       cx="10.5"
+       cy="26.5"
+       r="0.44"
+       fill="#111111"
+       id="circle309" />
+    <circle
+       cx="12.5"
+       cy="26.5"
+       r="0.44"
+       fill="#111111"
+       id="circle310" />
+    <circle
+       cx="15.5"
+       cy="26.5"
+       r="0.44"
+       fill="#111111"
+       id="circle311" />
+    <circle
+       cx="16.5"
+       cy="26.5"
+       r="0.44"
+       fill="#111111"
+       id="circle312" />
+    <circle
+       cx="17.5"
+       cy="26.5"
+       r="0.44"
+       fill="#111111"
+       id="circle313" />
+    <circle
+       cx="20.5"
+       cy="26.5"
+       r="0.44"
+       fill="#111111"
+       id="circle314" />
+    <circle
+       cx="22.5"
+       cy="26.5"
+       r="0.44"
+       fill="#111111"
+       id="circle315" />
+    <circle
+       cx="23.5"
+       cy="26.5"
+       r="0.44"
+       fill="#111111"
+       id="circle316" />
+    <circle
+       cx="24.5"
+       cy="26.5"
+       r="0.44"
+       fill="#111111"
+       id="circle317" />
+    <circle
+       cx="26.5"
+       cy="26.5"
+       r="0.44"
+       fill="#111111"
+       id="circle318" />
+    <circle
+       cx="28.5"
+       cy="26.5"
+       r="0.44"
+       fill="#111111"
+       id="circle319" />
+    <circle
+       cx="29.5"
+       cy="26.5"
+       r="0.44"
+       fill="#111111"
+       id="circle320" />
+    <circle
+       cx="31.5"
+       cy="26.5"
+       r="0.44"
+       fill="#111111"
+       id="circle321" />
+    <circle
+       cx="9.5"
+       cy="27.5"
+       r="0.44"
+       fill="#111111"
+       id="circle322" />
+    <circle
+       cx="13.5"
+       cy="27.5"
+       r="0.44"
+       fill="#111111"
+       id="circle323" />
+    <circle
+       cx="14.5"
+       cy="27.5"
+       r="0.44"
+       fill="#111111"
+       id="circle324" />
+    <circle
+       cx="16.5"
+       cy="27.5"
+       r="0.44"
+       fill="#111111"
+       id="circle325" />
+    <circle
+       cx="23.5"
+       cy="27.5"
+       r="0.44"
+       fill="#111111"
+       id="circle326" />
+    <circle
+       cx="24.5"
+       cy="27.5"
+       r="0.44"
+       fill="#111111"
+       id="circle327" />
+    <circle
+       cx="28.5"
+       cy="27.5"
+       r="0.44"
+       fill="#111111"
+       id="circle328" />
+    <circle
+       cx="29.5"
+       cy="27.5"
+       r="0.44"
+       fill="#111111"
+       id="circle329" />
+    <circle
+       cx="30.5"
+       cy="27.5"
+       r="0.44"
+       fill="#111111"
+       id="circle330" />
+    <circle
+       cx="31.5"
+       cy="27.5"
+       r="0.44"
+       fill="#111111"
+       id="circle331" />
+    <circle
+       cx="32.5"
+       cy="27.5"
+       r="0.44"
+       fill="#111111"
+       id="circle332" />
+    <circle
+       cx="8.5"
+       cy="28.5"
+       r="0.44"
+       fill="#111111"
+       id="circle333" />
+    <circle
+       cx="9.5"
+       cy="28.5"
+       r="0.44"
+       fill="#111111"
+       id="circle334" />
+    <circle
+       cx="12.5"
+       cy="28.5"
+       r="0.44"
+       fill="#111111"
+       id="circle335" />
+    <circle
+       cx="13.5"
+       cy="28.5"
+       r="0.44"
+       fill="#111111"
+       id="circle336" />
+    <circle
+       cx="16.5"
+       cy="28.5"
+       r="0.44"
+       fill="#111111"
+       id="circle337" />
+    <circle
+       cx="17.5"
+       cy="28.5"
+       r="0.44"
+       fill="#111111"
+       id="circle338" />
+    <circle
+       cx="21.5"
+       cy="28.5"
+       r="0.44"
+       fill="#111111"
+       id="circle339" />
+    <circle
+       cx="22.5"
+       cy="28.5"
+       r="0.44"
+       fill="#111111"
+       id="circle340" />
+    <circle
+       cx="24.5"
+       cy="28.5"
+       r="0.44"
+       fill="#111111"
+       id="circle341" />
+    <circle
+       cx="25.5"
+       cy="28.5"
+       r="0.44"
+       fill="#111111"
+       id="circle342" />
+    <circle
+       cx="26.5"
+       cy="28.5"
+       r="0.44"
+       fill="#111111"
+       id="circle343" />
+    <circle
+       cx="27.5"
+       cy="28.5"
+       r="0.44"
+       fill="#111111"
+       id="circle344" />
+    <circle
+       cx="28.5"
+       cy="28.5"
+       r="0.44"
+       fill="#111111"
+       id="circle345" />
+    <circle
+       cx="31.5"
+       cy="28.5"
+       r="0.44"
+       fill="#111111"
+       id="circle346" />
+    <circle
+       cx="32.5"
+       cy="28.5"
+       r="0.44"
+       fill="#111111"
+       id="circle347" />
+    <circle
+       cx="8.5"
+       cy="29.5"
+       r="0.44"
+       fill="#111111"
+       id="circle348" />
+    <circle
+       cx="10.5"
+       cy="29.5"
+       r="0.44"
+       fill="#111111"
+       id="circle349" />
+    <circle
+       cx="11.5"
+       cy="29.5"
+       r="0.44"
+       fill="#111111"
+       id="circle350" />
+    <circle
+       cx="12.5"
+       cy="29.5"
+       r="0.44"
+       fill="#111111"
+       id="circle351" />
+    <circle
+       cx="13.5"
+       cy="29.5"
+       r="0.44"
+       fill="#111111"
+       id="circle352" />
+    <circle
+       cx="14.5"
+       cy="29.5"
+       r="0.44"
+       fill="#111111"
+       id="circle353" />
+    <circle
+       cx="16.5"
+       cy="29.5"
+       r="0.44"
+       fill="#111111"
+       id="circle354" />
+    <circle
+       cx="17.5"
+       cy="29.5"
+       r="0.44"
+       fill="#111111"
+       id="circle355" />
+    <circle
+       cx="18.5"
+       cy="29.5"
+       r="0.44"
+       fill="#111111"
+       id="circle356" />
+    <circle
+       cx="20.5"
+       cy="29.5"
+       r="0.44"
+       fill="#111111"
+       id="circle357" />
+    <circle
+       cx="25.5"
+       cy="29.5"
+       r="0.44"
+       fill="#111111"
+       id="circle358" />
+    <circle
+       cx="28.5"
+       cy="29.5"
+       r="0.44"
+       fill="#111111"
+       id="circle359" />
+    <circle
+       cx="29.5"
+       cy="29.5"
+       r="0.44"
+       fill="#111111"
+       id="circle360" />
+    <circle
+       cx="31.5"
+       cy="29.5"
+       r="0.44"
+       fill="#111111"
+       id="circle361" />
+    <circle
+       cx="8.5"
+       cy="30.5"
+       r="0.44"
+       fill="#111111"
+       id="circle362" />
+    <circle
+       cx="9.5"
+       cy="30.5"
+       r="0.44"
+       fill="#111111"
+       id="circle363" />
+    <circle
+       cx="10.5"
+       cy="30.5"
+       r="0.44"
+       fill="#111111"
+       id="circle364" />
+    <circle
+       cx="12.5"
+       cy="30.5"
+       r="0.44"
+       fill="#111111"
+       id="circle365" />
+    <circle
+       cx="13.5"
+       cy="30.5"
+       r="0.44"
+       fill="#111111"
+       id="circle366" />
+    <circle
+       cx="16.5"
+       cy="30.5"
+       r="0.44"
+       fill="#111111"
+       id="circle367" />
+    <circle
+       cx="18.5"
+       cy="30.5"
+       r="0.44"
+       fill="#111111"
+       id="circle368" />
+    <circle
+       cx="20.5"
+       cy="30.5"
+       r="0.44"
+       fill="#111111"
+       id="circle369" />
+    <circle
+       cx="24.5"
+       cy="30.5"
+       r="0.44"
+       fill="#111111"
+       id="circle370" />
+    <circle
+       cx="25.5"
+       cy="30.5"
+       r="0.44"
+       fill="#111111"
+       id="circle371" />
+    <circle
+       cx="26.5"
+       cy="30.5"
+       r="0.44"
+       fill="#111111"
+       id="circle372" />
+    <circle
+       cx="29.5"
+       cy="30.5"
+       r="0.44"
+       fill="#111111"
+       id="circle373" />
+    <circle
+       cx="9.5"
+       cy="31.5"
+       r="0.44"
+       fill="#111111"
+       id="circle374" />
+    <circle
+       cx="11.5"
+       cy="31.5"
+       r="0.44"
+       fill="#111111"
+       id="circle375" />
+    <circle
+       cx="12.5"
+       cy="31.5"
+       r="0.44"
+       fill="#111111"
+       id="circle376" />
+    <circle
+       cx="15.5"
+       cy="31.5"
+       r="0.44"
+       fill="#111111"
+       id="circle377" />
+    <circle
+       cx="16.5"
+       cy="31.5"
+       r="0.44"
+       fill="#111111"
+       id="circle378" />
+    <circle
+       cx="20.5"
+       cy="31.5"
+       r="0.44"
+       fill="#111111"
+       id="circle379" />
+    <circle
+       cx="25.5"
+       cy="31.5"
+       r="0.44"
+       fill="#111111"
+       id="circle380" />
+    <circle
+       cx="27.5"
+       cy="31.5"
+       r="0.44"
+       fill="#111111"
+       id="circle381" />
+    <circle
+       cx="29.5"
+       cy="31.5"
+       r="0.44"
+       fill="#111111"
+       id="circle382" />
+    <circle
+       cx="30.5"
+       cy="31.5"
+       r="0.44"
+       fill="#111111"
+       id="circle383" />
+    <circle
+       cx="9.5"
+       cy="32.5"
+       r="0.44"
+       fill="#111111"
+       id="circle384" />
+    <circle
+       cx="12.5"
+       cy="32.5"
+       r="0.44"
+       fill="#111111"
+       id="circle385" />
+    <circle
+       cx="15.5"
+       cy="32.5"
+       r="0.44"
+       fill="#111111"
+       id="circle386" />
+    <circle
+       cx="16.5"
+       cy="32.5"
+       r="0.44"
+       fill="#111111"
+       id="circle387" />
+    <circle
+       cx="18.5"
+       cy="32.5"
+       r="0.44"
+       fill="#111111"
+       id="circle388" />
+    <circle
+       cx="19.5"
+       cy="32.5"
+       r="0.44"
+       fill="#111111"
+       id="circle389" />
+    <circle
+       cx="20.5"
+       cy="32.5"
+       r="0.44"
+       fill="#111111"
+       id="circle390" />
+    <circle
+       cx="21.5"
+       cy="32.5"
+       r="0.44"
+       fill="#111111"
+       id="circle391" />
+    <circle
+       cx="22.5"
+       cy="32.5"
+       r="0.44"
+       fill="#111111"
+       id="circle392" />
+    <circle
+       cx="23.5"
+       cy="32.5"
+       r="0.44"
+       fill="#111111"
+       id="circle393" />
+    <circle
+       cx="24.5"
+       cy="32.5"
+       r="0.44"
+       fill="#111111"
+       id="circle394" />
+    <circle
+       cx="25.5"
+       cy="32.5"
+       r="0.44"
+       fill="#111111"
+       id="circle395" />
+    <circle
+       cx="31.5"
+       cy="32.5"
+       r="0.44"
+       fill="#111111"
+       id="circle396" />
     <!-- Finder Pattern: Top-Left -->
-    <rect x="0.5" y="0.5" width="6" height="6" rx="1.6" fill="none" stroke="#111111" stroke-width="1" />
-    <rect x="2" y="2" width="3" height="3" rx="0.8" fill="#E63946" />
+    <rect
+       x="0.5"
+       y="0.5"
+       width="6"
+       height="6"
+       rx="1.6"
+       fill="none"
+       stroke="#111111"
+       stroke-width="1"
+       id="rect396" />
+    <rect
+       x="2"
+       y="2"
+       width="3"
+       height="3"
+       rx="0.80000001"
+       fill="#e63946"
+       id="rect397" />
     <!-- Finder Pattern: Top-Right -->
-    <rect x="26.5" y="0.5" width="6" height="6" rx="1.6" fill="none" stroke="#111111" stroke-width="1" />
-    <rect x="28" y="2" width="3" height="3" rx="0.8" fill="#E63946" />
+    <rect
+       x="26.5"
+       y="0.5"
+       width="6"
+       height="6"
+       rx="1.6"
+       fill="none"
+       stroke="#111111"
+       stroke-width="1"
+       id="rect398" />
+    <rect
+       x="28"
+       y="2"
+       width="3"
+       height="3"
+       rx="0.80000001"
+       fill="#e63946"
+       id="rect399" />
     <!-- Finder Pattern: Bottom-Left -->
-    <rect x="0.5" y="26.5" width="6" height="6" rx="1.6" fill="none" stroke="#111111" stroke-width="1" />
-    <rect x="2" y="28" width="3" height="3" rx="0.8" fill="#E63946" />
+    <rect
+       x="0.5"
+       y="26.5"
+       width="6"
+       height="6"
+       rx="1.6"
+       fill="none"
+       stroke="#111111"
+       stroke-width="1"
+       id="rect400" />
+    <rect
+       x="2"
+       y="28"
+       width="3"
+       height="3"
+       rx="0.80000001"
+       fill="#e63946"
+       id="rect401" />
     <!-- Center RouteDefense Emblem Badge -->
-    <g id="center_emblem">
-      <rect x="11" y="11" width="11" height="11" rx="2.5" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="0.4" filter="url(#badgeShadow)" />
-      <g transform="translate(12.7, 12.7) scale(0.038)">
+    <g
+       id="center_emblem"
+       style="display:inline">
+      <rect
+         x="11"
+         y="11"
+         width="11"
+         height="11"
+         rx="2.5"
+         fill="#ffffff"
+         stroke="#e5e7eb"
+         stroke-width="0.4"
+         filter="url(#badgeShadow)"
+         id="rect402"
+         style="display:none" />
+      <g
+         transform="matrix(0.038,0,0,0.038,12.7,12.7)"
+         id="g403">
         <!-- Outer Shield / Pathway -->
-        <path d="M 0 200 L 0 0 L 100 0 L 200 100 L 200 200 Z" fill="none" stroke="#111111" stroke-width="26" stroke-linejoin="miter" />
+        <path
+           d="M 0,200 V 0 h 100 l 100,100 v 100 z"
+           fill="none"
+           stroke="#111111"
+           stroke-width="26"
+           stroke-linejoin="miter"
+           id="path402" />
         <!-- Inner Forward Motion Line -->
-        <path d="M 60 200 L 60 60 L 100 60 L 140 100 L 140 200" fill="none" stroke="#111111" stroke-width="26" stroke-linejoin="miter" />
+        <path
+           d="M 60,200 V 60 h 40 l 40,40 v 100"
+           fill="none"
+           stroke="#111111"
+           stroke-width="26"
+           stroke-linejoin="miter"
+           id="path403" />
         <!-- Safety Crimson Accent Square -->
-        <rect x="116" y="148" width="26" height="26" fill="#E63946" />
+        <rect
+           x="116"
+           y="148"
+           width="26"
+           height="26"
+           fill="#e63946"
+           id="rect403" />
       </g>
     </g>
   </g>

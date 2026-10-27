@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1050"
+   height="600"
+   viewBox="0 0 1050 600"
+   version="1.1"
+   id="business_card_front_v3"
+   xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgDarkV3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141923" />
+      <stop offset="100%" stop-color="#090B0F" />
+    </linearGradient>
+    <linearGradient id="crimsonGradV3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF4D5E" />
+      <stop offset="100%" stop-color="#E63946" />
+    </linearGradient>
+    <linearGradient id="goldGradV3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F6E05E" />
+      <stop offset="100%" stop-color="#D69E2E" />
+    </linearGradient>
+    <clipPath id="cardClipV3">
+      <rect width="1050" height="600" />
+    </clipPath>
+  </defs>
+
+  <style>
+    .font-tagline-v3 { font-family: 'Outfit', 'Geist', 'Segoe UI', sans-serif; font-size: 20px; font-weight: 300; letter-spacing: 5px; fill: #A0AEC0; }
+  </style>
+
+  <!-- Card Base -->
+  <rect width="1050" height="600" fill="url(#bgDarkV3)" />
+
+  <g clip-path="url(#cardClipV3)">
+    <!-- Edge Accent Border -->
+    <rect x="0" y="0" width="1050" height="600" fill="none" stroke="url(#crimsonGradV3)" stroke-width="6" opacity="0.1" />
+    
+    <!-- Subtle Architectural Wave -->
+    <path d="M 0 300 C 300 100 750 500 1050 300 L 1050 600 L 0 600 Z" fill="url(#crimsonGradV3)" opacity="0.04" />
+    
+    <!-- Bottom Crimson Accent Strip -->
+    <rect x="0" y="585" width="1050" height="15" fill="url(#crimsonGradV3)" />
+    
+    <!-- Connecting Circle (Left Half) -->
+    <circle cx="850" cy="-50" r="300" fill="url(#crimsonGradV3)" opacity="0.14" />
+
+    <!-- Center Logo & Brand Identity Presentation -->
+    <g transform="translate(525, 255)">
+      <!-- Scaled Logo Group (Scale 3.8) -->
+      <g transform="translate(-230, -85) scale(3.8)" id="front_brand_lockup">
+        <!-- RouteDefense Shield Emblem -->
+        <g transform="translate(0, 4) scale(0.20)">
+          <path d="M 0 200 L 0 0 L 100 0 L 200 100 L 200 200 Z" fill="none" stroke="#FFFFFF" stroke-width="24" stroke-linejoin="miter" />
+          <path d="M 60 200 L 60 60 L 100 60 L 140 100 L 140 200" fill="none" stroke="#FFFFFF" stroke-width="24" stroke-linejoin="miter" />
+          <rect x="116" y="148" width="24" height="24" fill="#E63946" />
+        </g>
+
+        <text x="48" y="24" font-family="'Outfit', 'Geist', sans-serif" font-size="20px" font-weight="700" fill="#FFFFFF" letter-spacing="-0.3">RouteDefense</text>
+        <text x="48" y="39" font-family="'Outfit', 'Geist', sans-serif" font-size="11px" font-weight="700" fill="#E63946" letter-spacing="4">GROUP</text>
+        <line x1="48" y1="26" x2="95" y2="26" stroke="#E63946" stroke-width="1" opacity="0.5" />
+      </g>
+
+      <!-- Tagline -->
+      <text x="0" y="130" text-anchor="middle" class="font-tagline-v3">INSTITUTIONAL TRAFFIC DEFENSE NETWORK</text>
+
+      <!-- Executive / Leadership Title in Gold Foil -->
+      <text x="0" y="200" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-style="italic" font-size="28px" font-weight="700" fill="url(#goldGradV3)" letter-spacing="1">Office of the Directorate | General Counsel</text>
+    </g>
+  </g>
+</svg>
