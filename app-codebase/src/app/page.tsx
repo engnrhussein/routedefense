@@ -147,45 +147,9 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Precise smooth slide handler that lands right above the section heading on all devices
-  const scrollToSection = (e: React.MouseEvent, sectionId: string) => {
-    e.preventDefault();
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setMobileMenuOpen(false);
-
-    const performScroll = () => {
-      const element = document.getElementById(sectionId);
-      if (!element) return;
-
-      // Find the first visible heading/badge element to align right above it
-      const heading = (element.querySelector("span, h2, h3") as HTMLElement) || element;
-      const headerBar = document.getElementById("header-bar");
-      const navbarHeight = headerBar ? headerBar.offsetHeight : (typeof window !== "undefined" && window.innerWidth >= 640 ? 80 : 64);
-      
-      const headingTop = heading.getBoundingClientRect().top + window.pageYOffset;
-      // Stop precisely 16px right above the section heading
-      const targetY = Math.max(0, headingTop - navbarHeight - 16);
-
-      window.scrollTo({
-        top: targetY,
-        behavior: "smooth"
-      });
-      setActiveSection(sectionId);
-
-      // Tablet resilience: ensure exact landing after drawer closes so it never stops midway
-      setTimeout(() => {
-        const currentHeading = (element.querySelector("span, h2, h3") as HTMLElement) || element;
-        const currentHeadingTop = currentHeading.getBoundingClientRect().top + window.pageYOffset;
-        const exactTargetY = Math.max(0, currentHeadingTop - navbarHeight - 16);
-        if (Math.abs(window.pageYOffset - exactTargetY) > 15) {
-          window.scrollTo({
-            top: exactTargetY,
-            behavior: "smooth"
-          });
-        }
-      }, 280);
-    };
-
-    performScroll();
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -236,10 +200,21 @@ export default function Home() {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("/api/submit", {
+      let response = await fetch("/api/submit", {
         method: "POST",
         body: formData,
       });
+
+      // If /api/submit returns 404 or fails (such as when statically hosted on Cloudflare Pages), fall back to FormSubmit
+      if (!response.ok) {
+        response = await fetch("https://formsubmit.co/ajax/routedefense@gmail.com", {
+          method: "POST",
+          body: formData,
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+      }
 
       if (response.ok) {
         // Prevent viewport jumping/clamping to bottom on mobile, tablet, and desktop
@@ -258,6 +233,31 @@ export default function Home() {
         setFormStatus("error");
       }
     } catch {
+      try {
+        const fallbackRes = await fetch("https://formsubmit.co/ajax/routedefense@gmail.com", {
+          method: "POST",
+          body: formData,
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+        if (fallbackRes.ok) {
+          const portal = submitPortalRef.current || document.getElementById("submit-section");
+          if (portal) {
+            const navbar = document.querySelector("nav") || document.querySelector("header");
+            const navbarHeight = navbar ? (navbar as HTMLElement).offsetHeight : 72;
+            const targetY = portal.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 20;
+            window.scrollTo({
+              top: Math.max(0, targetY),
+              behavior: "instant" as ScrollBehavior
+            });
+          }
+          setFormStatus("success");
+          return;
+        }
+      } catch {
+        // ignore
+      }
       setFormStatus("error");
     }
   };
@@ -287,11 +287,30 @@ export default function Home() {
         </div>
       )}
 
+      {/* Full screen backdrop blur overlay for mobile & tablet (matches Raz Transportation LLC) */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div 
+            key="mobile-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setMobileMenuOpen(false)}
+            className="fixed inset-0 z-40 bg-black/40 backdrop-blur-md lg:hidden cursor-pointer"
+            aria-label="Close navigation overlay"
+          />
+        )}
+      </AnimatePresence>
+
       {/* Navigation Bar - Responsive with Mobile Hamburger & Sheet Drawer */}
-      <nav className="fixed top-0 w-full z-50 bg-[#FAFAFA]/95 backdrop-blur-md border-b border-[#E5E7EB]">
-        <div id="header-bar" className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between relative z-50 bg-[#FAFAFA]/95">
+      <nav className="fixed top-0 w-full z-50 bg-[#FAFAFA]/90 backdrop-blur-xl border-b border-[#E5E7EB]">
+        <div id="header-bar" className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between">
           
-          <Link href="/" className="flex items-center gap-2.5 sm:gap-3.5 group cursor-pointer shrink-0">
+          <div 
+            onClick={scrollToTop} 
+            className="flex items-center gap-2.5 sm:gap-3.5 group cursor-pointer shrink-0"
+          >
             <div className="w-7 h-7 sm:w-9 sm:h-9 relative group-hover:scale-105 transition-transform duration-300">
               <Image src="/logo.svg" alt="RouteDefense Logo" fill className="object-contain" priority />
             </div>
@@ -303,14 +322,13 @@ export default function Home() {
                 Premium Legal Network
               </span>
             </div>
-          </Link>
+          </div>
 
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center gap-8 xl:gap-10 text-xs font-bold tracking-widest uppercase">
             
-            <a 
+            <Link 
               href="#how-it-works"
-              onClick={(e) => scrollToSection(e, "how-it-works")}
               className={`relative py-1 transition-colors duration-200 ${
                 activeSection === "how-it-works" ? "text-[#E63946]" : "text-[#4A4A4A] hover:text-[#111111]"
               }`}
@@ -322,11 +340,10 @@ export default function Home() {
                   className="absolute -bottom-1.5 left-0 right-0 h-0.5 bg-[#E63946]" 
                 />
               )}
-            </a>
+            </Link>
 
-            <a 
+            <Link 
               href="#guidance"
-              onClick={(e) => scrollToSection(e, "guidance")}
               className={`relative py-1 transition-colors duration-200 ${
                 activeSection === "guidance" ? "text-[#E63946]" : "text-[#4A4A4A] hover:text-[#111111]"
               }`}
@@ -338,11 +355,10 @@ export default function Home() {
                   className="absolute -bottom-1.5 left-0 right-0 h-0.5 bg-[#E63946]" 
                 />
               )}
-            </a>
+            </Link>
 
-            <a 
+            <Link 
               href="#specialties"
-              onClick={(e) => scrollToSection(e, "specialties")}
               className={`relative py-1 transition-colors duration-200 ${
                 activeSection === "specialties" ? "text-[#E63946]" : "text-[#4A4A4A] hover:text-[#111111]"
               }`}
@@ -354,11 +370,10 @@ export default function Home() {
                   className="absolute -bottom-1.5 left-0 right-0 h-0.5 bg-[#E63946]" 
                 />
               )}
-            </a>
+            </Link>
 
-            <a 
+            <Link 
               href="#coverage"
-              onClick={(e) => scrollToSection(e, "coverage")}
               className={`relative py-1 transition-colors duration-200 ${
                 activeSection === "coverage" ? "text-[#E63946]" : "text-[#4A4A4A] hover:text-[#111111]"
               }`}
@@ -370,19 +385,19 @@ export default function Home() {
                   className="absolute -bottom-1.5 left-0 right-0 h-0.5 bg-[#E63946]" 
                 />
               )}
-            </a>
+            </Link>
 
           </div>
 
           {/* Right Header Actions */}
           <div className="flex items-center gap-2 sm:gap-3">
-            <button 
-              onClick={(e) => scrollToSection(e, "submit-section")} 
+            <Link 
+              href="#submit-section" 
               className="inline-flex items-center gap-1.5 sm:gap-2 bg-[#E63946] hover:bg-[#111111] text-white px-3.5 sm:px-6 py-2.5 sm:py-3 text-[11px] sm:text-xs font-bold tracking-widest uppercase transition-colors duration-300 shadow-xs shrink-0"
             >
               <span>Submit Ticket</span>
               <ArrowUpRight size={13} />
-            </button>
+            </Link>
 
             {/* Mobile Hamburger Toggle Button */}
             <button
@@ -396,70 +411,68 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Mobile & Tablet Navigation Drawer Sheet + Blurry Backdrop */}
+        {/* Mobile & Tablet Dropdown Menu (Matches Raz Transportation LLC) */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
-              key="mobile-nav-backdrop"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              onClick={() => setMobileMenuOpen(false)}
-              className="fixed inset-0 top-16 sm:top-20 z-40 bg-black/40 backdrop-blur-md lg:hidden cursor-pointer"
-              aria-label="Close navigation menu overlay"
-            />
-          )}
-          {mobileMenuOpen && (
-            <motion.div
-              key="mobile-nav-drawer"
+              key="mobile-dropdown"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25, ease: "easeInOut" }}
-              className="lg:hidden bg-white border-b border-[#E5E7EB] px-6 py-6 shadow-2xl flex flex-col gap-4 overflow-hidden relative z-50"
+              className="lg:hidden overflow-hidden bg-[#FAFAFA]/95 backdrop-blur-xl border-t border-[#E5E7EB]"
             >
-              <div className="flex flex-col gap-3 text-xs font-bold tracking-widest uppercase">
-                <a 
+              <div className="flex flex-col py-4 px-6 gap-3">
+                <Link 
                   href="#how-it-works"
-                  onClick={(e) => scrollToSection(e, "how-it-works")}
-                  className={`py-2 px-3 transition-colors ${activeSection === "how-it-works" ? "bg-[#E63946]/10 text-[#E63946] border-l-2 border-[#E63946]" : "text-[#333333]"}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`py-2.5 px-3 rounded-md transition-colors text-xs font-bold tracking-widest uppercase ${
+                    activeSection === "how-it-works" ? "bg-[#E63946]/10 text-[#E63946] border-l-2 border-[#E63946]" : "text-[#222222] hover:text-[#E63946]"
+                  }`}
                 >
                   How It Works
-                </a>
-                <a 
+                </Link>
+                <Link 
                   href="#guidance"
-                  onClick={(e) => scrollToSection(e, "guidance")}
-                  className={`py-2 px-3 transition-colors ${activeSection === "guidance" ? "bg-[#E63946]/10 text-[#E63946] border-l-2 border-[#E63946]" : "text-[#333333]"}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`py-2.5 px-3 rounded-md transition-colors text-xs font-bold tracking-widest uppercase ${
+                    activeSection === "guidance" ? "bg-[#E63946]/10 text-[#E63946] border-l-2 border-[#E63946]" : "text-[#222222] hover:text-[#E63946]"
+                  }`}
                 >
                   Driver Guidance
-                </a>
-                <a 
+                </Link>
+                <Link 
                   href="#specialties"
-                  onClick={(e) => scrollToSection(e, "specialties")}
-                  className={`py-2 px-3 transition-colors ${activeSection === "specialties" ? "bg-[#E63946]/10 text-[#E63946] border-l-2 border-[#E63946]" : "text-[#333333]"}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`py-2.5 px-3 rounded-md transition-colors text-xs font-bold tracking-widest uppercase ${
+                    activeSection === "specialties" ? "bg-[#E63946]/10 text-[#E63946] border-l-2 border-[#E63946]" : "text-[#222222] hover:text-[#E63946]"
+                  }`}
                 >
                   Legal Specialties
-                </a>
-                <a 
+                </Link>
+                <Link 
                   href="#coverage"
-                  onClick={(e) => scrollToSection(e, "coverage")}
-                  className={`py-2 px-3 transition-colors ${activeSection === "coverage" ? "bg-[#E63946]/10 text-[#E63946] border-l-2 border-[#E63946]" : "text-[#333333]"}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`py-2.5 px-3 rounded-md transition-colors text-xs font-bold tracking-widest uppercase ${
+                    activeSection === "coverage" ? "bg-[#E63946]/10 text-[#E63946] border-l-2 border-[#E63946]" : "text-[#222222] hover:text-[#E63946]"
+                  }`}
                 >
                   50-State Coverage
-                </a>
-              </div>
+                </Link>
 
-              <div className="pt-4 border-t border-[#E5E7EB] flex flex-col gap-2">
-                <p className="text-[11px] font-mono text-[#666666]">
-                  HOTLINE: <strong className="text-[#111111]">(800) 555-0199</strong>
-                </p>
-                <button
-                  onClick={(e) => scrollToSection(e, "submit-section")}
-                  className="w-full bg-[#111111] text-white py-3 text-xs font-bold uppercase tracking-widest text-center mt-1 cursor-pointer"
-                >
-                  Start Case Evaluation
-                </button>
+                <div className="pt-3 border-t border-[#E5E7EB] flex flex-col gap-2">
+                  <p className="text-[11px] font-mono text-[#666666]">
+                    HOTLINE: <strong className="text-[#111111]">(800) 555-0199</strong>
+                  </p>
+                  <Link
+                    href="#submit-section"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="w-full bg-[#E63946] hover:bg-[#111111] text-white py-3 px-4 text-xs font-bold uppercase tracking-widest text-center flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                  >
+                    <span>Submit Ticket</span>
+                    <ArrowUpRight size={14} />
+                  </Link>
+                </div>
               </div>
             </motion.div>
           )}
@@ -503,19 +516,19 @@ export default function Home() {
 
                 {/* Primary Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mb-10 sm:mb-12">
-                  <button 
-                    onClick={(e) => scrollToSection(e, "submit-section")}
+                  <Link 
+                    href="#submit-section"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#E63946] hover:bg-[#111111] text-white px-6 sm:px-8 py-3.5 sm:py-4 font-bold tracking-widest uppercase text-xs sm:text-sm transition-all duration-300 shadow-sm"
                   >
                     <span>Request Free Case Evaluation</span>
                     <ArrowUpRight size={16} />
-                  </button>
-                  <button 
-                    onClick={(e) => scrollToSection(e, "how-it-works")}
+                  </Link>
+                  <Link 
+                    href="#how-it-works"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-[#111111] text-[#111111] hover:bg-[#111111] hover:text-white px-6 sm:px-8 py-3.5 sm:py-4 font-bold tracking-widest uppercase text-xs sm:text-sm transition-all duration-300 bg-white"
                   >
                     <span>How It Works</span>
-                  </button>
+                  </Link>
                 </div>
 
                 {/* Trust Metrics Strip */}
@@ -574,7 +587,7 @@ export default function Home() {
         </section>
 
         {/* HOW IT WORKS: RESTORED SIDE-BY-SIDE LAYOUT (Optimized for Mobile Stacking & Tablet Grids) */}
-        <section id="how-it-works" className="pt-8 pb-14 sm:pt-12 sm:pb-18 md:pt-14 md:pb-20 px-4 sm:px-6 lg:px-12 bg-white border-t border-b border-[#E5E7EB] w-full">
+        <section id="how-it-works" className="scroll-mt-16 sm:scroll-mt-20 lg:scroll-mt-24 pt-8 pb-14 sm:pt-12 sm:pb-18 md:pt-14 md:pb-20 px-4 sm:px-6 lg:px-12 bg-white border-t border-b border-[#E5E7EB] w-full">
           <div className="max-w-[1600px] mx-auto">
             
             {/* Header */}
@@ -663,7 +676,7 @@ export default function Home() {
         </section>
 
         {/* DRIVER GUIDANCE: Critical Roadside Rules */}
-        <section id="guidance" className="pt-8 pb-14 sm:pt-12 sm:pb-18 md:pt-14 md:pb-20 px-4 sm:px-6 lg:px-12 bg-[#FAFAFA] w-full">
+        <section id="guidance" className="scroll-mt-16 sm:scroll-mt-20 lg:scroll-mt-24 pt-8 pb-14 sm:pt-12 sm:pb-18 md:pt-14 md:pb-20 px-4 sm:px-6 lg:px-12 bg-[#FAFAFA] w-full">
           <div className="max-w-[1600px] mx-auto">
             
             <div className="max-w-3xl mb-8 sm:mb-12">
@@ -726,7 +739,7 @@ export default function Home() {
         </section>
 
         {/* LEGAL SPECIALTIES: Institutional Capabilities with Attorney Review Photo */}
-        <section id="specialties" className="pt-8 pb-14 sm:pt-12 sm:pb-18 md:pt-14 md:pb-20 px-4 sm:px-6 lg:px-12 bg-white border-t border-b border-[#E5E7EB] w-full">
+        <section id="specialties" className="scroll-mt-16 sm:scroll-mt-20 lg:scroll-mt-24 pt-8 pb-14 sm:pt-12 sm:pb-18 md:pt-14 md:pb-20 px-4 sm:px-6 lg:px-12 bg-white border-t border-b border-[#E5E7EB] w-full">
           <div className="max-w-[1600px] mx-auto">
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
@@ -824,7 +837,7 @@ export default function Home() {
         </section>
 
         {/* 50-STATE COVERAGE HIGHLIGHT */}
-        <section id="coverage" className="pt-8 pb-14 sm:pt-12 sm:pb-18 md:pt-14 md:pb-20 px-4 sm:px-6 lg:px-12 bg-[#FAFAFA] w-full">
+        <section id="coverage" className="scroll-mt-16 sm:scroll-mt-20 lg:scroll-mt-24 pt-8 pb-14 sm:pt-12 sm:pb-18 md:pt-14 md:pb-20 px-4 sm:px-6 lg:px-12 bg-[#FAFAFA] w-full">
           <div className="max-w-[1600px] mx-auto text-center">
             <span className="text-[#E63946] font-bold text-xs tracking-[0.25em] uppercase block mb-2 sm:mb-3">
               Nationwide Jurisdiction
@@ -843,7 +856,7 @@ export default function Home() {
         </section>
 
         {/* TICKET SUBMISSION PORTAL: Form with Document Upload & Cascading Inventory */}
-        <section id="submit-section" className="pt-8 pb-16 sm:pt-12 sm:pb-20 md:pt-14 md:pb-24 px-4 sm:px-6 lg:px-12 bg-white border-t border-[#E5E7EB] w-full">
+        <section id="submit-section" className="scroll-mt-16 sm:scroll-mt-20 lg:scroll-mt-24 pt-8 pb-16 sm:pt-12 sm:pb-20 md:pt-14 md:pb-24 px-4 sm:px-6 lg:px-12 bg-white border-t border-[#E5E7EB] w-full">
           <div className="max-w-4xl mx-auto">
             
             <div className="text-center mb-8 sm:mb-12">
@@ -1166,11 +1179,11 @@ export default function Home() {
                 <Gavel size={15} className="text-[#E63946]" /> Defense Specialties
               </h4>
               <ul className="space-y-2.5 sm:space-y-3 text-xs text-white/60 font-light">
-                <li><a href="#specialties" onClick={(e) => scrollToSection(e, "specialties")} className="hover:text-white transition-colors">Speeding & Radar Calibration Audits</a></li>
-                <li><a href="#specialties" onClick={(e) => scrollToSection(e, "specialties")} className="hover:text-white transition-colors">Commercial Drivers & CDL Violations</a></li>
-                <li><a href="#specialties" onClick={(e) => scrollToSection(e, "specialties")} className="hover:text-white transition-colors">Reckless Driving & High-Speed Docket</a></li>
-                <li><a href="#specialties" onClick={(e) => scrollToSection(e, "specialties")} className="hover:text-white transition-colors">Automated Red Light & Speed Cameras</a></li>
-                <li><a href="#specialties" onClick={(e) => scrollToSection(e, "specialties")} className="hover:text-white transition-colors">Suspended License Reinstatement</a></li>
+                <li><Link href="#specialties" className="hover:text-white transition-colors">Speeding & Radar Calibration Audits</Link></li>
+                <li><Link href="#specialties" className="hover:text-white transition-colors">Commercial Drivers & CDL Violations</Link></li>
+                <li><Link href="#specialties" className="hover:text-white transition-colors">Reckless Driving & High-Speed Docket</Link></li>
+                <li><Link href="#specialties" className="hover:text-white transition-colors">Automated Red Light & Speed Cameras</Link></li>
+                <li><Link href="#specialties" className="hover:text-white transition-colors">Suspended License Reinstatement</Link></li>
               </ul>
             </div>
 
@@ -1203,12 +1216,12 @@ export default function Home() {
                   </a>
                 </li>
               </ul>
-              <button 
-                onClick={(e) => scrollToSection(e, "submit-section")}
-                className="w-full bg-[#E63946] hover:bg-white hover:text-[#111111] text-white py-3 text-xs font-bold tracking-widest uppercase transition-colors duration-300"
+              <Link 
+                href="#submit-section"
+                className="w-full bg-[#E63946] hover:bg-white hover:text-[#111111] text-white py-3 text-xs font-bold tracking-widest uppercase transition-colors duration-300 text-center block"
               >
                 Upload Citation Now
-              </button>
+              </Link>
             </div>
 
           </div>
