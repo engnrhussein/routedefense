@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
 export async function POST(request: NextRequest) {
   try {
@@ -32,7 +33,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Generate Custom Luxury Email Table
+    // Generate Custom Luxury Email Table (matches RouteDefense_Custom_Email_Preview.html exactly)
     const customHtml = `
 <!DOCTYPE html>
 <html lang="en">
@@ -181,9 +182,8 @@ export async function POST(request: NextRequest) {
 </html>
 `;
 
-    // Delivery Strategy
+    // Strategy 1: Resend API (Free, 3,000 emails/month)
     const resendApiKey = process.env.RESEND_API_KEY;
-
     if (resendApiKey) {
       const resend = new Resend(resendApiKey);
       const { data, error } = await resend.emails.send({
@@ -195,14 +195,39 @@ export async function POST(request: NextRequest) {
       });
 
       if (error) {
-        console.error("Resend delivery error:", error);
-        return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+        console.error("Resend error:", error);
+      } else {
+        return NextResponse.json({ success: true, provider: "resend", id: data?.id });
       }
-
-      return NextResponse.json({ success: true, id: data?.id });
     }
 
-    // Fallback if RESEND_API_KEY is not yet configured: Forward to FormSubmit
+    // Strategy 2: Gmail SMTP / Nodemailer
+    const gmailAppPassword = process.env.GMAIL_APP_PASSWORD || process.env.SMTP_PASSWORD;
+    if (gmailAppPassword) {
+      const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+          user: process.env.GMAIL_USER || "routedefense@gmail.com",
+          pass: gmailAppPassword,
+        },
+      });
+
+      const mailOptions = {
+        from: `"RouteDefense Intake" <${process.env.GMAIL_USER || "routedefense@gmail.com"}>`,
+        to: "routedefense@gmail.com",
+        subject: `RouteDefense Case Dossier: ${fullName} — ${citation}`,
+        html: customHtml,
+        attachments: attachments.map((a) => ({
+          filename: a.filename,
+          content: a.content,
+        })),
+      };
+
+      await transporter.sendMail(mailOptions);
+      return NextResponse.json({ success: true, provider: "gmail_smtp" });
+    }
+
+    // Strategy 3: Fallback via FormSubmit if credentials are not yet set in environment
     const formSubmitData = new FormData();
     formSubmitData.append("_subject", `RouteDefense Case Dossier: ${fullName} — ${citation}`);
     formSubmitData.append("_captcha", "false");
@@ -226,7 +251,7 @@ export async function POST(request: NextRequest) {
     });
 
     if (fsResponse.ok) {
-      return NextResponse.json({ success: true, mode: "fallback_formsubmit" });
+      return NextResponse.json({ success: true, provider: "formsubmit_fallback" });
     } else {
       return NextResponse.json({ success: false, error: "Submission failed" }, { status: 500 });
     }
