@@ -813,7 +813,7 @@ export default function Home() {
                 <form onSubmit={handleSubmit} method="POST" encType="multipart/form-data" className="space-y-4 sm:space-y-6">
                   {/* FormSubmit Configuration for routedefense@gmail.com */}
                   <input type="hidden" name="_subject" value="New RouteDefense Citation & Document Submission" />
-                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_template" value="box" />
                   <input type="hidden" name="_captcha" value="false" />
                   <input type="text" name="_honey" style={{ display: "none" }} />
 
@@ -825,7 +825,7 @@ export default function Home() {
                       </label>
                       <input 
                         type="text" 
-                        name="name" 
+                        name="Driver Full Name" 
                         id="fullName" 
                         required 
                         className="border border-[#E5E7EB] bg-white px-3.5 sm:px-4 py-3 sm:py-3.5 text-xs sm:text-sm focus:outline-none focus:border-[#E63946] transition-colors" 
@@ -838,7 +838,7 @@ export default function Home() {
                       </label>
                       <input 
                         type="tel" 
-                        name="phone" 
+                        name="Phone Number" 
                         id="phone" 
                         required 
                         className="border border-[#E5E7EB] bg-white px-3.5 sm:px-4 py-3 sm:py-3.5 text-xs sm:text-sm focus:outline-none focus:border-[#E63946] transition-colors" 
@@ -855,7 +855,7 @@ export default function Home() {
                       </label>
                       <input 
                         type="email" 
-                        name="email" 
+                        name="Email Address" 
                         id="email" 
                         required 
                         className="border border-[#E5E7EB] bg-white px-3.5 sm:px-4 py-3 sm:py-3.5 text-xs sm:text-sm focus:outline-none focus:border-[#E63946] transition-colors" 
@@ -868,7 +868,7 @@ export default function Home() {
                       </label>
                       <input 
                         type="text" 
-                        name="citation_number" 
+                        name="Citation Number" 
                         id="citation" 
                         required 
                         className="border border-[#E5E7EB] bg-white px-3.5 sm:px-4 py-3 sm:py-3.5 text-xs sm:text-sm focus:outline-none focus:border-[#E63946] transition-colors" 
@@ -884,7 +884,7 @@ export default function Home() {
                         State of Issue
                       </label>
                       <SearchableSelect 
-                        name="state"
+                        name="State of Issue"
                         options={US_STATES} 
                         value={selectedState} 
                         onChange={(val) => {
@@ -899,7 +899,7 @@ export default function Home() {
                         County Jurisdiction
                       </label>
                       <SearchableSelect 
-                        name="county"
+                        name="County Jurisdiction"
                         options={countyOptions} 
                         value={selectedCounty} 
                         onChange={setSelectedCounty} 
@@ -915,7 +915,7 @@ export default function Home() {
                       Primary Violation Type
                     </label>
                     <select 
-                      name="violation_type" 
+                      name="Violation Category" 
                       id="violationType" 
                       required 
                       className="border border-[#E5E7EB] bg-white px-3.5 sm:px-4 py-3 sm:py-3.5 text-xs sm:text-sm focus:outline-none focus:border-[#E63946] transition-colors text-[#111111]"
@@ -995,7 +995,7 @@ export default function Home() {
                       Incident Details & Court Notes
                     </label>
                     <textarea 
-                      name="details" 
+                      name="Incident Details & Notes" 
                       id="details" 
                       rows={3} 
                       required 
