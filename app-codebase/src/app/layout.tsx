@@ -13,8 +13,8 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "RouteDefense | Premium Legal Network",
-  description: "High-conversion network connecting clients with specialized traffic defense lawyers.",
+  title: "RouteDefense Group | Premium Legal Network",
+  description: "Institutional traffic defense network connecting drivers with specialized counsel across all 50 states.",
 };
 
 export default function RootLayout({
@@ -23,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${playfairDisplay.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-[#E8DFD4] text-[#1A1A1A] font-[family-name:var(--font-geist-sans)]">
+    <html lang="en" className={`${geistSans.variable} ${playfairDisplay.variable} h-full antialiased scroll-smooth`}>
+      <body className="min-h-full flex flex-col bg-[#FAFAFA] text-[#111111] font-[family-name:var(--font-geist-sans)] selection:bg-[#E63946] selection:text-white">
         {children}
       </body>
     </html>
