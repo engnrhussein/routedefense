@@ -189,20 +189,13 @@ export default function Home() {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/routedefense@gmail.com", {
+      const response = await fetch("https://formsubmit.co/routedefense@gmail.com", {
         method: "POST",
-        headers: {
-          Accept: "application/json",
-        },
         body: formData,
       });
 
-      const result = await response.json();
-
-      if (response.ok && (result.success === "true" || result.success === true)) {
+      if (response.ok) {
         setFormStatus("success");
-      } else if (result.message && result.message.toLowerCase().includes("activation")) {
-        setFormStatus("activation_needed");
       } else {
         setFormStatus("error");
       }
@@ -817,7 +810,7 @@ export default function Home() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                <form onSubmit={handleSubmit} method="POST" encType="multipart/form-data" className="space-y-4 sm:space-y-6">
                   {/* FormSubmit Configuration for routedefense@gmail.com */}
                   <input type="hidden" name="_subject" value="New RouteDefense Citation & Document Submission" />
                   <input type="hidden" name="_template" value="table" />
