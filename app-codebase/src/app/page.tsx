@@ -200,21 +200,13 @@ export default function Home() {
     const formData = new FormData(form);
 
     try {
-      let response = await fetch("/api/submit", {
+      const response = await fetch("https://formsubmit.co/ajax/routedefense@gmail.com", {
         method: "POST",
         body: formData,
+        headers: {
+          "Accept": "application/json"
+        }
       });
-
-      // If /api/submit returns 404 or fails (such as when statically hosted on Cloudflare Pages), fall back to FormSubmit
-      if (!response.ok) {
-        response = await fetch("https://formsubmit.co/ajax/routedefense@gmail.com", {
-          method: "POST",
-          body: formData,
-          headers: {
-            "Accept": "application/json"
-          }
-        });
-      }
 
       if (response.ok) {
         // Prevent viewport jumping/clamping to bottom on mobile, tablet, and desktop
@@ -233,31 +225,6 @@ export default function Home() {
         setFormStatus("error");
       }
     } catch {
-      try {
-        const fallbackRes = await fetch("https://formsubmit.co/ajax/routedefense@gmail.com", {
-          method: "POST",
-          body: formData,
-          headers: {
-            "Accept": "application/json"
-          }
-        });
-        if (fallbackRes.ok) {
-          const portal = submitPortalRef.current || document.getElementById("submit-section");
-          if (portal) {
-            const navbar = document.querySelector("nav") || document.querySelector("header");
-            const navbarHeight = navbar ? (navbar as HTMLElement).offsetHeight : 72;
-            const targetY = portal.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 20;
-            window.scrollTo({
-              top: Math.max(0, targetY),
-              behavior: "instant" as ScrollBehavior
-            });
-          }
-          setFormStatus("success");
-          return;
-        }
-      } catch {
-        // ignore
-      }
       setFormStatus("error");
     }
   };
