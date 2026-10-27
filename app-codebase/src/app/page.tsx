@@ -1033,7 +1033,7 @@ export default function Home() {
       </main>
 
       {/* RICH INSTITUTIONAL FOOTER */}
-      <footer className="bg-[#111111] text-white pt-16 pb-10 sm:pt-20 sm:pb-12 px-4 sm:px-6 lg:px-12 border-t border-black w-full">
+      <footer className="bg-[#111111] text-white pt-16 pb-10 sm:pt-20 sm:pb-8 lg:pb-6 px-4 sm:px-6 lg:px-12 border-t border-black w-full">
         <div className="max-w-[1600px] mx-auto">
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 pb-12 sm:pb-16 border-b border-white/10">
@@ -1114,24 +1114,33 @@ export default function Home() {
           </div>
 
           {/* Bottom Copyright & Legal Disclaimer (Same tab links for Privacy & Terms) */}
-          <div className="pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] font-medium tracking-widest text-white/40 uppercase gap-4 text-center md:text-left">
-            <p>&copy; {new Date().getFullYear()} RouteDefense Group. All rights reserved.</p>
+          <div className="pt-6 sm:pt-8 flex flex-col lg:flex-row justify-between items-center text-[10px] font-medium tracking-widest text-white/40 uppercase gap-5 lg:gap-4 text-center sm:text-left">
             
-            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-white/60">
-              <a href="https://docs.routedefensegroup.com/privacy/" className="hover:text-white transition-colors">
-                Privacy Policy
-              </a>
-              <a href="https://docs.routedefensegroup.com/terms/" className="hover:text-white transition-colors">
-                Terms of Service
-              </a>
-              <a href="https://docs.routedefensegroup.com/" className="hover:text-white transition-colors">
-                Compliance Hub
-              </a>
+            {/* Tablet & Desktop: Clean Organized Alignment */}
+            <div className="flex flex-col sm:flex-row items-center justify-between w-full lg:w-auto gap-4 sm:gap-6 lg:gap-8">
+              <p className="shrink-0 text-center sm:text-left">&copy; {new Date().getFullYear()} RouteDefense Group. All rights reserved.</p>
+              
+              <div className="flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-6 text-white/60">
+                <a href="https://docs.routedefensegroup.com/privacy/" className="hover:text-white transition-colors">
+                  Privacy Policy
+                </a>
+                <a href="https://docs.routedefensegroup.com/terms/" className="hover:text-white transition-colors">
+                  Terms of Service
+                </a>
+                <a href="https://docs.routedefensegroup.com/" className="hover:text-white transition-colors">
+                  Compliance Hub
+                </a>
+              </div>
             </div>
 
-            <p className="text-center md:text-right normal-case tracking-normal text-white/40 text-[9.5px] sm:text-[10px] max-w-md">
-              Attorney Advertising. RouteDefense Group is a legal technology and routing network. Prior results do not guarantee a similar outcome.
-            </p>
+            {/* Disclaimer: Centered on phones/tablets, clean rectangular 2-line block on desktop */}
+            <div className="w-full lg:w-auto text-center lg:text-left normal-case tracking-normal text-white/40 text-[9.5px] sm:text-[10px] max-w-xl lg:max-w-md pt-2 sm:pt-0">
+              <p className="leading-relaxed">
+                Attorney Advertising. RouteDefense Group is a legal technology and routing network.
+                <br className="hidden lg:inline" />
+                <span className="lg:block">Prior results do not guarantee a similar outcome.</span>
+              </p>
+            </div>
           </div>
 
         </div>
