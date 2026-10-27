@@ -79,7 +79,7 @@ const US_STATES = [
 ];
 
 export default function Home() {
-  const [formStatus, setFormStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [formStatus, setFormStatus] = useState<"idle" | "loading" | "success" | "activation_needed" | "error">("idle");
   const [selectedState, setSelectedState] = useState("");
   const [selectedCounty, setSelectedCounty] = useState("");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -189,13 +189,20 @@ export default function Home() {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("https://formsubmit.co/ajax/routedefense@gmail.com", {
         method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
         body: formData,
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (response.ok && (result.success === "true" || result.success === true)) {
         setFormStatus("success");
+      } else if (result.message && result.message.toLowerCase().includes("activation")) {
+        setFormStatus("activation_needed");
       } else {
         setFormStatus("error");
       }
@@ -811,10 +818,11 @@ export default function Home() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-                  {/* Web3Forms Configuration */}
-                  <input type="hidden" name="access_key" value="8afa92c0-e6bd-4cee-a464-ada76b23b0aa" />
-                  <input type="hidden" name="subject" value="New RouteDefense Ticket & Document Submission" />
-                  <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
+                  {/* FormSubmit Configuration for routedefense@gmail.com */}
+                  <input type="hidden" name="_subject" value="New RouteDefense Citation & Document Submission" />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="text" name="_honey" style={{ display: "none" }} />
 
                   {/* Personal Contact Info */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
@@ -1002,6 +1010,18 @@ export default function Home() {
                       placeholder="Include posted speed vs. alleged speed, weather conditions, or prior offenses..."
                     ></textarea>
                   </div>
+
+                  {formStatus === "activation_needed" && (
+                    <div className="p-3.5 sm:p-4 border border-amber-500/30 bg-amber-50 text-amber-950 text-xs font-semibold flex items-start gap-2.5">
+                      <AlertTriangle size={16} className="shrink-0 text-amber-600 mt-0.5" />
+                      <div>
+                        <p className="font-bold text-amber-900">One-Time Activation Email Sent</p>
+                        <p className="font-normal mt-0.5 text-amber-800 leading-relaxed">
+                          FormSubmit has sent an activation link to <strong>routedefense@gmail.com</strong>. Please check your inbox and click <em>"Activate Form"</em>. Once clicked, all future client tickets and file attachments will land directly in your email.
+                        </p>
+                      </div>
+                    </div>
+                  )}
 
                   {formStatus === "error" && (
                     <div className="p-3 sm:p-4 border border-[#E63946]/30 bg-[#E63946]/5 text-[#E63946] text-xs font-semibold flex items-center gap-2">
