@@ -82,11 +82,35 @@ export default function Home() {
   const [formStatus, setFormStatus] = useState<"idle" | "loading" | "success" | "activation_needed" | "error">("idle");
   const [selectedState, setSelectedState] = useState("");
   const [selectedCounty, setSelectedCounty] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("how-it-works");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const submitPortalRef = useRef<HTMLDivElement>(null);
+
+  const formatPhoneNumber = (value: string): string => {
+    let digits = value.replace(/\D/g, "");
+    if (digits.length === 11 && digits.startsWith("1")) {
+      digits = digits.slice(1);
+    }
+    digits = digits.slice(0, 10);
+
+    if (digits.length === 0) return "";
+    if (digits.length <= 3) {
+      return `(${digits}`;
+    }
+    if (digits.length <= 6) {
+      return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+    }
+    return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6, 10)}`;
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatPhoneNumber(e.target.value);
+    setPhoneNumber(formatted);
+  };
 
   const countyOptions = useMemo(() => {
     if (!selectedState) return [];
@@ -181,6 +205,22 @@ export default function Home() {
     }
   };
 
+  useEffect(() => {
+    if (formStatus === "success") {
+      const portal = submitPortalRef.current || document.getElementById("submit-section");
+      if (portal) {
+        const navbar = document.querySelector("nav") || document.querySelector("header");
+        const navbarHeight = navbar ? (navbar as HTMLElement).offsetHeight : 72;
+        const targetY = portal.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 20;
+
+        window.scrollTo({
+          top: Math.max(0, targetY),
+          behavior: "smooth"
+        });
+      }
+    }
+  }, [formStatus]);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormStatus("loading");
@@ -195,6 +235,17 @@ export default function Home() {
       });
 
       if (response.ok) {
+        // Prevent viewport jumping/clamping to bottom on mobile, tablet, and desktop
+        const portal = submitPortalRef.current || document.getElementById("submit-section");
+        if (portal) {
+          const navbar = document.querySelector("nav") || document.querySelector("header");
+          const navbarHeight = navbar ? (navbar as HTMLElement).offsetHeight : 72;
+          const targetY = portal.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 20;
+          window.scrollTo({
+            top: Math.max(0, targetY),
+            behavior: "instant" as ScrollBehavior
+          });
+        }
         setFormStatus("success");
       } else {
         setFormStatus("error");
@@ -787,7 +838,10 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-[#FAFAFA] p-5 sm:p-8 md:p-12 border border-[#E5E7EB] shadow-sm relative rounded-lg sm:rounded-none">
+            <div 
+              ref={submitPortalRef}
+              className="bg-[#FAFAFA] p-5 sm:p-8 md:p-12 border border-[#E5E7EB] shadow-sm relative rounded-lg sm:rounded-none min-h-[460px] flex flex-col justify-center"
+            >
               
               {/* SUCCESS CONFIRMATION STATE */}
               {formStatus === "success" ? (
@@ -803,8 +857,14 @@ export default function Home() {
                     Your citation details and uploaded documents have been securely encrypted and routed. A specialized defense attorney assigned to your jurisdiction will contact you shortly.
                   </p>
                   <button 
-                    onClick={() => { setFormStatus("idle"); setSelectedFile(null); }}
-                    className="inline-flex items-center gap-2 border border-[#111111] px-5 sm:px-6 py-2.5 sm:py-3 text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#111111] hover:bg-[#111111] hover:text-white transition-colors bg-white"
+                    onClick={() => { 
+                      setFormStatus("idle"); 
+                      setSelectedFile(null); 
+                      setPhoneNumber("");
+                      setSelectedState("");
+                      setSelectedCounty("");
+                    }}
+                    className="inline-flex items-center gap-2 border border-[#111111] px-5 sm:px-6 py-2.5 sm:py-3 text-[11px] sm:text-xs font-bold uppercase tracking-widest text-[#111111] hover:bg-[#111111] hover:text-white transition-colors bg-white cursor-pointer"
                   >
                     Submit Another Citation
                   </button>
@@ -841,6 +901,13 @@ export default function Home() {
                         name="Phone Number" 
                         id="phone" 
                         required 
+                        value={phoneNumber}
+                        onChange={handlePhoneChange}
+                        maxLength={14}
+                        pattern="^\(\d{3}\) \d{3}-\d{4}$"
+                        title="Please enter a valid 10-digit US phone number: (XXX) XXX-XXXX"
+                        inputMode="numeric"
+                        autoComplete="tel"
                         className="border border-[#E5E7EB] bg-white px-3.5 sm:px-4 py-3 sm:py-3.5 text-xs sm:text-sm focus:outline-none focus:border-[#E63946] transition-colors" 
                         placeholder="(800) 555-0199" 
                       />
