@@ -123,22 +123,38 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Precise smooth slide handler with exact offset for sticky navbar
+  // Precise smooth slide handler that lands right above the section heading on all devices
   const scrollToSection = (e: React.MouseEvent, sectionId: string) => {
     e.preventDefault();
+    const wasDrawerOpen = mobileMenuOpen;
     setMobileMenuOpen(false);
-    const element = document.getElementById(sectionId);
-    if (!element) return;
-    
-    const headerOffset = 84;
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-    setActiveSection(sectionId);
+    const performScroll = () => {
+      const element = document.getElementById(sectionId);
+      if (!element) return;
+
+      // Find the first visible heading/badge element to align right above it
+      const heading = (element.querySelector("span, h2, h3") as HTMLElement) || element;
+      const navbar = document.querySelector("nav");
+      const navbarHeight = navbar ? navbar.offsetHeight : 80;
+      
+      const headingTop = heading.getBoundingClientRect().top + window.pageYOffset;
+      // Stop precisely 16px right above the section heading
+      const targetY = headingTop - navbarHeight - 16;
+
+      window.scrollTo({
+        top: Math.max(0, targetY),
+        behavior: "smooth"
+      });
+      setActiveSection(sectionId);
+    };
+
+    if (wasDrawerOpen) {
+      // Delay slightly for mobile/tablet drawer to collapse so height calculation is exact
+      setTimeout(performScroll, 60);
+    } else {
+      performScroll();
+    }
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -383,7 +399,7 @@ export default function Home() {
       <main className="flex-1 w-full">
         
         {/* HERO SECTION: Fully Responsive Typography & Image Badge Scaling */}
-        <section className="relative pt-24 pb-14 sm:pt-28 sm:pb-16 md:pt-[104px] lg:pt-[104px] md:pb-20 px-4 sm:px-6 lg:px-12 overflow-hidden bg-[#FAFAFA] w-full">
+        <section className="relative pt-24 pb-14 sm:pt-[104px] md:pt-[104px] lg:pt-[104px] sm:pb-16 md:pb-20 px-4 sm:px-6 lg:px-12 overflow-hidden bg-[#FAFAFA] w-full">
           
           {/* Subtle Ambient Glows */}
           <div className="absolute top-0 right-0 w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] bg-[#E63946]/5 rounded-full blur-[100px] sm:blur-[130px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
