@@ -150,7 +150,6 @@ export default function Home() {
   // Precise smooth slide handler that lands right above the section heading on all devices
   const scrollToSection = (e: React.MouseEvent, sectionId: string) => {
     e.preventDefault();
-    const wasDrawerOpen = mobileMenuOpen;
     setMobileMenuOpen(false);
 
     const performScroll = () => {
@@ -159,26 +158,34 @@ export default function Home() {
 
       // Find the first visible heading/badge element to align right above it
       const heading = (element.querySelector("span, h2, h3") as HTMLElement) || element;
-      const navbar = document.querySelector("nav");
-      const navbarHeight = navbar ? navbar.offsetHeight : 80;
+      const headerBar = document.getElementById("header-bar");
+      const navbarHeight = headerBar ? headerBar.offsetHeight : (typeof window !== "undefined" && window.innerWidth >= 640 ? 80 : 64);
       
       const headingTop = heading.getBoundingClientRect().top + window.pageYOffset;
       // Stop precisely 16px right above the section heading
-      const targetY = headingTop - navbarHeight - 16;
+      const targetY = Math.max(0, headingTop - navbarHeight - 16);
 
       window.scrollTo({
-        top: Math.max(0, targetY),
+        top: targetY,
         behavior: "smooth"
       });
       setActiveSection(sectionId);
+
+      // Tablet resilience: ensure exact landing after drawer closes so it never stops midway
+      setTimeout(() => {
+        const currentHeading = (element.querySelector("span, h2, h3") as HTMLElement) || element;
+        const currentHeadingTop = currentHeading.getBoundingClientRect().top + window.pageYOffset;
+        const exactTargetY = Math.max(0, currentHeadingTop - navbarHeight - 16);
+        if (Math.abs(window.pageYOffset - exactTargetY) > 15) {
+          window.scrollTo({
+            top: exactTargetY,
+            behavior: "smooth"
+          });
+        }
+      }, 280);
     };
 
-    if (wasDrawerOpen) {
-      // Delay slightly for mobile/tablet drawer to collapse so height calculation is exact
-      setTimeout(performScroll, 60);
-    } else {
-      performScroll();
-    }
+    performScroll();
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -282,7 +289,7 @@ export default function Home() {
 
       {/* Navigation Bar - Responsive with Mobile Hamburger & Sheet Drawer */}
       <nav className="fixed top-0 w-full z-50 bg-[#FAFAFA]/95 backdrop-blur-md border-b border-[#E5E7EB]">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between">
+        <div id="header-bar" className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between relative z-50 bg-[#FAFAFA]/95">
           
           <Link href="/" className="flex items-center gap-2.5 sm:gap-3.5 group cursor-pointer shrink-0">
             <div className="w-7 h-7 sm:w-9 sm:h-9 relative group-hover:scale-105 transition-transform duration-300">
@@ -389,15 +396,28 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Mobile Navigation Drawer Sheet */}
+        {/* Mobile & Tablet Navigation Drawer Sheet + Blurry Backdrop */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
+              key="mobile-nav-backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setMobileMenuOpen(false)}
+              className="fixed inset-0 top-16 sm:top-20 z-40 bg-black/40 backdrop-blur-md lg:hidden cursor-pointer"
+              aria-label="Close navigation menu overlay"
+            />
+          )}
+          {mobileMenuOpen && (
+            <motion.div
+              key="mobile-nav-drawer"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25, ease: "easeInOut" }}
-              className="lg:hidden bg-white border-b border-[#E5E7EB] px-6 py-6 shadow-xl flex flex-col gap-4 overflow-hidden"
+              className="lg:hidden bg-white border-b border-[#E5E7EB] px-6 py-6 shadow-2xl flex flex-col gap-4 overflow-hidden relative z-50"
             >
               <div className="flex flex-col gap-3 text-xs font-bold tracking-widest uppercase">
                 <a 
@@ -436,7 +456,7 @@ export default function Home() {
                 </p>
                 <button
                   onClick={(e) => scrollToSection(e, "submit-section")}
-                  className="w-full bg-[#111111] text-white py-3 text-xs font-bold uppercase tracking-widest text-center mt-1"
+                  className="w-full bg-[#111111] text-white py-3 text-xs font-bold uppercase tracking-widest text-center mt-1 cursor-pointer"
                 >
                   Start Case Evaluation
                 </button>
