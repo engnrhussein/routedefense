@@ -813,7 +813,7 @@ export default function Home() {
                 <form onSubmit={handleSubmit} method="POST" encType="multipart/form-data" className="space-y-4 sm:space-y-6">
                   {/* FormSubmit Configuration for routedefense@gmail.com */}
                   <input type="hidden" name="_subject" value="New RouteDefense Citation & Document Submission" />
-                  <input type="hidden" name="_template" value="box" />
+                  <input type="hidden" name="_template" value="table" />
                   <input type="hidden" name="_captcha" value="false" />
                   <input type="text" name="_honey" style={{ display: "none" }} />
 
