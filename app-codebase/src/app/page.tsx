@@ -189,7 +189,7 @@ export default function Home() {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("https://formsubmit.co/routedefense@gmail.com", {
+      const response = await fetch("/api/submit", {
         method: "POST",
         body: formData,
       });
