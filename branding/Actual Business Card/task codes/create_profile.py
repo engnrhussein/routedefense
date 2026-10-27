@@ -1,0 +1,143 @@
+import os
+
+base_dir = r"c:\Users\HP 1030 G2\Downloads\Website For Lawyers\RouteDefense\branding\Actual Business Card"
+out_svg = os.path.join(base_dir, "routedefense_profile.svg")
+
+svg_content = """<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 1024 1024"
+   width="1024"
+   height="1024"
+   version="1.1"
+   id="routedefense_profile_svg"
+   xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Executive Radial Depth -->
+    <radialGradient id="profileGlow" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#1c1f24" />
+      <stop offset="60%" stop-color="#111317" />
+      <stop offset="100%" stop-color="#0a0b0d" />
+    </radialGradient>
+    
+    <!-- Safety Crimson Subtle Gradient -->
+    <linearGradient id="crimsonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF4D5E" />
+      <stop offset="100%" stop-color="#E63946" />
+    </linearGradient>
+
+    <!-- Subtle Shadow for Mark -->
+    <filter id="markShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Deep Solid Obsidian Slate Background -->
+  <rect width="1024" height="1024" fill="url(#profileGlow)" id="bg_rect" />
+
+  <!-- Circular Safe Framing Ring (Subtle Corporate Boundary) -->
+  <circle cx="512" cy="512" r="476" fill="none" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="2" />
+  <circle cx="512" cy="512" r="456" fill="none" stroke="url(#crimsonGrad)" stroke-opacity="0.18" stroke-width="1.5" stroke-dasharray="12 8" />
+
+  <!-- Minimalist Corner Framing Accents (Luxury Architectural Framing) -->
+  <g stroke="url(#crimsonGrad)" stroke-width="3" fill="none" opacity="0.75" id="corner_accents">
+    <path d="M 80 80 L 150 80 M 80 80 L 80 150" />
+    <path d="M 944 80 L 874 80 M 944 80 L 944 150" />
+    <path d="M 80 944 L 150 944 M 80 944 L 80 874" />
+    <path d="M 944 944 L 874 944 M 944 944 L 944 874" />
+  </g>
+
+  <!-- Center Presentation: RouteDefense Shield Emblem & Typography -->
+  <!-- Centered at x=512, y=360 -->
+  <g transform="translate(512, 350)" id="center_brand_group" filter="url(#markShadow)">
+    
+    <!-- RouteDefense Geometric Shield Emblem -->
+    <!-- Original box 200x200; centered by translating -130, -130 with scale 1.3 -->
+    <g transform="translate(-130, -170) scale(1.3)" id="brand_emblem">
+      <!-- Outer Shield / Pathway -->
+      <path
+         d="M 0 200 L 0 0 L 100 0 L 200 100 L 200 200 Z"
+         fill="none"
+         stroke="#FFFFFF"
+         stroke-width="24"
+         stroke-linejoin="miter" />
+      <!-- Inner Forward Motion Line -->
+      <path
+         d="M 60 200 L 60 60 L 100 60 L 140 100 L 140 200"
+         fill="none"
+         stroke="#FFFFFF"
+         stroke-width="24"
+         stroke-linejoin="miter" />
+      <!-- Safety Crimson Accent Square -->
+      <rect
+         x="116"
+         y="148"
+         width="24"
+         height="24"
+         fill="#E63946" />
+    </g>
+
+    <!-- Authority Brand Typography -->
+    <text
+       x="0"
+       y="170"
+       font-family="'Geist', 'Inter', -apple-system, sans-serif"
+       font-size="44px"
+       font-weight="900"
+       fill="#FFFFFF"
+       letter-spacing="10"
+       text-anchor="middle"
+       id="text_brand">ROUTEDEFENSE</text>
+    
+    <text
+       x="0"
+       y="218"
+       font-family="'Geist', 'Inter', -apple-system, sans-serif"
+       font-size="16px"
+       font-weight="700"
+       fill="#E63946"
+       letter-spacing="7"
+       text-anchor="middle"
+       id="text_sub">PREMIUM LEGAL NETWORK</text>
+
+    <!-- Crimson Rule Separator -->
+    <line
+       x1="-70"
+       y1="245"
+       x2="70"
+       y2="245"
+       stroke="#E63946"
+       stroke-width="2"
+       opacity="0.6" />
+  </g>
+
+  <!-- Strategic Tagline & Domain Footer -->
+  <text
+     x="512"
+     y="780"
+     font-family="'Geist', 'Inter', -apple-system, sans-serif"
+     font-size="22px"
+     font-weight="400"
+     fill="#FFFFFF"
+     fill-opacity="0.65"
+     letter-spacing="6"
+     text-anchor="middle"
+     id="text_tagline">INSTITUTIONAL TRAFFIC DEFENSE</text>
+
+  <text
+     x="512"
+     y="832"
+     font-family="'Geist', 'Inter', -apple-system, sans-serif"
+     font-size="26px"
+     font-weight="700"
+     fill="#E63946"
+     letter-spacing="3"
+     text-anchor="middle"
+     id="text_domain">routedefensegroup.com</text>
+
+</svg>
+"""
+
+with open(out_svg, "w", encoding="utf-8") as f:
+    f.write(svg_content)
+
+print(f"Generated RouteDefense Profile SVG at: {out_svg}")
