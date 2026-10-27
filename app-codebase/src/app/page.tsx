@@ -383,7 +383,7 @@ export default function Home() {
       <main className="flex-1 w-full">
         
         {/* HERO SECTION: Fully Responsive Typography & Image Badge Scaling */}
-        <section className="relative pt-24 pb-14 sm:pt-28 sm:pb-16 md:pt-32 md:pb-20 px-4 sm:px-6 lg:px-12 overflow-hidden bg-[#FAFAFA] w-full">
+        <section className="relative pt-24 pb-14 sm:pt-28 sm:pb-16 md:pt-[104px] lg:pt-[104px] md:pb-20 px-4 sm:px-6 lg:px-12 overflow-hidden bg-[#FAFAFA] w-full">
           
           {/* Subtle Ambient Glows */}
           <div className="absolute top-0 right-0 w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] bg-[#E63946]/5 rounded-full blur-[100px] sm:blur-[130px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
