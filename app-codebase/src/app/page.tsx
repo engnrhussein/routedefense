@@ -212,6 +212,12 @@ export default function Home() {
               Capabilities
             </a>
             <a
+              href="#how-it-works"
+              className="hover:text-rdaccent transition-colors"
+            >
+              Driver Protocol
+            </a>
+            <a
               href="#submit-case"
               className="hover:text-rdaccent transition-colors"
             >
@@ -378,10 +384,116 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Driver Protocol / Steps Section (#how-it-works — KV Freight Minimalist Split) */}
+      <section
+        id="how-it-works"
+        className="py-24 px-6 bg-[#fafafa] border-t border-rdink/5 scroll-mt-20"
+      >
+        <div className="max-w-[1600px] mx-auto">
+          <div className="max-w-3xl mb-14">
+            <p className="font-heading text-rdaccent font-bold tracking-[0.2em] uppercase text-xs mb-4">
+              Protocol &amp; Action Plan
+            </p>
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-rdink leading-tight mb-6">
+              What to do immediately <br />
+              after receiving a ticket.
+            </h2>
+            <div className="w-20 h-1 bg-rdaccent mb-6" />
+            <p className="text-rdink/70 text-lg font-light leading-relaxed">
+              Most drivers make the irreversible mistake of rushing to pay the
+              court fine—which legally enters a permanent guilty plea. Follow
+              this 4-step protocol designed by traffic defense attorneys.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="lg:col-span-6 relative aspect-[16/11] w-full bg-rdink/5 rounded-2xl overflow-hidden"
+            >
+              <Image
+                src="/images/guidance-illustration.jpg"
+                alt="RouteDefense Strategic Case Scanning & Legal Resolution Protocol"
+                fill
+                className="object-cover object-center"
+              />
+              <div className="absolute inset-0 border border-black/5 rounded-2xl pointer-events-none" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-5 w-full"
+            >
+              <div className="bg-white border border-rdink/10 p-6 rounded-xl hover:border-rdink/30 transition-colors duration-300">
+                <span className="font-heading text-xs font-bold text-rdaccent tracking-[0.2em] uppercase block mb-2.5">
+                  Stage 01 //
+                </span>
+                <h3 className="font-heading text-base font-bold text-rdink uppercase tracking-wide mb-2">
+                  Stay Calm &amp; Don&apos;t Argue
+                </h3>
+                <p className="text-sm text-rdink/70 leading-relaxed font-light">
+                  Signing the citation is NOT an admission of guilt; it only
+                  acknowledges receipt. Remain polite and do not argue roadside
+                  with the issuing officer.
+                </p>
+              </div>
+
+              <div className="bg-white border border-rdink/10 p-6 rounded-xl hover:border-rdink/30 transition-colors duration-300">
+                <span className="font-heading text-xs font-bold text-rdaccent tracking-[0.2em] uppercase block mb-2.5">
+                  Stage 02 //
+                </span>
+                <h3 className="font-heading text-base font-bold text-rdink uppercase tracking-wide mb-2">
+                  Don&apos;t Pay — Photograph Ticket
+                </h3>
+                <p className="text-sm text-rdink/70 leading-relaxed font-light">
+                  Do not pay the fine online, which legally waives your defense.
+                  Take a clear, well-lit photo of the entire citation showing
+                  the statute code, county, and court deadline.
+                </p>
+              </div>
+
+              <div className="bg-white border border-rdink/10 p-6 rounded-xl hover:border-rdink/30 transition-colors duration-300">
+                <span className="font-heading text-xs font-bold text-rdaccent tracking-[0.2em] uppercase block mb-2.5">
+                  Stage 03 //
+                </span>
+                <h3 className="font-heading text-base font-bold text-rdink uppercase tracking-wide mb-2">
+                  Secure Portal Upload
+                </h3>
+                <p className="text-sm text-rdink/70 leading-relaxed font-light">
+                  Submit your ticket directly to RouteDefense. Our network
+                  matches your case with counsel who regularly practices in that
+                  specific county court.
+                </p>
+              </div>
+
+              <div className="bg-white border border-rdink/10 p-6 rounded-xl hover:border-rdink/30 transition-colors duration-300">
+                <span className="font-heading text-xs font-bold text-rdaccent tracking-[0.2em] uppercase block mb-2.5">
+                  Stage 04 //
+                </span>
+                <h3 className="font-heading text-base font-bold text-rdink uppercase tracking-wide mb-2">
+                  Dismissal &amp; Defense
+                </h3>
+                <p className="text-sm text-rdink/70 leading-relaxed font-light">
+                  In most traffic hearings, your attorney appears on your
+                  behalf. You don&apos;t have to take time off work or step
+                  inside a courthouse.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Case Evaluation Portal (#submit-case — Clean KV Freight Minimalism) */}
       <section
         id="submit-case"
-        className="py-24 px-6 bg-[#fafafa] border-t border-rdink/5 scroll-mt-20"
+        className="py-24 px-6 bg-white border-t border-rdink/5 scroll-mt-20"
       >
         <div className="max-w-[1600px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
@@ -429,7 +541,7 @@ export default function Home() {
 
             <div
               ref={submitPortalRef}
-              className="lg:col-span-7 bg-white border border-rdink/10 p-6 sm:p-10 rounded-2xl"
+              className="lg:col-span-7 bg-[#fafafa] border border-rdink/10 p-6 sm:p-10 rounded-2xl"
             >
               {formStatus === "success" ? (
                 <div
