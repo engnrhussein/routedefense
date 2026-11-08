@@ -288,7 +288,7 @@ export default function Home() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 800 540"
-              className="w-full h-auto"
+              className="w-full h-auto overflow-visible"
               aria-hidden="true"
             >
               <g transform="translate(230, 28) scale(1.7)">
@@ -322,12 +322,12 @@ export default function Home() {
               </text>
               <text
                 x="400"
-                y="524"
+                y="548"
                 textAnchor="middle"
                 fontFamily="'Montserrat', 'Inter', sans-serif"
-                fontWeight="700"
-                fontSize="26"
-                letterSpacing="14"
+                fontWeight="800"
+                fontSize="62"
+                letterSpacing="10"
               >
                 <tspan fill="#111111">GROUP </tspan>
                 <tspan fill="#e63946">LLC</tspan>
