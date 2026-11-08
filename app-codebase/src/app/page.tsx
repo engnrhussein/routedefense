@@ -384,39 +384,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Driver Protocol / Steps Section (#how-it-works — KV Freight Minimalist Split) */}
+      {/* Driver Guidance Section (#how-it-works — Exact KV Freight 2-column split) */}
       <section
         id="how-it-works"
         className="py-24 px-6 bg-[#fafafa] border-t border-rdink/5 scroll-mt-20"
       >
         <div className="max-w-[1600px] mx-auto">
-          <div className="max-w-3xl mb-14">
-            <p className="font-heading text-rdaccent font-bold tracking-[0.2em] uppercase text-xs mb-4">
-              Protocol &amp; Action Plan
-            </p>
-            <h2 className="font-heading text-3xl md:text-5xl font-bold text-rdink leading-tight mb-6">
-              What to do immediately <br />
-              after receiving a ticket.
-            </h2>
-            <div className="w-20 h-1 bg-rdaccent mb-6" />
-            <p className="text-rdink/70 text-lg font-light leading-relaxed">
-              Most drivers make the irreversible mistake of rushing to pay the
-              court fine—which legally enters a permanent guilty plea. Follow
-              this 4-step protocol designed by traffic defense attorneys.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
-              className="lg:col-span-6 relative aspect-[16/11] w-full bg-rdink/5 rounded-2xl overflow-hidden"
+              className="relative aspect-square md:aspect-[4/3] w-full bg-rdink/5 rounded-2xl overflow-hidden order-2 lg:order-1"
             >
               <Image
                 src="/images/guidance-illustration.jpg"
-                alt="RouteDefense Strategic Case Scanning & Legal Resolution Protocol"
+                alt="Traffic citation review and defense workflow"
                 fill
                 className="object-cover object-center"
               />
@@ -428,63 +412,51 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
-              className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-5 w-full"
+              className="order-1 lg:order-2"
             >
-              <div className="bg-white border border-rdink/10 p-6 rounded-xl hover:border-rdink/30 transition-colors duration-300">
-                <span className="font-heading text-xs font-bold text-rdaccent tracking-[0.2em] uppercase block mb-2.5">
-                  Stage 01 //
-                </span>
-                <h3 className="font-heading text-base font-bold text-rdink uppercase tracking-wide mb-2">
-                  Stay Calm &amp; Don&apos;t Argue
-                </h3>
-                <p className="text-sm text-rdink/70 leading-relaxed font-light">
-                  Signing the citation is NOT an admission of guilt; it only
-                  acknowledges receipt. Remain polite and do not argue roadside
-                  with the issuing officer.
-                </p>
-              </div>
+              <h2 className="font-heading text-3xl md:text-5xl font-bold text-rdink mb-6">
+                What to do after <br />
+                receiving a ticket.
+              </h2>
+              <div className="w-20 h-1 bg-rdaccent mb-8" />
+              <p className="text-rdink/70 text-lg mb-8 leading-relaxed font-light">
+                Most drivers make the irreversible mistake of paying the court
+                fine online, which legally enters a permanent guilty plea.
+                Before taking action, follow these steps to protect your record.
+              </p>
 
-              <div className="bg-white border border-rdink/10 p-6 rounded-xl hover:border-rdink/30 transition-colors duration-300">
-                <span className="font-heading text-xs font-bold text-rdaccent tracking-[0.2em] uppercase block mb-2.5">
-                  Stage 02 //
-                </span>
-                <h3 className="font-heading text-base font-bold text-rdink uppercase tracking-wide mb-2">
-                  Don&apos;t Pay — Photograph Ticket
-                </h3>
-                <p className="text-sm text-rdink/70 leading-relaxed font-light">
-                  Do not pay the fine online, which legally waives your defense.
-                  Take a clear, well-lit photo of the entire citation showing
-                  the statute code, county, and court deadline.
-                </p>
-              </div>
-
-              <div className="bg-white border border-rdink/10 p-6 rounded-xl hover:border-rdink/30 transition-colors duration-300">
-                <span className="font-heading text-xs font-bold text-rdaccent tracking-[0.2em] uppercase block mb-2.5">
-                  Stage 03 //
-                </span>
-                <h3 className="font-heading text-base font-bold text-rdink uppercase tracking-wide mb-2">
-                  Secure Portal Upload
-                </h3>
-                <p className="text-sm text-rdink/70 leading-relaxed font-light">
-                  Submit your ticket directly to RouteDefense. Our network
-                  matches your case with counsel who regularly practices in that
-                  specific county court.
-                </p>
-              </div>
-
-              <div className="bg-white border border-rdink/10 p-6 rounded-xl hover:border-rdink/30 transition-colors duration-300">
-                <span className="font-heading text-xs font-bold text-rdaccent tracking-[0.2em] uppercase block mb-2.5">
-                  Stage 04 //
-                </span>
-                <h3 className="font-heading text-base font-bold text-rdink uppercase tracking-wide mb-2">
-                  Dismissal &amp; Defense
-                </h3>
-                <p className="text-sm text-rdink/70 leading-relaxed font-light">
-                  In most traffic hearings, your attorney appears on your
-                  behalf. You don&apos;t have to take time off work or step
-                  inside a courthouse.
-                </p>
-              </div>
+              <ul className="space-y-5">
+                {[
+                  {
+                    title: "Stay calm and don't argue roadside.",
+                    desc: "Signing the citation is not an admission of guilt—it only acknowledges receipt. Remain polite with the issuing officer.",
+                  },
+                  {
+                    title: "Don't pay the fine online.",
+                    desc: "Paying waives your defense and triggers DMV points. Photograph the full ticket showing the statute, county, and court deadline.",
+                  },
+                  {
+                    title: "Upload your citation for review.",
+                    desc: "Submit your ticket below so we can match your case with counsel who regularly practices in that specific county court.",
+                  },
+                  {
+                    title: "Let your attorney handle the court date.",
+                    desc: "In most traffic hearings, your lawyer appears on your behalf so you don't have to take time off work or step inside a courthouse.",
+                  },
+                ].map((step, i) => (
+                  <li key={i} className="flex items-start gap-4">
+                    <div className="w-1.5 h-1.5 rounded-full bg-rdaccent mt-2.5 shrink-0" />
+                    <div>
+                      <h3 className="text-rdink font-medium text-base mb-0.5">
+                        {step.title}
+                      </h3>
+                      <p className="text-rdink/70 text-sm leading-relaxed font-light">
+                        {step.desc}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           </div>
         </div>
