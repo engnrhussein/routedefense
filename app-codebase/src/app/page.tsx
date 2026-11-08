@@ -417,7 +417,12 @@ export default function Home() {
                   <strong className="font-semibold text-rdink">
                     Direct Line:
                   </strong>{" "}
-                  (800) 555-0199
+                  <a
+                    href="tel:+16202140989"
+                    className="hover:text-rdaccent transition-colors"
+                  >
+                    (620) 214-0989
+                  </a>
                 </p>
               </div>
             </div>
@@ -527,7 +532,7 @@ export default function Home() {
                         inputMode="numeric"
                         autoComplete="tel"
                         className="rd-field border border-rdink/15 bg-white px-4 py-3 text-base sm:text-sm text-rdink focus:outline-none focus:border-rdaccent transition-colors"
-                        placeholder="(800) 555-0199"
+                        placeholder="(620) 214-0989"
                       />
                     </div>
                   </div>
@@ -767,7 +772,7 @@ export default function Home() {
                       className="border border-rdaccent/30 bg-rdaccent/5 px-4 py-3 text-xs font-semibold text-rdaccent"
                     >
                       Unable to submit your citation right now. Please try again
-                      or call (800) 555-0199.
+                      or call (620) 214-0989.
                     </p>
                   )}
 
@@ -840,17 +845,17 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Jurisdiction Column */}
+            {/* Headquarters Column */}
             <div className="lg:col-start-3 md:pl-16 lg:pl-0">
               <h4 className="font-heading text-sm font-bold tracking-widest uppercase mb-6 flex items-center gap-2 text-white/90">
-                <MapPin size={16} className="text-rdaccent" /> Jurisdiction
+                <MapPin size={16} className="text-rdaccent" /> Headquarters
               </h4>
               <p className="text-white/60 text-sm leading-relaxed font-light">
-                All 50 US States
+                3601 E McDowell Rd
                 <br />
-                3,143 County Courts
+                Apt 2027
                 <br />
-                United States
+                Phoenix, AZ 85008
               </p>
             </div>
 
@@ -861,7 +866,13 @@ export default function Home() {
               </h4>
               <ul className="space-y-4 text-white/60 text-sm font-light">
                 <li>
-                  <strong className="text-white">P:</strong> (800) 555-0199
+                  <strong className="text-white">P:</strong>{" "}
+                  <a
+                    href="tel:+16202140989"
+                    className="hover:text-rdaccent transition-colors"
+                  >
+                    (620) 214-0989
+                  </a>
                 </li>
                 <li>
                   <strong className="text-white">E:</strong>{" "}
