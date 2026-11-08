@@ -320,6 +320,18 @@ export default function Home() {
               >
                 ROUTEDEFENSE
               </text>
+              <text
+                x="400"
+                y="524"
+                textAnchor="middle"
+                fontFamily="'Montserrat', 'Inter', sans-serif"
+                fontWeight="700"
+                fontSize="26"
+                letterSpacing="14"
+              >
+                <tspan fill="#111111">GROUP </tspan>
+                <tspan fill="#e63946">LLC</tspan>
+              </text>
             </svg>
           </motion.div>
         </div>
